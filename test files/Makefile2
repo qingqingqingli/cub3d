@@ -70,13 +70,14 @@ all: $(NAME)
 
 %.o: %.c
 	@echo "CUB3D: Compiling $<"
-	@$(CC) $(FLAGS) -Ilibft -Ignl -c $< -o $@
+	@gcc $(FLAGS) -Imlx -Ilibft -Ignl -c $< -o $@
 
 $(NAME): $(SRC_O)
 	@echo "creating libraries"
+	@make -C mlx
 	@make -C libft
 	@make -C gnl
-	@$(CC) -o $(NAME) $(SRC_O) $(LIBRARIES)
+	@gcc -Lmlx/ -lmlx -Llibft/ -lft -Lgnl/ -lgnl -framework OpenGL -framework AppKit -o $(NAME) $(SRC_O)
 
 clean:
 	@echo "Cleaning all .o files"

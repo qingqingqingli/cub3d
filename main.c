@@ -41,6 +41,8 @@ int		main(int argc, char **argv)
 
 	if (argc < 2)
 		return (ft_return_error("No map description\n"));
+	if (argc > 2)
+		return (ft_return_error("Too many arguments\n"));
 	ft_reset_input(&input);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
@@ -51,5 +53,6 @@ int		main(int argc, char **argv)
 		ft_parse_input(line, &input);
 		output = get_next_line(fd, &line);
 	}
+	ft_print_input(input);
 	return (0);
 }

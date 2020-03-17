@@ -36,12 +36,60 @@ void	ft_parse_r(char *line, t_input *input, int *i)
 	}
 }
 
+void	ft_parse_n(char *line, t_input *input, int *i)
+{
+	if (line[*i] == 'N')
+	{
+		*i = *i + 1;
+		if (line[*i] != '\0' && line[*i] == 'O')
+		{
+			input->north_present = 1;
+			*i = *i + 1;
+		}
+	}
+	while (line[*i] != '\0' && ft_isspace(line[*i] == 1))
+		*i = *i + 1;
+	*i = *i + 1;
+	while (*i > 0)
+	{
+		line++;
+		*i = *i - 1;
+	}
+	if (input->north_present == 1)
+		input->north_path = line;
+}
+
+void	ft_parse_s(char *line, t_input *input, int *i)
+{
+	if (line[*i] == 'S')
+	{
+		*i = *i + 1;
+		if (line[*i] != '\0' && line[*i] == 'O')
+		{
+			input->south_present = 1;
+			*i = *i + 1;
+		}
+	}
+	while (line[*i] != '\0' && ft_isspace(line[*i] == 1))
+		*i = *i + 1;
+	*i = *i + 1;
+	while (*i > 0)
+	{
+		line++;
+		*i = *i - 1;
+	}
+	if (input->south_present == 1)
+		input->south_path = line;
+}
+
 int		ft_parse_element(char *line, t_input *input, int *i)
 {
 	if (line[*i] == 'R')
 		ft_parse_r(line, input, i);
-	else
-		return (ft_return_error("Not valid element\n"));
+	else if (line[*i] == 'N')
+		ft_parse_n(line, input, i);
+	else if (line[*i] == 'S')
+		ft_parse_s(line, input, i);
 	return (0);
 }
 
@@ -56,6 +104,5 @@ int		ft_parse_input(char *line, t_input *input)
 		ft_parse_element(line, input, &i);
 	// else if (line[i] != '\0' && line[i] != '1')
 	// 	ft_parse_map(line, input);
-	ft_print_input(*input); //print input struct
 	return (0);
 }

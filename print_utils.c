@@ -17,4 +17,8 @@ void	ft_print_input(t_input input)
 	printf("input.r is %d\n", input.r_present);
 	printf("input.xsize is %d\n", input.r_xsize);
 	printf("input.ysize is %d\n", input.r_ysize);
+	printf("input.north_present is %d\n", input.north_present);
+	printf("input.north_path is %s\n", input.north_path);
+	printf("input.south_present is %d\n", input.south_present);
+	printf("input.south_path is %s\n", input.south_path);
 }
