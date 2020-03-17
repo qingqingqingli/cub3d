@@ -55,6 +55,7 @@ typedef struct 	s_input
 	int		ceilling_r;
 	int		ceilling_g;
 	int		ceilling_b;
+	int		element_present;
 
 }				t_input;
 
@@ -71,5 +72,7 @@ int				ft_isdigit(int c);
 int				ft_char_range(int c);
 void			ft_print_input(t_input input);
 int				ft_parse_input(char *line, t_input *input);
+int				ft_check_element(t_input input);
+int				ft_valid_element(t_input input);
 
 #endif

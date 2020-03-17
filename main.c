@@ -35,6 +35,7 @@ static void	ft_reset_input(t_input *input)
 	input->ceilling_r = 0;
 	input->ceilling_g = 0;
 	input->ceilling_b = 0;
+	input->element_present = 0;
 }
 
 int		main(int argc, char **argv)
