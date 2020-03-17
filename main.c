@@ -18,10 +18,15 @@ static void	ft_reset_input(t_input *input)
 	input->r_xsize = 0;
 	input->r_ysize = 0;
 	input->north_present = 0;
+	input->north_path = "null";
 	input->south_present = 0;
+	input->south_path = "null";
 	input->west_present = 0;
+	input->west_path = "null";
 	input->east_present = 0;
+	input->east_path = "null";
 	input->sprite_present = 0;
+	input->sprite_path = "null";
 	input->floor_present = 0;
 	input->floor_r = 0;
 	input->floor_g = 0;
