@@ -37,3 +37,24 @@ void	ft_print_input(t_input input)
 	printf("input.ceilling_b is %d\n", input.ceilling_b);
 
 }
+
+// void	ft_print_2d_array(char **array)
+// {
+// 	int i;
+// 	int j;
+// 	int row;
+
+// 	i = 0;
+// 	j = 0;
+// 	while (array[row])
+// 		row++;
+// 	while (i < row)
+// 	{
+// 		while (array[i][j] != '\0')
+// 		{
+// 			printf("%d", array[i][j]);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
