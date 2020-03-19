@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#define LINE_COUNT 1000
 
 int 	ft_check_map(char *line)
 {
@@ -22,34 +21,45 @@ int 	ft_check_map(char *line)
 	count = 0;
 	while (line[i] != '\0' && count <= 1)
 	{
-		if (line[i] != '0' && line[i] != '1' && line[i] != '2'
-		&& line[i] != 'N' && line[i] != 'S' && line[i] != 'W'
-		&& line[i] != 'E' && ft_isspace(line[i]) != 1)
-			return (0);
-		if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W'
+		if (line[i] == '0' || line[i] == '1' || line[i] != '2'|| ft_isspace(line[i]) == 1)
+			i++;
+		else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W'
 		|| line[i] == 'E')
+		{
 			count++;
+			i++;
+		}
+		else
+			return(-1);
 	}
 	if (count >= 2)
-		return (0);
+		return (-1);
 	return (1);
 }
 
-int		ft_create_2d_array(char *line)
+int 	ft_check_spaces_nextline(char *line)
 {
-	static char **array;
-	static int y;
-	int len;
+	int i;
 
-	y = 0;
-	len = ft_strlen(line);
-	if (!**array)
-		*array = (char *)malloc(LINE_COUNT * sizeof(char *));
-	if (line)
+	i = 0;
+	while (line[i] != '\0')
 	{
-		array[y] = (char *) malloc((len + 1) * sizeof(char));
-		array[y] = ft_strdup(line);
-		y++;
+		if (ft_isspace(line[i]) == 1 || line[i] == '\n')
+			i++;
+		else
+			return (0);
 	}
+	return (1);
+}
+
+int		ft_create_2d_array(char *line, t_input *input)
+{
+	if (ft_check_map(line) == 1 && ft_check_spaces_nextline(line) != 1)
+	{
+		input->line = line;
+		printf("%s\n", input->line);
+	}
+	else if (ft_check_map(line) != -1 && ft_check_spaces_nextline(line) != 1)
+		return (ft_return_error("Invalid map input\n"));
 	return (0);
 }

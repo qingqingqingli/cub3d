@@ -55,7 +55,7 @@ typedef struct 	s_input
 	int		ceilling_r;
 	int		ceilling_g;
 	int		ceilling_b;
-
+	char	*line;
 }				t_input;
 
 /*
@@ -76,6 +76,6 @@ int				ft_validate_element(t_input input);
 int 			ft_check_map(char *line);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
-int				ft_create_2d_array(char *line);
+int				ft_create_2d_array(char *line, t_input *input);
 
 #endif

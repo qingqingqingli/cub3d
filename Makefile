@@ -14,11 +14,11 @@ NAME = test
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = main.c\
-		input_parse.c\
-		utils.c\
-		print_utils.c\
-		input_2d_array.c
+SRC = 1_main.c\
+		2_input_parse.c\
+		0_general_utils.c\
+		0_print_utils.c\
+		3_input_2d_array.c
 
 SRC_O = $(SRC:.c=.o)
 

@@ -16,7 +16,7 @@
 **	count the len of a string
 */
 
-size_t		ft_strlen(const char *s)
+size_t		ft_strlen_1(const char *s)
 {
 	size_t len;
 
@@ -32,7 +32,7 @@ size_t		ft_strlen(const char *s)
 ** duplicate the buf to containter, when the container is empty
 */
 
-char		*ft_strdup(const char *s1)
+char		*ft_strdup_1(const char *s1)
 {
 	char	*dst;
 	char	*src;
@@ -41,7 +41,7 @@ char		*ft_strdup(const char *s1)
 
 	i = 0;
 	src = (char *)s1;
-	len = ft_strlen(src);
+	len = ft_strlen_1(src);
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (dst == NULL)
 		return (0);
@@ -58,7 +58,7 @@ char		*ft_strdup(const char *s1)
 **	join the buffer to container, when the containerontainer is not empty
 */
 
-char		*ft_strjoin(char *s1, char *s2)
+char		*ft_strjoin_1(char *s1, char *s2)
 {
 	size_t	i1;
 	size_t	i2;
@@ -68,7 +68,7 @@ char		*ft_strjoin(char *s1, char *s2)
 		return (0);
 	i1 = 0;
 	i2 = 0;
-	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	dst = (char *)malloc(sizeof(char) * (ft_strlen_1(s1) + ft_strlen_1(s2) + 1));
 	if (dst == NULL)
 		return (0);
 	while (s1[i1] != '\0')

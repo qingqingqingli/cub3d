@@ -19,9 +19,9 @@
 # include <unistd.h>
 
 int		get_next_line(int fd, char **line);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s1);
-char	*ft_strjoin(char *s1, char *s2);
+size_t	ft_strlen_1(const char *s);
+char	*ft_strdup_1(const char *s1);
+char	*ft_strjoin_1(char *s1, char *s2);
 size_t	ft_char_find(char *s, char c);
 int		ft_check_line(char *container);
 

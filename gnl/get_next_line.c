@@ -54,7 +54,7 @@ static int		ft_container_new(char **container, size_t len)
 	size_t	i;
 
 	i = 0;
-	total_len = ft_strlen(*container) - len;
+	total_len = ft_strlen_1(*container) - len;
 	if (total_len == 0)
 		return (ft_free_container(container, 0));
 	new_container = malloc(sizeof(char) * (total_len + 1));
@@ -109,22 +109,22 @@ static int		ft_read_line(char **con, char **line, ssize_t n, char *buf)
 		if (!(*con))
 		{
 			free(*con);
-			*line = ft_strdup("");
+			*line = ft_strdup_1("");
 			if (*line == 0)
 				return (ft_free_container(con, -1));
 			return (0);
 		}
 		if (ft_line_create(*con, line, '\0') == -1
-		|| ft_container_new(con, ft_strlen(*con)) == -1)
+		|| ft_container_new(con, ft_strlen_1(*con)) == -1)
 			return (ft_free_container(con, -1));
 		return (ft_free_container(con, 0));
 	}
 	if (n == 2)
 	{
 		if (!(*con))
-			*con = ft_strdup(buf);
+			*con = ft_strdup_1(buf);
 		else if (*con)
-			*con = ft_strjoin(*con, buf);
+			*con = ft_strjoin_1(*con, buf);
 		if (*con == 0)
 			return (ft_free_container(con, -1));
 	}

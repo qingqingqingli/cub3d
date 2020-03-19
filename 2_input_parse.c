@@ -225,14 +225,9 @@ int		ft_parse_input(char *line, t_input *input)
 		if (ft_char_range(line[i]) == 1)
 			ft_choose_element(line, input, &i);
 	}
-	else if (ft_check_element(*input) == 0 && ft_validate_element(*input) == 0)
+	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 0)
 		return (ft_return_error("Invalid element input\n"));
 	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 1)
-	{
-		if (ft_check_map(line) == 1)
-			ft_create_2d_array(line);
-	}
+		ft_create_2d_array(line, input);
 	return (0);
 }
-
-	// printf("line[i] is %c\n", line[*i]);
