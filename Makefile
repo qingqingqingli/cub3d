@@ -17,7 +17,8 @@ FLAGS = -Wall -Wextra -Werror
 SRC = main.c\
 		input_parse.c\
 		utils.c\
-		print_utils.c
+		print_utils.c\
+		input_2d_array.c
 
 SRC_O = $(SRC:.c=.o)
 

@@ -43,7 +43,7 @@ int		ft_check_element(t_input input)
 	return (0);
 }
 
-int		ft_valid_element(t_input input)
+int		ft_validate_element(t_input input)
 {
 	if (input.r_xsize > 0 && input.r_ysize > 0
 	&& input.floor_r >= 0 && input.floor_r <= 255
