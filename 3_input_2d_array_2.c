@@ -53,45 +53,64 @@ int 	ft_check_spaces_nextline(char *line)
 	return (1);
 }
 
-int 	ft_lines_join(char *line, t_input *input)
+char 	**ft_duplicate_array(char **new_array, char **old_array, int row)
 {
-	char *new_line;
-	int i1;
-	int i2;
+	int i;
+	int j;
+	int len;
 
-	i1 = 0;
-	i2 = 0;
-	new_line = (char *)malloc((ft_strlen(input->line) + ft_strlen(line)
-	+ 2) * sizeof(char));
-	if (new_line == 0)
-		return (ft_return_error("Malloc error\n"));
-	while (input->line[i1] != '\0')
+	i = 0;
+	j = 0;
+	len = 0;
+	while (i < row)
 	{
-		new_line[i1] = input->line[i1];
-		i1++; 
+		len = ft_strlen(old_array[i]);
+		new_array[i] = (char *)malloc((len + 1) * sizeof(char));
+		while (j < len && old_array[i][j] != '\0')
+		{
+			new_array[i][j] = old_array[i][j];
+			j++;
+		}
+		i++;
 	}
-	new_line[i1] = '\n';
-	i1++;
-	while (line[i2] != '\0')
+	return (new_array);
+}
+
+int		ft_create_2d_array(char *line, t_input *input)
+{
+	int row;
+	char **new_array;
+	int i;
+
+	i = 0;
+	row = 0;
+	/* check how many rows are there in the input->array */
+	while (input->array[row])
+		row++;
+	/* malloc the rows needed for the new array */
+	new_array = (char **)malloc((row + 1) * sizeof(char *));
+	/* duplicate all lines from the old array to the new array */
+	new_array = ft_duplicate_array(new_array, input->array, row);
+	/* for the one new line, duplicate the line to the new array*/
+	new_array[row] = ft_strdup(line);
+	while (new_array[row])
+		row++;
+	printf("new array row is %d\n", row);
+	/* allocate and free the old array */
+	while (i < row)
 	{
-		new_line[i1 + i2] = line[i2];
-		i2++;
+		printf("new_array[%d] is %s\n", i, new_array[i]);
+		i++;
 	}
-	new_line[i1 + i2] = '\0';
-	input->line = ft_strdup(new_line);
-	free(new_line);
-	return (0);
+	// input->array = new_array;
+	// printf("input->array[row] is %s\n", input->array[row]);
+	return(0);
 }
 
 int		ft_process_map_line(char *line, t_input *input)
 {
 	if (ft_check_map(line) == 1 && ft_check_spaces_nextline(line) != 1)
-	{
-		if (ft_strncmp(input->line, "null", 6) == 0)
-			input->line = ft_strdup(line);
-		else
-			ft_lines_join(line, input);
-	}
+		ft_create_2d_array(line, input);
 	else if (ft_check_map(line) != -1 && ft_check_spaces_nextline(line) != 1)
 		return (ft_return_error("Invalid map input\n"));
 	return (0);

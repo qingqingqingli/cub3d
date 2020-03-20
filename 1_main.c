@@ -36,9 +36,6 @@ static void	ft_reset_input(t_input *input)
 	input->ceilling_g = 0;
 	input->ceilling_b = 0;
 	input->line = "null";
-	input->array = (char **)malloc(1 * sizeof(char *));
-	(input->array)[0] = (char *)malloc(5 * sizeof(char));
-	(input->array)[0] = "null";
 }
 
 int		main(int argc, char **argv)

@@ -12,6 +12,18 @@
 
 #include "cub3d.h"
 
+void 	ft_print_2d_array(t_input *input)
+{
+	int i;
+
+	i = 0;
+	while (input->array[i])
+	{
+		printf("%s\n", input->array[i]);
+		i++;
+	}
+}
+
 void	ft_print_input(t_input input)
 {
 	printf("r_present is %d\n", input.r_present);
@@ -35,26 +47,6 @@ void	ft_print_input(t_input input)
 	printf("input.ceilling_r is %d\n", input.ceilling_r);
 	printf("input.ceilling_g is %d\n", input.ceilling_g);
 	printf("input.ceilling_b is %d\n", input.ceilling_b);
-
+	// printf("%s\n", input.line);
+	ft_print_2d_array(&input);
 }
-
-// void	ft_print_2d_array(char **array)
-// {
-// 	int i;
-// 	int j;
-// 	int row;
-
-// 	i = 0;
-// 	j = 0;
-// 	while (array[row])
-// 		row++;
-// 	while (i < row)
-// 	{
-// 		while (array[i][j] != '\0')
-// 		{
-// 			printf("%d", array[i][j]);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }

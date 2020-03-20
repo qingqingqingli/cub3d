@@ -228,6 +228,9 @@ int		ft_parse_input(char *line, t_input *input)
 	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 0)
 		return (ft_return_error("Invalid element input\n"));
 	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 1)
+	{
 		ft_process_map_line(line, input);
+		input->array = ft_split(input->line, '\n');
+	}
 	return (0);
 }
