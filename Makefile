@@ -18,7 +18,8 @@ SRC = 1_main.c\
 		2_input_parse.c\
 		0_general_utils.c\
 		0_print_utils.c\
-		3_input_2d_array.c
+		3_input_2d_array.c\
+		4_validate_map.c
 
 SRC_O = $(SRC:.c=.o)
 

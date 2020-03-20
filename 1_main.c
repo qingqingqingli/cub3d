@@ -36,6 +36,8 @@ static void	ft_reset_input(t_input *input)
 	input->ceilling_g = 0;
 	input->ceilling_b = 0;
 	input->line = "null";
+	input->flood_fill_x = 0;
+	input->flood_fill_y = 0;
 }
 
 int		main(int argc, char **argv)
@@ -59,6 +61,7 @@ int		main(int argc, char **argv)
 		ft_parse_input(line, &input);
 		output = get_next_line(fd, &line);
 	}
+	ft_validate_map(&input);
 	ft_print_input(input);
 	return (0);
 }

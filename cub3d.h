@@ -57,6 +57,8 @@ typedef struct 	s_input
 	int		ceilling_b;
 	char	*line;
 	char 	**array;
+	unsigned int 	flood_fill_x;
+	unsigned int 	flood_fill_y;
 }				t_input;
 
 /*
@@ -81,5 +83,6 @@ int				ft_process_map_line(char *line, t_input *input);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 char			**ft_split(char const *s, char c);
+int 			ft_validate_map(t_input *input);
 
 #endif
