@@ -10,83 +10,88 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME			=	cub3d
 
-FLAGS = -Wall -Wextra -Werror
+SRC 			=	1_main.c \
+					2_input_parse.c \
+					0_general_utils.c \
+					0_print_utils.c \
+					3_input_2d_array.c \
+					4_validate_map.c
 
-SRC = 1_main.c\
-		2_input_parse.c\
-		0_general_utils.c\
-		0_print_utils.c\
-		3_input_2d_array.c\
-		4_validate_map.c
+SRC_O 			=	$(SRC:.c=.o)
 
-SRC_O = $(SRC:.c=.o)
+EXTERNAL_LIBS	=	libft/libft.a \
+						gnl/libgnl.a
 
-SRC_GNL = gnl/get_next_line_utils.c\
-			gnl/get_next_line.c
+INLCUDES		=	-Ilibft \
+						-Ignl
 
-SRC_O_GNL = $(SRC_GNL:.c=.o)
+FLAGS 			=	-Wall -Wextra -Werror
 
-SRC_LIBFT = libft/ft_strlen.c\
-			libft/ft_strncmp.c\
-			libft/ft_toupper.c\
-			libft/ft_tolower.c\
-			libft/ft_memset.c\
-			libft/ft_bzero.c\
-			libft/ft_memcpy.c\
-			libft/ft_memccpy.c\
-			libft/ft_memmove.c\
-			libft/ft_memchr.c\
-			libft/ft_memcmp.c\
-			libft/ft_isalpha.c\
-			libft/ft_isdigit.c\
-			libft/ft_isalnum.c\
-			libft/ft_isascii.c\
-			libft/ft_isprint.c\
-			libft/ft_strchr.c\
-			libft/ft_strrchr.c\
-			libft/ft_strlcpy.c\
-			libft/ft_strlcat.c\
-			libft/ft_strnstr.c\
-			libft/ft_atoi.c\
-			libft/ft_calloc.c\
-			libft/ft_strdup.c\
-			libft/ft_substr.c\
-			libft/ft_strjoin.c\
-			libft/ft_strmapi.c\
-			libft/ft_putchar_fd.c\
-			libft/ft_putstr_fd.c\
-			libft/ft_putendl_fd.c\
-			libft/ft_putnbr_fd.c\
-			libft/ft_strtrim.c\
-			libft/ft_split.c\
-			libft/ft_itoa.c
+COMPILE 		=	gcc
 
-SRC_O_LIBFT = $(SRC_LIBFT:.c=.o)
+C_GREEN			=	\033[0;38;5;119m
+C_WHITE			=	\033[38;5;7m
+C_BLUE			=	\033[38;5;73m
+C_GREY			=	\033[38;5;241m
+C_ORANGE 		= 	\033[38;5;202m
+C_DGREEN		=	\033[0;38;5;22m
+RESET			=	$(C_WHITE)
 
-LIBRARIES = libft/libft.a\
-			gnl/libgnl.a
+UNAME_S			:=	$(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+LIBS			+=	-LMinilibX -lmlx -lX11 -lXext -lm -lft -lbsd
+INCLUDES		+=	-IMinilibX/X11
+EXTERNAL_LIBS	+=	MinilibX/libmlx.a
+FLAGS			+=	-DLINUX
+endif
+
+ifeq ($(UNAME_S),MacOS)
+LIBS			+=	-Lmlx -lmlx -framework OpenGL -framework Appkit
+INCLUDES		+=	-Imlx
+EXTERNAL_LIBS	+=	mlx/libmlx.dylib
+FLAGS			+=	-DMACOS
+endif
 
 all: $(NAME)
 
 %.o: %.c
 	@echo "CUB3D: Compiling $<"
-	@$(CC) $(FLAGS) -Ilibft -Ignl -c $< -o $@
+	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
 
 $(NAME): $(SRC_O)
-	@echo "creating libraries"
-	@make -C libft
+	@echo "$(C_GREEN)compiling libft ... $(RESET)"
+	@make bonus -C libft
+	@echo "$(C_GREEN)compiling gnl ... $(RESET)"
 	@make -C gnl
-	@$(CC) -o $(NAME) $(SRC_O) $(LIBRARIES)
+	@echo "$(C_GREEN)compiling mlx ... $(RESET)"
+	@make -C MinilibX 2> /dev/null
+	@$(COMPILE) -o $(NAME) $(SRC_O) $(EXTERNAL_LIBS)
+	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
 clean:
-	@echo "Cleaning all .o files"
-	@rm -f $(SRC_O) $(SRC_O_GNL) $(SRC_O_LIBFT)
+	@echo "$(C_ORANGE)cleaning libft...$(RESET)"
+	@make clean -C libft
+	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
+	@make clean -C gnl
+	@echo "$(C_ORANGE)cleaning MinilibX...$(RESET)"
+	@make clean -C MinilibX	
+	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
+	@rm -f $(SRC_O)
+	@echo "$(C_ORANGE)make clean complete...$(RESET)"
 
 fclean: clean
-	@echo "Cleaning all .a files"
-	@rm -f $(NAME) $(LIBRARIES)
+	@echo "$(C_ORANGE)fcleaning libft...$(RESET)"
+	@make fclean -C libft
+	@echo "$(C_ORANGE)fcleaning gnl...$(RESET)"
+	@make fclean -C gnl
+	@echo "$(C_ORANGE)fcleaning MinilibX...$(RESET)"
+	@make fclean -C MinilibX
+	@echo "$(C_ORANGE)fcleaning cub3d...$(RESET)"
+	@rm -f $(NAME)
+	@echo "$(C_ORANGE)fcleaning complete...$(RESET)"
 
 re: fclean all
 
