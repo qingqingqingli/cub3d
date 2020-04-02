@@ -1,4 +1,4 @@
-# **************************************************************************** #
+eal# **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
@@ -12,22 +12,22 @@
 
 NAME			=	cub3d
 
-SRC 			=	1_main.c \
-					2_input_parse.c \
-					0_general_utils.c \
-					0_print_utils.c \
-					3_input_2d_array.c \
-					4_validate_map.c
+SRC 			=	main.c
 
 SRC_O 			=	$(SRC:.c=.o)
 
 EXTERNAL_LIBS	=	libft/libft.a \
-						gnl/libgnl.a
+					gnl/libgnl.a \
+					MinilibX/libmlx.a \
+					MinilibX/X11/*.a
+
+LIBS 			= 	-LMinilibX -lmlx -lX11 -lXext
 
 INLCUDES		=	-Ilibft \
-						-Ignl
+					-Ignl \
+					-IMinilibX/X11
 
-FLAGS 			=	-Wall -Wextra -Werror
+FLAGS 			=	-g
 
 COMPILE 		=	gcc
 
@@ -38,22 +38,6 @@ C_GREY			=	\033[38;5;241m
 C_ORANGE 		= 	\033[38;5;202m
 C_DGREEN		=	\033[0;38;5;22m
 RESET			=	$(C_WHITE)
-
-UNAME_S			:=	$(shell uname -s)
-
-ifeq ($(UNAME_S),Linux)
-LIBS			+=	-LMinilibX -lmlx -lX11 -lXext -lm -lft -lbsd
-INCLUDES		+=	-IMinilibX/X11
-EXTERNAL_LIBS	+=	MinilibX/libmlx.a
-FLAGS			+=	-DLINUX
-endif
-
-ifeq ($(UNAME_S),MacOS)
-LIBS			+=	-Lmlx -lmlx -framework OpenGL -framework Appkit
-INCLUDES		+=	-Imlx
-EXTERNAL_LIBS	+=	mlx/libmlx.dylib
-FLAGS			+=	-DMACOS
-endif
 
 all: $(NAME)
 
@@ -66,9 +50,8 @@ $(NAME): $(SRC_O)
 	@make bonus -C libft
 	@echo "$(C_GREEN)compiling gnl ... $(RESET)"
 	@make -C gnl
-	@echo "$(C_GREEN)compiling mlx ... $(RESET)"
-	@make -C MinilibX 2> /dev/null
-	@$(COMPILE) -o $(NAME) $(SRC_O) $(EXTERNAL_LIBS)
+	@echo "$(C_GREEN)compiling cub3d ... $(RESET)"
+	@$(COMPILE) $(FLAGS) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
 clean:
@@ -76,8 +59,6 @@ clean:
 	@make clean -C libft
 	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
 	@make clean -C gnl
-	@echo "$(C_ORANGE)cleaning MinilibX...$(RESET)"
-	@make clean -C MinilibX	
 	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
 	@rm -f $(SRC_O)
 	@echo "$(C_ORANGE)make clean complete...$(RESET)"
@@ -87,8 +68,6 @@ fclean: clean
 	@make fclean -C libft
 	@echo "$(C_ORANGE)fcleaning gnl...$(RESET)"
 	@make fclean -C gnl
-	@echo "$(C_ORANGE)fcleaning MinilibX...$(RESET)"
-	@make fclean -C MinilibX
 	@echo "$(C_ORANGE)fcleaning cub3d...$(RESET)"
 	@rm -f $(NAME)
 	@echo "$(C_ORANGE)fcleaning complete...$(RESET)"

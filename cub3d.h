@@ -15,6 +15,8 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include "MinilibX/X11/mlx.h"
+# include "MinilibX/X11/mlx_int.h"
 
 /*
 ** ---------------------------STRUCT-------------------------------------------
