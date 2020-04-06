@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/09 11:24:46 by qli            #+#    #+#                */
-/*   Updated: 2020/03/11 14:14:26 by qli           ########   odam.nl         */
+/*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/06 12:05:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include "MinilibX/X11/mlx.h"
-# include "MinilibX/X11/mlx_int.h"
+# include "minilibx-master/mlx.h"
 
 /*
 ** ---------------------------STRUCT-------------------------------------------
@@ -32,10 +31,27 @@ typedef struct	s_data
 }               t_data;
 
 /*
+** -----------------------------RAY CASTING STRUCT-----------------------------------
+*/
+
+typedef struct s_ray_casting
+{
+	double 	pos_x;
+	double 	pos_y;
+	double 	dir_x;
+	double 	dir_y;
+	double 	plane_x;
+	double 	plane_y;
+	double	ray_direction_x;
+	double 	ray_direction_y;
+}			t_ray_casting;
+
+/*
 ** -----------------------------INPUT STRUCT-----------------------------------
 */
 typedef struct 	s_input
 {
+	t_ray_casting ray_casting;
 	int		r_present;
 	int		r_xsize;
 	int		r_ysize;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_utils.c                                      :+:    :+:            */
+/*   0_print_utils.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/10 16:21:21 by qli            #+#    #+#                */
-/*   Updated: 2020/03/11 14:16:34 by qli           ########   odam.nl         */
+/*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/06 12:06:32 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ void	ft_print_input(t_input input)
 	printf("input.ceilling_r is %d\n", input.ceilling_r);
 	printf("input.ceilling_g is %d\n", input.ceilling_g);
 	printf("input.ceilling_b is %d\n", input.ceilling_b);
+	printf("input.ray_casting.pos_x is %f\n", input.ray_casting.pos_x);
+	printf("input.ray_casting.pos_y is %f\n", input.ray_casting.pos_y);
+	printf("input.ray_casting.dir_x is %f\n", input.ray_casting.dir_x);
+	printf("input.ray_casting.dir_y is %f\n", input.ray_casting.dir_y);	
+	printf("input.ray_casting.plane_x is %f\n", input.ray_casting.plane_x);
+	printf("input.ray_casting.plane_y is %f\n", input.ray_casting.plane_y);
+	printf("input.ray_casting.ray_direction_x is %f\n", input.ray_casting.ray_direction_x);
+	printf("input.ray_casting.ray_direction_y is %f\n", input.ray_casting.ray_direction_y);
 	// printf("%s\n", input.line);
 	ft_print_2d_array(&input);
 }

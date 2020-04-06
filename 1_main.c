@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   1_main.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/10 14:16:45 by qli            #+#    #+#                */
-/*   Updated: 2020/03/11 14:14:26 by qli           ########   odam.nl         */
+/*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/06 12:05:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ static void	ft_reset_input(t_input *input)
 	input->line = "null";
 	input->flood_fill_x = 0;
 	input->flood_fill_y = 0;
+	input->ray_casting.pos_x = 0;
+	input->ray_casting.pos_y = 0;
+	input->ray_casting.dir_x = 0;
+	input->ray_casting.dir_y = 0;
+	input->ray_casting.plane_x = 0;
+	input->ray_casting.plane_y = 0;
+	input->ray_casting.ray_direction_x = 0;
+	input->ray_casting.ray_direction_y = 0;
 }
 
 int		main(int argc, char **argv)

@@ -1,33 +1,38 @@
-eal# **************************************************************************** #
+# **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/03/09 17:06:23 by qli            #+#    #+#                 #
-#    Updated: 2020/03/11 13:47:37 by qli           ########   odam.nl          #
+#    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
+#    Updated: 2020/04/06 12:09:42 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	cub3d
 
-SRC 			=	main.c
+SRC 			=	0_general_utils.c \
+					0_print_utils.c \
+					1_main.c \
+					2_input_parse.c \
+					3_input_2d_array.c \
+					4_validate_map.c \
+					5_initiate_ray_casting.c
 
 SRC_O 			=	$(SRC:.c=.o)
 
 EXTERNAL_LIBS	=	libft/libft.a \
 					gnl/libgnl.a \
-					MinilibX/libmlx.a \
-					MinilibX/X11/*.a
+					minilibx-master/libmlx.a \
 
-LIBS 			= 	-LMinilibX -lmlx -lX11 -lXext
+LIBS 			= 	-lXext -lX11 -lm -lz -AppKit
 
 INLCUDES		=	-Ilibft \
 					-Ignl \
-					-IMinilibX/X11
+					-Iminilibx_master
 
-FLAGS 			=	-g
+FLAGS 			=	-Wall -Wextra -Werror
 
 COMPILE 		=	gcc
 
@@ -50,8 +55,10 @@ $(NAME): $(SRC_O)
 	@make bonus -C libft
 	@echo "$(C_GREEN)compiling gnl ... $(RESET)"
 	@make -C gnl
+	@echo "$(C_GREEN)compiling minilibx ... $(RESET)"
+	@make -C minilibx-master
 	@echo "$(C_GREEN)compiling cub3d ... $(RESET)"
-	@$(COMPILE) $(FLAGS) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
+	@$(COMPILE) $(FLAGS) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
 clean:
@@ -59,6 +66,8 @@ clean:
 	@make clean -C libft
 	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
 	@make clean -C gnl
+	@echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
+	@make clean -C minilibx-master
 	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
 	@rm -f $(SRC_O)
 	@echo "$(C_ORANGE)make clean complete...$(RESET)"
