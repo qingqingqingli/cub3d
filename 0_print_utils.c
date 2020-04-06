@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 12:06:32 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/06 17:00:45 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void 	ft_print_2d_array(t_input *input)
 
 void	ft_print_input(t_input input)
 {
+	printf("*********************************\n");
 	printf("r_present is %d\n", input.r_present);
 	printf("input.xsize is %d\n", input.r_xsize);
 	printf("input.ysize is %d\n", input.r_ysize);
@@ -47,14 +48,20 @@ void	ft_print_input(t_input input)
 	printf("input.ceilling_r is %d\n", input.ceilling_r);
 	printf("input.ceilling_g is %d\n", input.ceilling_g);
 	printf("input.ceilling_b is %d\n", input.ceilling_b);
-	printf("input.ray_casting.pos_x is %f\n", input.ray_casting.pos_x);
-	printf("input.ray_casting.pos_y is %f\n", input.ray_casting.pos_y);
+	printf("*********************************\n");
+	printf("input.ray_casting.pos_x is %d\n", input.ray_casting.pos_x);
+	printf("input.ray_casting.pos_y is %d\n", input.ray_casting.pos_y);
+	printf("input.ray_casting.sprawing_dir is %c\n", input.ray_casting.sprawing_dir);
 	printf("input.ray_casting.dir_x is %f\n", input.ray_casting.dir_x);
 	printf("input.ray_casting.dir_y is %f\n", input.ray_casting.dir_y);	
 	printf("input.ray_casting.plane_x is %f\n", input.ray_casting.plane_x);
 	printf("input.ray_casting.plane_y is %f\n", input.ray_casting.plane_y);
 	printf("input.ray_casting.ray_direction_x is %f\n", input.ray_casting.ray_direction_x);
 	printf("input.ray_casting.ray_direction_y is %f\n", input.ray_casting.ray_direction_y);
+	printf("input.ray_casting.camera_x is %f\n", input.ray_casting.camera_x);
+	printf("input.ray_casting.current_time is %f\n", input.ray_casting.current_time);
+	printf("input.ray_casting.old_time is %f\n", input.ray_casting.old_time);
 	// printf("%s\n", input.line);
+	printf("*********************************\n");
 	ft_print_2d_array(&input);
 }

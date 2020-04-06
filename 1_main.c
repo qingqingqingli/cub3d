@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 12:05:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/06 17:02:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,16 @@ static void	ft_reset_input(t_input *input)
 	input->flood_fill_y = 0;
 	input->ray_casting.pos_x = 0;
 	input->ray_casting.pos_y = 0;
+	input->ray_casting.sprawing_dir= 0;
 	input->ray_casting.dir_x = 0;
 	input->ray_casting.dir_y = 0;
 	input->ray_casting.plane_x = 0;
 	input->ray_casting.plane_y = 0;
 	input->ray_casting.ray_direction_x = 0;
 	input->ray_casting.ray_direction_y = 0;
+	input->ray_casting.camera_x = 0;
+	input->ray_casting.current_time = 0;
+	input->ray_casting.old_time = 0;
 }
 
 int		main(int argc, char **argv)
@@ -70,6 +74,7 @@ int		main(int argc, char **argv)
 		output = get_next_line(fd, &line);
 	}
 	ft_validate_map(&input);
+	ft_cast_ray(&input);
 	ft_print_input(input);
 	return (0);
 }

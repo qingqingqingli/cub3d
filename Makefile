@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/06 12:09:42 by qli           ########   odam.nl          #
+#    Updated: 2020/04/06 17:22:08 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC 			=	0_general_utils.c \
 					2_input_parse.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
-					5_initiate_ray_casting.c
+					5_initiate_ray_casting.c \
+					6_calculate_ray.c
 
 SRC_O 			=	$(SRC:.c=.o)
 
@@ -66,8 +67,8 @@ clean:
 	@make clean -C libft
 	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
 	@make clean -C gnl
-	@echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
-	@make clean -C minilibx-master
+	# @echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
+	# @make clean -C minilibx-master
 	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
 	@rm -f $(SRC_O)
 	@echo "$(C_ORANGE)make clean complete...$(RESET)"

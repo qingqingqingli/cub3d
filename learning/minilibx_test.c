@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test.c                                             :+:    :+:            */
+/*   minilibx_test.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/09 16:18:13 by qli            #+#    #+#                */
-/*   Updated: 2020/03/10 13:55:54 by qli           ########   odam.nl         */
+/*   Created: 2020/03/09 16:18:13 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/06 14:52:29 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_windows_data *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -24,7 +24,7 @@ int	main(void)
 {
 	void	*mlx;
 	void	*mlx_win;
-	t_data	img;
+	t_windows_data	img;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 250, 250, "Hello world!");

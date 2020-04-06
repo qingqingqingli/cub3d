@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 12:05:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/06 17:13:05 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,34 @@
 # include "minilibx-master/mlx.h"
 
 /*
+** ---------------------------SHORT NAMES-------------------------------------------
+*/
+
+#define position_y input->ray_casting.pos_y
+#define position_x input->ray_casting.pos_x
+#define direction_x input->ray_casting.dir_x
+#define direction_y input->ray_casting.dir_y
+#define direction input->ray_casting.sprawing_dir
+#define plane_dir_x input->ray_casting.plane_x
+#define plane_dir_y input->ray_casting.plane_y
+#define camera_x_pos input->ray_casting.camera_x
+#define res_width input->r_xsize
+#define res_height input->r_ysize
+#define ray_dir_x input->ray_casting.ray_direction_x
+#define ray_dir_y input->ray_casting.ray_direction_y
+
+/*
 ** ---------------------------STRUCT-------------------------------------------
 */
 
-typedef struct	s_data
+typedef struct	s_windows_data
 {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}               t_data;
+}               t_windows_data;
 
 /*
 ** -----------------------------RAY CASTING STRUCT-----------------------------------
@@ -36,14 +53,18 @@ typedef struct	s_data
 
 typedef struct s_ray_casting
 {
-	double 	pos_x;
-	double 	pos_y;
+	int 	pos_x;
+	int 	pos_y;
+	char 	sprawing_dir;
 	double 	dir_x;
 	double 	dir_y;
 	double 	plane_x;
 	double 	plane_y;
 	double	ray_direction_x;
 	double 	ray_direction_y;
+	double 	camera_x;
+	double 	current_time;
+	double 	old_time;
 }			t_ray_casting;
 
 /*
@@ -52,6 +73,7 @@ typedef struct s_ray_casting
 typedef struct 	s_input
 {
 	t_ray_casting ray_casting;
+	t_windows_data img;
 	int		r_present;
 	int		r_xsize;
 	int		r_ysize;
@@ -102,5 +124,8 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 char			**ft_split(char const *s, char c);
 int 			ft_validate_map(t_input *input);
+int 			ft_cast_ray(t_input *input);
+int 			ft_check_sprawning_pos(char c, t_input *input);
+int 			ft_calculate_ray(t_input *input);
 
 #endif

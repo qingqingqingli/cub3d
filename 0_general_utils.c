@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   utils.c                                            :+:    :+:            */
+/*   0_general_utils.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/10 14:24:27 by qli            #+#    #+#                */
-/*   Updated: 2020/03/10 14:57:02 by qli           ########   odam.nl         */
+/*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/06 14:12:45 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,30 @@ int		ft_validate_element(t_input input)
 	&& input.ceilling_g >= 0 && input.ceilling_g <= 255
 	&& input.ceilling_b >= 0 && input.ceilling_b <= 255)
 		return (1);
+	return (0);
+}
+
+int 	ft_check_sprawning_pos(char c, t_input *input)
+{
+	if (c == 'N')
+	{
+		input->ray_casting.sprawing_dir = 'N';
+		return (1);
+	}
+	else if (c == 'S')
+	{
+		input->ray_casting.sprawing_dir = 'S';
+		return (1);
+	}
+	else if (c == 'W')
+	{
+		input->ray_casting.sprawing_dir = 'W';
+		return (1);
+	}	
+	else if (c == 'E')
+	{
+		input->ray_casting.sprawing_dir = 'E';
+		return (1);
+	}	
 	return (0);
 }
