@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 17:02:09 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 12:01:43 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ static void	ft_reset_input(t_input *input)
 	input->ray_casting.camera_x = 0;
 	input->ray_casting.current_time = 0;
 	input->ray_casting.old_time = 0;
+	input->dda.map_x = 0;
+	input->dda.map_y = 0;
+	input->dda.side_dis_x = 0;
+	input->dda.side_dis_y = 0;
+	input->dda.delta_dis_x = 0;
+	input->dda.delta_dis_y = 0;
+	input->dda.step_x = 0;
+	input->dda.step_y = 0;
+
 }
 
 int		main(int argc, char **argv)

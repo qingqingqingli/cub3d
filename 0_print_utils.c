@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 17:00:45 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 12:05:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	ft_print_input(t_input input)
 	printf("input.ceilling_g is %d\n", input.ceilling_g);
 	printf("input.ceilling_b is %d\n", input.ceilling_b);
 	printf("*********************************\n");
-	printf("input.ray_casting.pos_x is %d\n", input.ray_casting.pos_x);
-	printf("input.ray_casting.pos_y is %d\n", input.ray_casting.pos_y);
+	printf("input.ray_casting.pos_x is %f\n", input.ray_casting.pos_x);
+	printf("input.ray_casting.pos_y is %f\n", input.ray_casting.pos_y);
 	printf("input.ray_casting.sprawing_dir is %c\n", input.ray_casting.sprawing_dir);
 	printf("input.ray_casting.dir_x is %f\n", input.ray_casting.dir_x);
 	printf("input.ray_casting.dir_y is %f\n", input.ray_casting.dir_y);	
@@ -62,6 +62,16 @@ void	ft_print_input(t_input input)
 	printf("input.ray_casting.current_time is %f\n", input.ray_casting.current_time);
 	printf("input.ray_casting.old_time is %f\n", input.ray_casting.old_time);
 	// printf("%s\n", input.line);
+	printf("*********************************\n");
+	printf("input.dda.map_x is %d\n", input.dda.map_x);
+	printf("input.dda.map_y is %d\n", input.dda.map_y);
+	printf("input->dda.side_dis_x is %f\n", input.dda.side_dis_x);
+	printf("input->dda.side_dis_y is %f\n", input.dda.side_dis_y);
+	printf("input.dda.delta_dis_x is %f\n", input.dda.delta_dis_x);
+	printf("input.dda.delta_dis_y is %f\n", input.dda.delta_dis_y);
+	printf("step_x is %d\n", input.dda.step_x);
+	printf("step_y is %d\n", input.dda.step_y);
+
 	printf("*********************************\n");
 	ft_print_2d_array(&input);
 }

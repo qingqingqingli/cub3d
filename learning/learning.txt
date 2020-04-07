@@ -21,9 +21,20 @@ Need to look into how to create a SSH key.
 Save the private key private and only distribute the public key. 
 Upload the public SSH key.
 
-************************QUESTION**********************
-
 - How to make the loop to allow the ray casting variables to be 
 constantly calcuated?
+ANSWER: Use mlx_loop & mlx_hook & mlx_hook_loop
 
+- for DDA, is map_x the same as position_x? position_x is an int not a float
+ANSWER: It needs to be double
 
+************************QUESTION**********************
+
+- Need to understand how the different metrics are used
+
+- What is the difference between pos_x and input->dda.map_x
+
+- Need to change all the defines to the entire variable name
+
+- flood fill: 4 way flood fill does not detect certain edge cases. 
+  It can be changed to a 8-way flood fill algorithm

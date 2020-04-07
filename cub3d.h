@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 17:13:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 10:40:11 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <math.h>
 # include "minilibx-master/mlx.h"
 
 /*
@@ -33,6 +34,8 @@
 #define res_height input->r_ysize
 #define ray_dir_x input->ray_casting.ray_direction_x
 #define ray_dir_y input->ray_casting.ray_direction_y
+#define delta_len_x input->dda.delta_dis_x
+#define delta_len_y input->dda.delta_dis_y
 
 /*
 ** ---------------------------STRUCT-------------------------------------------
@@ -53,8 +56,8 @@ typedef struct	s_windows_data
 
 typedef struct s_ray_casting
 {
-	int 	pos_x;
-	int 	pos_y;
+	double 	pos_x;
+	double 	pos_y;
 	char 	sprawing_dir;
 	double 	dir_x;
 	double 	dir_y;
@@ -68,12 +71,29 @@ typedef struct s_ray_casting
 }			t_ray_casting;
 
 /*
+** -----------------------------DDA(Dynamic Distance Algorithm)-------------------
+*/
+
+typedef struct s_dda
+{
+	int 	map_x;
+	int 	map_y;
+	double 	side_dis_x;
+	double 	side_dis_y;
+	double	delta_dis_x;
+	double	delta_dis_y;
+	int 	step_x;
+	int 	step_y;
+}				t_dda;
+
+/*
 ** -----------------------------INPUT STRUCT-----------------------------------
 */
 typedef struct 	s_input
 {
-	t_ray_casting ray_casting;
-	t_windows_data img;
+	t_ray_casting 	ray_casting;
+	t_windows_data 	img;
+	t_dda 			dda;
 	int		r_present;
 	int		r_xsize;
 	int		r_ysize;
@@ -127,5 +147,6 @@ int 			ft_validate_map(t_input *input);
 int 			ft_cast_ray(t_input *input);
 int 			ft_check_sprawning_pos(char c, t_input *input);
 int 			ft_calculate_ray(t_input *input);
+int 			ft_dda(t_input *input);
 
 #endif

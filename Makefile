@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/06 17:22:08 by qli           ########   odam.nl          #
+#    Updated: 2020/04/06 19:10:51 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC 			=	0_general_utils.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
 					5_initiate_ray_casting.c \
-					6_calculate_ray.c
+					6_calculate_ray.c \
+					7_dda.c
 
 SRC_O 			=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 13:29:12 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 17:13:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 10:51:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,25 @@
 
 int 	ft_set_player_position(t_input *input)
 {
-	position_x = 0;
-	position_y = 0;
-	while(input->array[position_y][position_x])
+	int position_x_int;
+	int position_y_int;
+	
+	position_x_int = 0;
+	position_y_int = 0;
+	while(input->array[position_y_int][position_x_int])
 	{
-		while (input->array[position_y][position_x] != '\0')
+		while (input->array[position_y_int][position_x_int] != '\0')
 		{
-			if (ft_check_sprawning_pos(input->array[position_y][position_x], input) == 1)
+			if (ft_check_sprawning_pos(input->array[position_y_int][position_x_int], input) == 1)
+			{
+				position_x = (double)position_x_int;
+				position_y = (double)position_y_int;
 				return (0);
-			position_x++;
+			}
+			position_x_int++;
 		}
-		position_x = 0;
-		position_y++;
+		position_x_int = 0;
+		position_y_int++;
 	}
 	return (0);
 }
@@ -93,10 +100,10 @@ void	ft_initiate_variables(t_input *input)
 	ft_set_player_position(input);
 	ft_set_player_orientation(input);
 	ft_set_plane_orientation(input);
-	printf("direction_x is %f\n", direction_x);
-	printf("direction_y is %f\n", direction_y);
-	printf("plane_dir_x is %f\n", plane_dir_x);
-	printf("plane_dir_y is %f\n", plane_dir_y);
+	// printf("direction_x is %f\n", direction_x);
+	// printf("direction_y is %f\n", direction_y);
+	// printf("plane_dir_x is %f\n", plane_dir_x);
+	// printf("plane_dir_y is %f\n", plane_dir_y);
 }
 
 int 	ft_cast_ray(t_input *input)
