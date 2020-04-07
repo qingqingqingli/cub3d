@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 12:05:01 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 14:54:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void 	ft_print_2d_array(t_input *input)
 void	ft_print_input(t_input input)
 {
 	printf("*********************************\n");
-	printf("r_present is %d\n", input.r_present);
-	printf("input.xsize is %d\n", input.r_xsize);
-	printf("input.ysize is %d\n", input.r_ysize);
+	printf("input.res_present is %d\n", input.res_present);
+	printf("input.res_x is %d\n", input.res_x);
+	printf("input.res_y is %d\n", input.res_y);
 	printf("input.north_present is %d\n", input.north_present);
 	printf("input.north_path is %s\n", input.north_path);
 	printf("input.south_present is %d\n", input.south_present);
@@ -65,12 +65,14 @@ void	ft_print_input(t_input input)
 	printf("*********************************\n");
 	printf("input.dda.map_x is %d\n", input.dda.map_x);
 	printf("input.dda.map_y is %d\n", input.dda.map_y);
-	printf("input->dda.side_dis_x is %f\n", input.dda.side_dis_x);
-	printf("input->dda.side_dis_y is %f\n", input.dda.side_dis_y);
+	printf("input.dda.side_dis_x is %f\n", input.dda.side_dis_x);
+	printf("input.dda.side_dis_y is %f\n", input.dda.side_dis_y);
 	printf("input.dda.delta_dis_x is %f\n", input.dda.delta_dis_x);
 	printf("input.dda.delta_dis_y is %f\n", input.dda.delta_dis_y);
-	printf("step_x is %d\n", input.dda.step_x);
-	printf("step_y is %d\n", input.dda.step_y);
+	printf("input.dda.step_x is %d\n", input.dda.step_x);
+	printf("input.dda.step_y is %d\n", input.dda.step_y);
+	printf("input.dda.hit is %d\n", input.dda.hit);
+	printf("input.dda.side is %d\n", input.dda.side);
 
 	printf("*********************************\n");
 	ft_print_2d_array(&input);

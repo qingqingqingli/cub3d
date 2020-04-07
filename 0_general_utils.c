@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 14:12:45 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 14:55:35 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_char_range(int c)
 
 int		ft_check_element(t_input input)
 {
-	if (input.r_present == 1 && input.north_present == 1
+	if (input.res_present == 1 && input.north_present == 1
 	&& input.south_present == 1 && input.west_present == 1
 	&& input.east_present == 1 && input.sprite_present == 1
 	&& input.floor_present == 1 && input.ceilling_present == 1)
@@ -45,7 +45,7 @@ int		ft_check_element(t_input input)
 
 int		ft_validate_element(t_input input)
 {
-	if (input.r_xsize > 0 && input.r_ysize > 0
+	if (input.res_x > 0 && input.res_y > 0
 	&& input.floor_r >= 0 && input.floor_r <= 255
 	&& input.floor_g >= 0 && input.floor_g <= 255
 	&& input.floor_b >= 0 && input.floor_b <= 255

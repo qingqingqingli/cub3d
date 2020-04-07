@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 15:36:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 14:56:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ void	ft_parse_r(char *line, t_input *input, int *i)
 	*i = *i + 1;
 	if (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 	{
-		input->r_present = 1;
+		input->res_present = 1;
 		while (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 			*i = *i + 1;
 	}
-	while (input->r_present == 1 && line[*i] != '\0' && ft_isdigit(line[*i]) == 1)
+	while (input->res_present == 1 && line[*i] != '\0' && ft_isdigit(line[*i]) == 1)
 	{
-		input->r_xsize = input->r_xsize * 10 + line[*i] - '0';
+		input->res_x = input->res_x * 10 + line[*i] - '0';
 		*i = *i + 1;
 	}
-	while (input->r_present == 1 && line[*i] != '\0' && ft_isspace(line[*i]) == 1)
+	while (input->res_present == 1 && line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 		*i = *i + 1;
-	while (input->r_present == 1 && line[*i] != '\0' && ft_isdigit(line[*i]) == 1)
+	while (input->res_present == 1 && line[*i] != '\0' && ft_isdigit(line[*i]) == 1)
 	{
-		input->r_ysize = input->r_ysize * 10 + line[*i] - '0';
+		input->res_y = input->res_y * 10 + line[*i] - '0';
 		*i = *i + 1;
 	}
 }

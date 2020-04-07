@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/06 19:10:51 by qli           ########   odam.nl          #
+#    Updated: 2020/04/07 17:02:46 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ INLCUDES		=	-Ilibft \
 					-Ignl \
 					-Iminilibx_master
 
-FLAGS 			=	-Wall -Wextra -Werror
+FLAGS 			=	-Wall -Wextra -Werror -g
 
 COMPILE 		=	gcc
 

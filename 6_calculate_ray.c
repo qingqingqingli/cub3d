@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 16:59:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/06 19:08:12 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 14:33:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void ft_calculate_ray_dir(t_input *input)
 
 void ft_calculate_camera(t_input *input)
 {
-	camera_x_pos = (2 * position_x / (double)res_width) - 1;
+	/* potentially need to change position_x to x */
+	camera_x_pos = (2 * position_x / (double)input->res_x) - 1;
 }
 
 int ft_calculate_ray(t_input *input)

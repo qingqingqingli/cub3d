@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 12:01:43 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/07 14:55:00 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_reset_input(t_input *input)
 {
-	input->r_present = 0;
-	input->r_xsize = 0;
-	input->r_ysize = 0;
+	input->res_present = 0;
+	input->res_x = 0;
+	input->res_y = 0;
 	input->north_present = 0;
 	input->north_path = "null";
 	input->south_present = 0;
@@ -58,6 +58,8 @@ static void	ft_reset_input(t_input *input)
 	input->dda.delta_dis_y = 0;
 	input->dda.step_x = 0;
 	input->dda.step_y = 0;
+	input->dda.hit = 0;
+	input->dda.side = 0;
 
 }
 
