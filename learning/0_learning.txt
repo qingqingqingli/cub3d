@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/04/07 14:09:47 by qli           #+#    #+#                  #
-#    Updated: 2020/04/08 11:09:29 by qli           ########   odam.nl          #
+#    Updated: 2020/04/08 11:38:04 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,3 +86,5 @@ ANSWER: Use mlx_loop & mlx_hook & mlx_hook_loop
   Somehow, this does not work as a calculation
 	input->dda.delta_dis_x = (ray_dir_y == 0) ? 0 :	((ray_dir_x == 0) ? 1 : abs(1 / ray_dir_x));
 	input->dda.delta_dis_y = (ray_dir_x == 0) ? 0 :	((ray_dir_y == 0) ? 1 : abs(1 / ray_dir_y));
+
+testtest
