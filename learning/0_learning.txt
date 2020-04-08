@@ -1,18 +1,17 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    0_learning.txt                                     :+:    :+:             #
-#                                                      +:+                     #
-#    By: qli <qli@student.codam.nl>                   +#+                      #
-#                                                    +#+                       #
-#    Created: 2020/04/07 14:09:47 by qli           #+#    #+#                  #
-#    Updated: 2020/04/08 11:38:04 by qli           ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
+*******************************OVERALL STEPS*********************************
+
+- For every x of the screen
+- send out a ray
+- calculate the direction of the ray
+- let the ray move forward until it hits a wall
+- calculate distance between hit point to a player
+- calculate how high this wall needs to be drawn
+- draw the wall
+
+***********************************LEARNINGS*********************************
 
 - what are the correlation and difference between map and screen measurement?
 ANSWER: Only the resolution metrics are needed
-
 
 - plane_orientation (0, 0.66)
 Does the initialisation change based on the player orientation? 
@@ -44,29 +43,31 @@ ANSWER: It needs to be double
   position_y represent vertical position
   input->array[position_y][position_x]
 
-
-***********************************QUESTIONS*********************************
-
 - How to make the loop to allow the ray casting variables to be constantly calcuated?
 ANSWER: Use mlx_loop & mlx_hook & mlx_hook_loop
 
-- Need to understand how the different metrics are used
-
 - What is the difference between pos_x and input->dda.map_x
+ANSWER: pos_x is the specific location of where the ray is. dda.map_x shows
+in which grid is the ray
 
-- Need to change all the defines to the entire variable name
+- (NOAH) To consider whether to instal dual booting. If so, ask Noah for
+  help to install it.
+  ANSWER: Not to dual boot now as I will need to sacrifice one USB port
 
-- flood fill: 4 way flood fill does not detect certain edge cases. 
-  It can be changed to a 8-way flood fill algorithm
+***********************************QUESTIONS*********************************
 
 - when you rotate a vector, you multiply it with the rotation matrix. 
   When do you actually multiply this?
+
+- If the player is facing west (-1, 0), why is the camera plane vector (0, -0.66)?
+  Why can't it be (0, 0.66)? It will also be perpendicular
 
 - camera_x_pos = (2 * x / (double)input->res_x) - 1;
   what is this x?
 
 - is hit a local variable or should it be part of the struct?
   while (input->dda.hit == 0)
+  My guess: It's probably okay to be a local variable
 
 - currently perform dda gives seg fault. The loop is probably not correct
 
@@ -76,15 +77,20 @@ ANSWER: Use mlx_loop & mlx_hook & mlx_hook_loop
   causes a fisheye effect and what we'd like is to see straight lines like 
   we would see in real life.
 
-- (NOAH) My lldb does not work properly. Ask Noah to check if I am running
-  it correctly
-
-- (NOAH) To consider whether to instal dual booting. If so, ask Noah for
-  help to install it.
-
 - The correct way to calculate delta_dis_x & delta_dis_y
   Somehow, this does not work as a calculation
 	input->dda.delta_dis_x = (ray_dir_y == 0) ? 0 :	((ray_dir_x == 0) ? 1 : abs(1 / ray_dir_x));
 	input->dda.delta_dis_y = (ray_dir_x == 0) ? 0 :	((ray_dir_y == 0) ? 1 : abs(1 / ray_dir_y));
 
-testtest
+- what is the relationship between the measurement of a cube and the pixels & resolution width
+
+***********************************ACTIONS*********************************
+
+- Need to change all the defines to the entire variable name
+
+- flood fill: 4 way flood fill does not detect certain edge cases. 
+  It can be changed to a 8-way flood fill algorithm
+
+- (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly
+
+- Need to understand direction vector calculation

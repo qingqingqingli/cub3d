@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 19:06:55 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 17:54:50 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/08 17:18:37 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,25 @@ void 	ft_calculate_side_dist(t_input *input)
 	if (ray_dir_x < 0)
 	{
 		input->dda.step_x = -1;
-		input->dda.side_dis_x = (position_x - input->dda.map_x) * input->dda.delta_dis_x;
+		input->dda.side_dis_x = (position_x - input->dda.map_x) *
+		input->dda.delta_dis_x;
 	}
 	else
 	{
 		input->dda.step_x = 1;
-		input->dda.side_dis_x = (input->dda.map_x + 1.0 - position_x) * input->dda.delta_dis_x;
+		input->dda.side_dis_x = (input->dda.map_x + 1.0 - position_x) *
+		input->dda.delta_dis_x;
 	}
 	if (ray_dir_y < 0)
 	{
 		input->dda.step_y = -1;
-		input->dda.side_dis_y = (position_y - input->dda.map_y) * input->dda.delta_dis_y;
+		input->dda.side_dis_y = (position_y - input->dda.map_y) *
+		input->dda.delta_dis_y;
 	}
 	else
 	{
 		input->dda.step_y = 1;
-		input->dda.side_dis_y = (input->dda.map_y + 1.0 - position_y) * input->dda.delta_dis_y;
+		input->dda.side_dis_y = (input->dda.map_y + 1.0 - position_y) *input->dda.delta_dis_y;
 	}	
 }
 
@@ -61,6 +64,7 @@ void 	ft_map_location(t_input *input)
 /* perform dda in a loop until it hits a wall */
 int 	ft_perform_dda(t_input *input)
 {
+	input->dda.hit = 0;
 	while (input->dda.hit == 0)
 	{
 		/* jump to next map square in x or y direction */
@@ -81,7 +85,7 @@ int 	ft_perform_dda(t_input *input)
 		{
 			printf("i am here\n");
 			input->dda.hit = 1;
-		}		
+		}
 	}
 	printf("input->dda.side is %d\n", input->dda.side);
 	printf("input->dda.hit is %d\n", input->dda.hit);
@@ -90,7 +94,7 @@ int 	ft_perform_dda(t_input *input)
 
 int 	ft_dda(t_input *input)
 {
-	ft_map_location(input); 
+	ft_map_location(input);
 	ft_calculate_delta(input);
 	ft_calculate_side_dist(input);
 	/* need to read all the calculations again before going to the next step */

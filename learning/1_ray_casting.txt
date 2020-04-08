@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/04/06 13:28:58 by qli           #+#    #+#                  #
-#    Updated: 2020/04/07 14:26:27 by qli           ########   odam.nl          #
+#    Updated: 2020/04/08 17:17:37 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,13 @@ speed no matter how long the calculation of the frame takes) and for FRS
 		double rayDirY = dirY + planeY * cameraY;
 	} 
 
-[step 2] Initiate variables relevant to DDA algorithm
-	//current square the ray is in(mapX, mapY);
-	The ray 
+OVERALL STEPS
+
+- For every x of the screen
+- send out a ray
+- calculate the direction of the ray
+- let the ray move forward until it hits a wall
+- calculate distance between hit point to a player
+- calculate how high this wall needs to be drawn
+- draw the wall
+
