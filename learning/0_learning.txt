@@ -1,0 +1,88 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    0_learning.txt                                     :+:    :+:             #
+#                                                      +:+                     #
+#    By: qli <qli@student.codam.nl>                   +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/04/07 14:09:47 by qli           #+#    #+#                  #
+#    Updated: 2020/04/08 09:26:21 by qli           ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+- what are the correlation and difference between map and screen measurement?
+ANSWER: Only the resolution metrics are needed
+
+
+- plane_orientation (0, 0.66)
+Does the initialisation change based on the player orientation? 
+ANSWER: It does change. West player position (-1, 0) is associated 
+with a plane position of (0, -0.66)
+
+- map_width
+With an irregular map, does the width reflect the row that the player is at?
+ANSWER: We don't use map width but the resolution width. 
+
+- camera(x) & pos_x & pos_y
+I need to cast the ray from the player position. Why do I need to calculate the camera(x)?
+ANSWER: It will give a fishbowl kind of view if you cast it from the player position. 
+Need to understand better. 
+
+- Vector & two individual variables
+What are the essential difference between a vector and two individually declared variables?
+The declaration is the same, just the calculation of it is different. 
+
+- SSH
+Need to look into how to create a SSH key. 
+Save the private key private and only distribute the public key. 
+Upload the public SSH key.
+
+- for DDA, is map_x the same as position_x? position_x is an int not a float
+ANSWER: It needs to be double
+
+- Need to remember that position_x represent horizontal position and 
+  position_y represent vertical position
+  input->array[position_y][position_x]
+
+
+***********************************QUESTIONS*********************************
+
+- How to make the loop to allow the ray casting variables to be constantly calcuated?
+ANSWER: Use mlx_loop & mlx_hook & mlx_hook_loop
+
+- Need to understand how the different metrics are used
+
+- What is the difference between pos_x and input->dda.map_x
+
+- Need to change all the defines to the entire variable name
+
+- flood fill: 4 way flood fill does not detect certain edge cases. 
+  It can be changed to a 8-way flood fill algorithm
+
+- when you rotate a vector, you multiply it with the rotation matrix. 
+  When do you actually multiply this?
+
+- camera_x_pos = (2 * x / (double)input->res_x) - 1;
+  what is this x?
+
+- is hit a local variable or should it be part of the struct?
+  while (input->dda.hit == 0)
+
+- currently perform dda gives seg fault. The loop is probably not correct
+
+- why can't we cast rays from the player position but the camera position?
+  ANSWER from Bman: if you take the 'euclidian' distance, whatever is right
+  in front of you is always closer than what's a little to the side. that 
+  causes a fisheye effect and what we'd like is to see straight lines like 
+  we would see in real life.
+
+- (NOAH) My lldb does not work properly. Ask Noah to check if I am running
+  it correctly
+
+- (NOAH) To consider whether to instal dual booting. If so, ask Noah for
+  help to install it.
+
+- The correct way to calculate delta_dis_x & delta_dis_y
+  Somehow, this does not work as a calculation
+	input->dda.delta_dis_x = (ray_dir_y == 0) ? 0 :	((ray_dir_x == 0) ? 1 : abs(1 / ray_dir_x));
+	input->dda.delta_dis_y = (ray_dir_x == 0) ? 0 :	((ray_dir_y == 0) ? 1 : abs(1 / ray_dir_y));

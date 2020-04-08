@@ -1,0 +1,71 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    1_ray_casting.txt                                  :+:    :+:             #
+#                                                      +:+                     #
+#    By: qli <qli@student.codam.nl>                   +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/04/06 13:28:58 by qli           #+#    #+#                  #
+#    Updated: 2020/04/07 14:26:27 by qli           ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+
+*****************VARIABLES NEEDED FOR RAY CASTING************************
+
+- posX, posY (position vector)
+
+- dirX, dirY (initial direction vector)
+
+- planeX, planeY (initial camera plane vetor: perpendicular to direction plane
+length can be changed)
+
+- FOV (ratio between the len of direction and camera plane determines FOV)
+
+- current_time (the time of current frame)
+
+- old_time (the time of previous frame)
+
+- FRS (frames per second counter)
+
+the time difference between old and current time frame determines
+how much should move when a certain key is pressed (to move a constant
+speed no matter how long the calculation of the frame takes) and for FRS
+
+******************************PROCESS***********************************
+
+~ create a screen with chosen resolution (mlx)
+
+	mlx_win = mlx_new_window(mlx, 250, 250, "Hello world!");
+
+~ let the game loop starts (every loop draws a whole frame and reads input)
+  This loop will be done in another way with mlx
+	while (!done())	
+
+~ ray casting loop to calculate for each vertical stripe 
+
+[step 1] Inititate relevant variables & conduct necessary calculation.
+         At the end, we have the vector information on player position, 
+		 camera vector and ray direction vector
+
+	//position vector(posX, posY);
+	//camera vector(planeX, planeY);
+	//ray direction vector(rayDirX, rayDirY);
+	//int screen_width;
+	//int screen_height;
+
+	//set the ray direction vestor
+	//right side of screen get coordinate 1, the center of screen get coordinate 0,
+	  and the left side of screen get coordinate -1 //???
+
+	for (int x = 0; x < w; x++)
+	{
+		double cameraX = 2 * x / double(w) - 1; 
+		//w stands for screen width. It needs to be casted to double to do the calculation
+		double rayDirX = dirX + planeX * cameraX;
+		double rayDirY = dirY + planeY * cameraY;
+	} 
+
+[step 2] Initiate variables relevant to DDA algorithm
+	//current square the ray is in(mapX, mapY);
+	The ray 
