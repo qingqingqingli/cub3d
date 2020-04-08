@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 14:54:58 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/08 20:35:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	ft_print_input(t_input input)
 	printf("input.ray_casting.ray_direction_x is %f\n", input.ray_casting.ray_direction_x);
 	printf("input.ray_casting.ray_direction_y is %f\n", input.ray_casting.ray_direction_y);
 	printf("input.ray_casting.camera_x is %f\n", input.ray_casting.camera_x);
-	printf("input.ray_casting.current_time is %f\n", input.ray_casting.current_time);
-	printf("input.ray_casting.old_time is %f\n", input.ray_casting.old_time);
+	printf("input.ray_casting.current_time is %ld\n", input.ray_casting.current_time);
+	printf("input.ray_casting.old_time is %ld\n", input.ray_casting.old_time);
 	// printf("%s\n", input.line);
 	printf("*********************************\n");
 	printf("input.dda.map_x is %d\n", input.dda.map_x);
@@ -71,9 +71,8 @@ void	ft_print_input(t_input input)
 	printf("input.dda.delta_dis_y is %f\n", input.dda.delta_dis_y);
 	printf("input.dda.step_x is %d\n", input.dda.step_x);
 	printf("input.dda.step_y is %d\n", input.dda.step_y);
-	printf("input.dda.hit is %d\n", input.dda.hit);
 	printf("input.dda.side is %d\n", input.dda.side);
-
+	printf("input.dda.ray_len is %f\n", input.dda.ray_len);
 	printf("*********************************\n");
 	ft_print_2d_array(&input);
 }

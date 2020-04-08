@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 14:55:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/08 20:22:07 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
+# include <time.h>
 # include "minilibx-master/mlx.h"
 
 /*
@@ -39,14 +40,14 @@
 ** ---------------------------STRUCT-------------------------------------------
 */
 
-typedef struct		s_windows_data
+typedef struct		s_mlx
 {
 	void			*img;
 	char			*addr;
 	int				bits_per_pixel;
 	int				line_length;
 	int				endian;
-}           	    t_windows_data;
+}           	    t_mlx;
 
 /*
 ** -----------------------------RAY CASTING STRUCT-----------------------------------
@@ -64,8 +65,8 @@ typedef struct 		s_ray_casting
 	double			ray_direction_x;
 	double 			ray_direction_y;
 	double 			camera_x;
-	double 			current_time;
-	double 			old_time;
+	time_t 			current_time;
+	time_t 			old_time;
 }					t_ray_casting;
 
 /*
@@ -82,8 +83,8 @@ typedef struct 		s_dda
 	double			delta_dis_y;
 	int 			step_x;
 	int 			step_y;
-	int 			hit;
 	int 			side;
+	double 			ray_len;
 }					t_dda;
 
 /*
@@ -92,7 +93,7 @@ typedef struct 		s_dda
 typedef struct 		s_input
 {
 	t_ray_casting 	ray_casting;
-	t_windows_data 	img;
+	t_mlx		 	img;
 	t_dda 			dda;
 	int				res_present;
 	int				res_x;
@@ -148,5 +149,7 @@ int 				ft_cast_ray(t_input *input);
 int 				ft_check_sprawning_pos(char c, t_input *input);
 int 				ft_calculate_ray(t_input *input);
 int 				ft_dda(t_input *input);
+void				ft_reset_input(t_input *input);
+void				my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 
 #endif

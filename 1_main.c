@@ -6,62 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 14:55:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/08 19:56:40 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-static void	ft_reset_input(t_input *input)
-{
-	input->res_present = 0;
-	input->res_x = 0;
-	input->res_y = 0;
-	input->north_present = 0;
-	input->north_path = "null";
-	input->south_present = 0;
-	input->south_path = "null";
-	input->west_present = 0;
-	input->west_path = "null";
-	input->east_present = 0;
-	input->east_path = "null";
-	input->sprite_present = 0;
-	input->sprite_path = "null";
-	input->floor_present = 0;
-	input->floor_r = 0;
-	input->floor_g = 0;
-	input->floor_b = 0;
-	input->ceilling_present = 0;
-	input->ceilling_r = 0;
-	input->ceilling_g = 0;
-	input->ceilling_b = 0;
-	input->line = "null";
-	input->flood_fill_x = 0;
-	input->flood_fill_y = 0;
-	input->ray_casting.pos_x = 0;
-	input->ray_casting.pos_y = 0;
-	input->ray_casting.sprawing_dir= 0;
-	input->ray_casting.dir_x = 0;
-	input->ray_casting.dir_y = 0;
-	input->ray_casting.plane_x = 0;
-	input->ray_casting.plane_y = 0;
-	input->ray_casting.ray_direction_x = 0;
-	input->ray_casting.ray_direction_y = 0;
-	input->ray_casting.camera_x = 0;
-	input->ray_casting.current_time = 0;
-	input->ray_casting.old_time = 0;
-	input->dda.map_x = 0;
-	input->dda.map_y = 0;
-	input->dda.side_dis_x = 0;
-	input->dda.side_dis_y = 0;
-	input->dda.delta_dis_x = 0;
-	input->dda.delta_dis_y = 0;
-	input->dda.step_x = 0;
-	input->dda.step_y = 0;
-	input->dda.hit = 0;
-	input->dda.side = 0;
-
-}
 
 int		main(int argc, char **argv)
 {
@@ -69,6 +18,8 @@ int		main(int argc, char **argv)
 	char 	*line;
 	int		output;
 	t_input	input;
+	void	*mlx;
+	void	*mlx_win;
 
 	if (argc < 2)
 		return (ft_return_error("No map description\n"));
@@ -87,5 +38,13 @@ int		main(int argc, char **argv)
 	ft_validate_map(&input);
 	ft_cast_ray(&input);
 	ft_print_input(input);
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, 250, 250, "Hello world!");
+	input.img.img = mlx_new_image(mlx, 250, 250);
+	input.img.addr = mlx_get_data_addr(input.img.img, &input.img.bits_per_pixel,
+	&input.img.line_length, &input.img.endian);
+	my_mlx_pixel_put(&input.img, 5, 5, 0x00FF0000);
+	mlx_put_image_to_window(mlx, mlx_win, input.img.img, 0, 0);
+	mlx_loop(mlx);
 	return (0);
 }

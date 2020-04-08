@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/07 17:02:46 by qli           ########   odam.nl          #
+#    Updated: 2020/04/08 19:55:12 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,15 @@ NAME			=	cub3d
 
 SRC 			=	0_general_utils.c \
 					0_print_utils.c \
+					0_reset_value.c \
 					1_main.c \
 					2_input_parse.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
 					5_initiate_ray_casting.c \
 					6_calculate_ray.c \
-					7_dda.c
+					7_dda.c \
+					8_mlx.c
 
 SRC_O 			=	$(SRC:.c=.o)
 
