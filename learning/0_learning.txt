@@ -127,8 +127,12 @@ in which grid is the ray
 - Choose different colors for wall, floor and ceiling so you can see 
   the depth of the different elements
 
+- How to assign a pixel a color?
+  ANSWER: use mlx. my_mlx_pixel_put(&input.img, 5, 5, 0x00FF0000);
+
 ***********************************QUESTIONS*********************************
 
+- If I change the location, somehow it would give me seg fault
 
 ***********************************ACTIONS*********************************
 

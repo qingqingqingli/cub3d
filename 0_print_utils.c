@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 11:56:29 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 17:11:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,12 @@ void	ft_print_input(t_input input)
 	printf("input.dda.draw_start is %d\n", input.dda.draw_start);
 	printf("input.dda.draw_end is %d\n", input.dda.draw_end);
 	printf("*********************************\n");
+	printf("input.color.red is %d\n", input.color.red);
+	printf("input.color.green is %d\n", input.color.green);
+	printf("input.color.blue is %d\n", input.color.blue);
+	printf("input.color.wall is %d\n", input.color.wall);
+	printf("input.color.ceilling is %d\n", input.color.ceilling);
+	printf("input.color.floor is %d\n", input.color.floor);
+	printf("input.color.reserve is %d\n", input.color.reserve);
 	ft_print_2d_array(&input);
 }

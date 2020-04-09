@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 11:56:29 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 17:11:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,11 @@ void	ft_reset_input(t_input *input)
 	input->dda.line_height = 0;
 	input->dda.draw_start = 0;
 	input->dda.draw_end = 0;
+	input->color.red = 0;
+	input->color.green = 0;
+	input->color.blue = 0;
+	input->color.wall = 0;
+	input->color.ceilling = 0;
+	input->color.floor = 0;
+	input->color.reserve = 0;
 }

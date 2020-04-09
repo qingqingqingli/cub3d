@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 19:56:40 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 17:43:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,18 @@ int		main(int argc, char **argv)
 		ft_parse_input(line, &input);
 		output = get_next_line(fd, &line);
 	}
-	ft_validate_map(&input);
-	ft_cast_ray(&input);
-	ft_print_input(input);
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 250, 250, "Hello world!");
 	input.img.img = mlx_new_image(mlx, 250, 250);
 	input.img.addr = mlx_get_data_addr(input.img.img, &input.img.bits_per_pixel,
 	&input.img.line_length, &input.img.endian);
-	my_mlx_pixel_put(&input.img, 5, 5, 0x00FF0000);
+	ft_validate_map(&input);
+	ft_cast_ray(&input);
+	ft_print_input(input);
+	// my_mlx_pixel_put(&input.img, 5, 5, RED);
+	// my_mlx_pixel_put(&input.img, 15, 15, RED);
+	// my_mlx_pixel_put(&input.img, 25, 25, RED);
+	// my_mlx_pixel_put(&input.img, 35, 35, RED);
 	mlx_put_image_to_window(mlx, mlx_win, input.img.img, 0, 0);
 	mlx_loop(mlx);
 	return (0);

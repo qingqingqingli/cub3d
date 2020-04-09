@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 11:59:30 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 17:37:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,30 @@
 #define ray_dir_y input->ray_casting.ray_direction_y
 #define delta_len_x input->dda.delta_dis_x
 #define delta_len_y input->dda.delta_dis_y
+
+/*
+** ---------------------------COLOR-------------------------------------------
+*/
+
+#define RED 0x00FF0000
+#define GREEN 0x0000FF00
+#define BLUE 0x000000FF
+
+
+/*
+** ---------------------------COLORS-------------------------------------------
+*/
+
+typedef struct 		s_rgb
+{
+	int				red;
+	int 			green;
+	int 			blue;
+	int 			wall;
+	int 			ceilling;
+	int 			floor;
+	int 			reserve;
+}					t_rgb;
 
 /*
 ** ---------------------------STRUCT-------------------------------------------
@@ -98,6 +122,7 @@ typedef struct 		s_input
 	t_ray_casting 	ray_casting;
 	t_mlx		 	img;
 	t_dda 			dda;
+	t_rgb 			color;
 	int				res_present;
 	int				res_x;
 	int				res_y;
@@ -153,8 +178,13 @@ int 				ft_check_sprawning_pos(char c, t_input *input);
 int 				ft_calculate_ray(t_input *input);
 int 				ft_dda(t_input *input);
 void				ft_reset_input(t_input *input);
-void				my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
 int 				ft_set_player_position(t_input *input);
 int 				ft_draw_line(t_input *input);
+int					create_rgb(int r, int g, int b);
+int					get_r(int rgb);
+int					get_g(int rgb);
+int					get_b(int rgb);
+int					ft_put_color(t_input *input, int x);
 
 #endif

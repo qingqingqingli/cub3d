@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/09 11:58:25 by qli           ########   odam.nl          #
+#    Updated: 2020/04/09 17:26:34 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC 			=	0_general_utils.c \
 					6_calculate_ray.c \
 					7_dda.c \
 					8_mlx.c \
-					9_draw_line.c
+					9_draw_line.c \
+					10_put_color.c
 
 SRC_O 			=	$(SRC:.c=.o)
 

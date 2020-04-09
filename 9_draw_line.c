@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/09 11:57:50 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 12:23:58 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 17:34:56 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,20 @@ void 	ft_calculate_draw_end(t_input *input)
 		input->dda.draw_end = input->res_y - 1;
 }
 
+void 	ft_choose_color(t_input *input)
+{
+	if (input->array[input->dda.map_y][input->dda.map_y] == '1')
+		input->color.reserve = RED;
+	if (input->dda.side == 1)
+		input->color.reserve = input->color.reserve / 2;
+}
+
 int 	ft_draw_line(t_input *input)
 {
 	ft_calculate_ray_len(input);
 	ft_calculate_line_height(input);
 	ft_calculate_draw_start(input);
 	ft_calculate_draw_end(input);
+	ft_choose_color(input);
 	return (0);
 }
