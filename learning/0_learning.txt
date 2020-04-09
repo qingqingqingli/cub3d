@@ -70,22 +70,14 @@ in which grid is the ray
   causes a fisheye effect and what we'd like is to see straight lines like 
   we would see in real life.
 
-***********************************QUESTIONS*********************************
-
-- what is the relationship between the square size, resolution & map width?
-  For instance, res = 500, map_width = 50
-
-- If the player is facing west (-1, 0), why is the camera plane vector (0, -0.66)?
-  Why can't it be (0, 0.66)? It will also be perpendicular
-
 - What is the best formula to use for delta_dis_x & delta_dis_y? 
   Three algorithms give different answers.
 
 	input->dda.delta_dis_x = sqrt(1 + (ray_dir_y * ray_dir_y) / (ray_dir_x * ray_dir_x));
 	input->dda.delta_dis_y = sqrt(1 + (ray_dir_x * ray_dir_x) /	(ray_dir_y * ray_dir_y));
 
-	input->dda.delta_dis_x = abs(1 / ray_dir_x);
-	input->dda.delta_dis_y = abs(1 / ray_dir_y);
+	input->dda.delta_dis_x = fabs(1 / ray_dir_x);
+	input->dda.delta_dis_y = fabs(1 / ray_dir_y);
 
 	input->dda.delta_dis_x = (ray_dir_y == 0) ? 0 :	((ray_dir_x == 0) ? 1 : abs(1 / ray_dir_x));
 	input->dda.delta_dis_y = (ray_dir_x == 0) ? 0 :	((ray_dir_y == 0) ? 1 : abs(1 / ray_dir_y));
@@ -97,9 +89,41 @@ in which grid is the ray
   3**input->dda.delta_dis_x is 1.000000
   3**input->dda.delta_dis_y is 1.000000
 
+  ANSWER: 
+  - change abs to fabs to give an absolute number for float number
+  - abs() and fabs () functions, both are used to retrieve or calculate the absolute value. 
+  - The only difference between both of them is, abs() is used to calculate the absolute value 
+    for integer type numbers whereas fabs() are used for floating type numbers.
+  - abs() function is use under the library file <stdlib.h> and fabs() function is use under 
+    the library file <math.h>.
+
+- what is the relationship between the square size, resolution & map width?
+  For instance, res = 500, map_width = 50
+  ANSWER: No real relationship between them
+
 - currently perform dda gives seg fault. The loop is probably not correct
 
+  ANSWER:
+  - check how the values change in functions to spot where could potentially went wrong
+  "print map_x and map_y values in the loops and spot that map_y would go out of bound"
+
+  - My initial code is below, which is looking for an integer value 1 instead of '1' in 
+  a character array. I'm working with an integer array and not a char array
+
+  if (input->array[input->dda.map_y][input->dda.map_x] == 1)
+		hit = 1;
+
+  needs to change to 
+
+  if (input->array[input->dda.map_y][input->dda.map_x] == '1')
+		hit = 1;
+
 - ways to calculate ray_len (one simple way & one complicated way)
+  ANSWER: the simple way is enough. The complicated one gives all the explanation behind the calculation
+
+***********************************QUESTIONS*********************************
+
+
 
 ***********************************ACTIONS*********************************
 
@@ -110,9 +134,11 @@ in which grid is the ray
 
 - (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly
 
+- If the player is facing west (-1, 0), why is the camera plane vector (0, -0.66)?
+  Why can't it be (0, 0.66)? It will also be perpendicular
+  Try it out when I can see something on the screen
+
 - Next step:
-  make the dda algorithm work
-  calculate the distance between player and hit point
   calculate how high the wall should be
   draw the wall on the screen
   project the wall on the screen
