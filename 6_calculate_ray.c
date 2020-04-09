@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 16:59:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 20:04:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 12:24:55 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,14 @@ int ft_calculate_ray(t_input *input)
 		ft_calculate_camera(input, x);
 		ft_calculate_ray_dir(input);
 		ft_dda(input);
+		ft_draw_line(input);
 		x++;
 		printf("camera_x_pos is %f\n", camera_x_pos);
 		printf("ray_dir_x is %f\n", ray_dir_x);
 		printf("ray_dir_y is %f\n", ray_dir_y);
+		printf("input->dda.line_height is %d\n", input->dda.line_height);
+		printf("input->dda.draw_start is %d\n", input->dda.draw_start);
+		printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
 	}
 	return (0);
 }

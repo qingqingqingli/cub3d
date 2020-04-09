@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 20:22:07 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 11:56:29 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,7 @@ void	ft_reset_input(t_input *input)
 	input->dda.step_y = 0;
 	input->dda.side = 0;
 	input->dda.ray_len = 0;
+	input->dda.line_height = 0;
+	input->dda.draw_start = 0;
+	input->dda.draw_end = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 20:35:01 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 11:56:29 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ void	ft_print_input(t_input input)
 	printf("input.dda.step_y is %d\n", input.dda.step_y);
 	printf("input.dda.side is %d\n", input.dda.side);
 	printf("input.dda.ray_len is %f\n", input.dda.ray_len);
+	printf("input.dda.line_height is %d\n", input.dda.line_height);
+	printf("input.dda.draw_start is %d\n", input.dda.draw_start);
+	printf("input.dda.draw_end is %d\n", input.dda.draw_end);
 	printf("*********************************\n");
 	ft_print_2d_array(&input);
 }

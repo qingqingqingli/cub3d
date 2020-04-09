@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 19:06:55 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 10:21:35 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 11:44:29 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,6 @@ int 	ft_perform_dda(t_input *input)
 	return (0);
 }
 
-void 	ft_calculate_ray_len(t_input *input)
-{
-	if (input->dda.side == 0)
-	{
-		input->dda.ray_len = (input->dda.map_x + (1 -
-		input->dda.step_x) / 2) / ray_dir_x;
-	}
-	else
-	{
-		input->dda.ray_len = (input->dda.map_y + (1 -
-		input->dda.step_y) / 2) / ray_dir_y;
-	}	
-}
-
 int 	ft_dda(t_input *input)
 {
 	ft_map_location(input);
@@ -112,6 +98,5 @@ int 	ft_dda(t_input *input)
 	ft_calculate_side_dist(input);
 	/* need to read all the calculations again before going to the next step */
 	ft_perform_dda(input);
-	ft_calculate_ray_len(input);
 	return (0);
 }

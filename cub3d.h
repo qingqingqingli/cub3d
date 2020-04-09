@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 20:22:07 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 11:59:30 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ typedef struct 		s_dda
 	int 			step_y;
 	int 			side;
 	double 			ray_len;
+	int 			line_height;
+	int 			draw_start;
+	int 			draw_end;
 }					t_dda;
 
 /*
@@ -151,5 +154,7 @@ int 				ft_calculate_ray(t_input *input);
 int 				ft_dda(t_input *input);
 void				ft_reset_input(t_input *input);
 void				my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+int 				ft_set_player_position(t_input *input);
+int 				ft_draw_line(t_input *input);
 
 #endif
