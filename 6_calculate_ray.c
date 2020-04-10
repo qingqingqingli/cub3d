@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 16:59:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 17:37:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 10:56:53 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,23 @@ int ft_calculate_ray(t_input *input)
 	int x; 
 
 	x = 0;
-	while (x < input->res_x)
+	/* should this be < or <= */
+	while (x <= input->res_x)
 	{
 		ft_calculate_camera(input, x);
 		ft_calculate_ray_dir(input);
 		ft_dda(input);
 		ft_draw_line(input);
 		ft_put_color(input, x);
+		printf("passing\n");
 		x++;
-		printf("camera_x_pos is %f\n", camera_x_pos);
-		printf("ray_dir_x is %f\n", ray_dir_x);
-		printf("ray_dir_y is %f\n", ray_dir_y);
-		printf("input->dda.line_height is %d\n", input->dda.line_height);
-		printf("input->dda.draw_start is %d\n", input->dda.draw_start);
-		printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
+		// printf("camera_x_pos is %f\n", camera_x_pos);
+		// printf("ray_dir_x is %f\n", ray_dir_x);
+		// printf("ray_dir_y is %f\n", ray_dir_y);
+		// printf("input->dda.line_height is %d\n", input->dda.line_height);
+		// printf("input->dda.draw_start is %d\n", input->dda.draw_start);
+		// printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
 	}
+	printf("here 10\n");
 	return (0);
 }

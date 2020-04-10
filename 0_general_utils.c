@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 14:55:35 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 19:34:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int	ft_return_error(char *s)
 int		ft_isspace(int c)
 {
 	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
+
+int 	ft_check_position(int c)
+{
+	if (c == 'N' || c == 'S'|| c == 'W' || c == 'E')
 		return (1);
 	return (0);
 }

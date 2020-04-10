@@ -6,15 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/06 19:06:55 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 11:44:29 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 14:00:31 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /* calculate step & initial side_dis */
-/* len of ray from current position to the next x / y side */
-/* which direction to step in x / y direction (either +1 or -1)*/
 void 	ft_calculate_side_dist(t_input *input)
 {
 	if (ray_dir_x < 0)
@@ -65,28 +63,20 @@ int 	ft_perform_dda(t_input *input)
 	hit = 0;
 	while (hit == 0)
 	{
-		/* jump to next map square in x or y direction */
 		if (input->dda.side_dis_x < input->dda.side_dis_y)
 		{
 			input->dda.side_dis_x = input->dda.side_dis_x + input->dda.delta_dis_x;
 			input->dda.map_x = input->dda.map_x + input->dda.step_x;
 			input->dda.side = 0;
-			// printf("input->dda.map_x is %d\n", input->dda.map_x);
 		}
 		else
 		{
 			input->dda.side_dis_y = input->dda.side_dis_y + input->dda.delta_dis_y;
 			input->dda.map_y = input->dda.map_y + input->dda.step_y;
 			input->dda.side = 1;
-			// printf("input->dda.map_y is %d\n", input->dda.map_y);
 		}
-		/* check if ray has hit a wall */
 		if (input->array[input->dda.map_y][input->dda.map_x] == '1')
-		{
 			hit = 1;
-			printf("input->dda.map_x is %d\n", input->dda.map_x);
-			printf("input->dda.map_y is %d\n", input->dda.map_y);
-		}
 	}
 	return (0);
 }
@@ -96,7 +86,6 @@ int 	ft_dda(t_input *input)
 	ft_map_location(input);
 	ft_calculate_delta(input);
 	ft_calculate_side_dist(input);
-	/* need to read all the calculations again before going to the next step */
 	ft_perform_dda(input);
 	return (0);
 }

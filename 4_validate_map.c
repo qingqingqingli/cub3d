@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 10:33:49 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 10:45:22 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ unsigned int ft_calculate_height(t_input *input)
 void ft_flood_fill(t_input *input, unsigned int x, unsigned int y,
 unsigned int height)
 {
-	if (input->array[x][y] == '1' || input->array[x][y] == 'f')
+	if (input->array[x][y] == '1' || input->array[x][y] == 'f' 
+	|| ft_check_position(input->array[x][y]) == 1)
 		return ;
-	if (input->array[x][y] && input->array[x][y] != '\0')
+	if (input->array[x][y] && input->array[x][y] != '\0' &&
+	ft_check_position(input->array[x][y]) == 0)
 		input->array[x][y] = 'f';
 	if (x > 0)
 		ft_flood_fill(input, x - 1, y, height);
@@ -91,19 +93,39 @@ int ft_check_border(t_input *input)
 	return (0);
 }
 
+int	ft_change_map_back(t_input *input)
+{
+	int x;
+	int y;
+
+	x = 0;
+	y = 0;
+	while(input->array[y] != 0)
+	{
+		while(input->array[y][x] != '\0')
+		{
+			if(input->array[y][x] == 'f')
+				input->array[y][x] = '0';
+			x++;
+		}
+		x = 0;
+		y++;
+	}
+	return (0);
+}
+
 int ft_validate_map(t_input *input)
 {
 	unsigned height;
 
 	height = ft_calculate_height(input);
-	/* find the first 0 to start the flood fill*/
 	ft_find_first_0(input);
-	/* transform all the 0, 2, S/N/W/E into 'f'. stop when it's 1 */
 	ft_flood_fill(input, input->flood_fill_x, input->flood_fill_y, height);
-	/* check all the border elements if there is an 'f'*/
 	if (ft_check_border(input) == -1)
 		return (ft_return_error("Map flooded\n"));
 	else
 		printf("MAP CORRECT!\n");
+	ft_change_map_back(input);
+	// ft_print_input(*input);
 	return (0);
 }

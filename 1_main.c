@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 17:43:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/09 19:44:13 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ int		main(int argc, char **argv)
 	ft_validate_map(&input);
 	ft_cast_ray(&input);
 	ft_print_input(input);
-	// my_mlx_pixel_put(&input.img, 5, 5, RED);
-	// my_mlx_pixel_put(&input.img, 15, 15, RED);
-	// my_mlx_pixel_put(&input.img, 25, 25, RED);
-	// my_mlx_pixel_put(&input.img, 35, 35, RED);
 	mlx_put_image_to_window(mlx, mlx_win, input.img.img, 0, 0);
 	mlx_loop(mlx);
 	return (0);

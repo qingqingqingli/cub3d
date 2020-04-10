@@ -130,9 +130,63 @@ in which grid is the ray
 - How to assign a pixel a color?
   ANSWER: use mlx. my_mlx_pixel_put(&input.img, 5, 5, 0x00FF0000);
 
+- If I change the location, somehow it would give me seg fault
+  ANSWER: I changed the original map during the flood fill algorithm. 
+  The content already changed and there was no N/S/W/E in the map anymore
+
+- This function gives segfault, because the end of the array is 0 due to 
+  the spilt function. Therefore, when I changed the wider restriction, 
+  it does not try to access the non-existent space, the seg fault stopped.
+  int	ft_change_map_back(t_input *input)
+  {
+    int x;
+    int y;
+
+    x = 0;
+    y = 0;
+    while(input->array[y][x] != '\0') --> while(input->array[y] != 0)
+    {
+      while(input->array[y][x] != '\0')
+      {
+        if(input->array[y][x] == 'f')
+          input->array[y][x] = '0';
+        x++;
+      }
+      x = 0;
+      y++;
+    }
+    return (0);
+  }
+
 ***********************************QUESTIONS*********************************
 
-- If I change the location, somehow it would give me seg fault
+- should x be < or <= input->res_x
+int ft_calculate_ray(t_input *input)
+{
+	int x; 
+
+	x = 0;
+	/* should this be < or <= */
+	while (x <= input->res_x)
+	{
+		ft_calculate_camera(input, x);
+		ft_calculate_ray_dir(input);
+		ft_dda(input);
+		ft_draw_line(input);
+		ft_put_color(input, x);
+		x++;
+		// printf("camera_x_pos is %f\n", camera_x_pos);
+		// printf("ray_dir_x is %f\n", ray_dir_x);
+		// printf("ray_dir_y is %f\n", ray_dir_y);
+		// printf("input->dda.line_height is %d\n", input->dda.line_height);
+		// printf("input->dda.draw_start is %d\n", input->dda.draw_start);
+		// printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
+	}
+	printf("here 10\n");
+	return (0);
+
+- If there are multiple S / N, it does not give an error but provide a 
+seg fault.
 
 ***********************************ACTIONS*********************************
 
@@ -142,6 +196,9 @@ in which grid is the ray
   It can be changed to a 8-way flood fill algorithm
 
 - flood fill: change the starting point from the first 0 to the player position
+
+- flood fill: need to make a copy of the original array before flood fill.
+  After validating the map, free the copy version of the array 
 
 - (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly
 

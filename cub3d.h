@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 17:37:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 10:36:07 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@
 
 #define RED 0x00FF0000
 #define GREEN 0x0000FF00
-#define BLUE 0x000000FF
+#define BLUE 0x000099ff
+#define ORANGE 0x00ff9900
+#define DARK_GREEN 0x00009933
+#define DARK_PINK 0x00cc3399
 
 
 /*
@@ -186,5 +189,6 @@ int					get_r(int rgb);
 int					get_g(int rgb);
 int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
+int 				ft_check_position(int c);
 
 #endif
