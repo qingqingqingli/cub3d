@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   8_mlx.c                                            :+:    :+:            */
+/*   ft_put_color_wall.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/08 19:54:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 17:29:05 by qli           ########   odam.nl         */
+/*   Created: 2020/04/10 14:31:38 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/10 14:32:08 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "/home/qli/codam/cub3d/cub3d.h"
 
-void	my_mlx_pixel_put(t_mlx *img, int x, int y, int color)
+void 	ft_put_color_wall(t_input *input, int x)
 {
-	char	*dst;
+	int y;
 
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	y = input->dda.draw_start;
+	while (y < input->dda.draw_end)
+	{
+		my_mlx_pixel_put(&input->img, x, y, ORANGE);
+		y++;
+	}
 }

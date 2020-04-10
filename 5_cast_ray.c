@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   6_calculate_ray.c                                  :+:    :+:            */
+/*   5_cast_ray.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/06 16:59:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 10:56:53 by qli           ########   odam.nl         */
+/*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/10 14:37:39 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/*
-** calculate the ray direction vector
-*/
-
-void ft_calculate_ray_dir(t_input *input)
+int		ft_put_color(t_input *input, int x)
 {
-	ray_dir_x = direction_x + (plane_dir_x * camera_x_pos);
-	ray_dir_y = direction_y + (plane_dir_y * camera_x_pos);
+	ft_put_color_ceilling(input, x);
+	ft_put_color_wall(input, x);
+	printf("passing 2\n");
+	ft_put_color_floor(input, x);
+	printf("passing 3\n");
+	return (0);
 }
 
-/*
-** calculate the camera x position
-*/
-
-void ft_calculate_camera(t_input *input, int x)
+int 	ft_draw_line(t_input *input)
 {
-	camera_x_pos = 2 * x / (double)input->res_x - 1;
+	ft_calculate_ray_len(input);
+	ft_calculate_line_height(input);
+	ft_calculate_draw_start(input);
+	ft_calculate_draw_end(input);
+	ft_choose_color(input);
+	return (0);
+}
+
+int 	ft_dda(t_input *input)
+{
+	ft_map_location(input);
+	ft_calculate_delta(input);
+	ft_calculate_side_dist(input);
+	ft_perform_dda(input);
+	return (0);
 }
 
 int ft_calculate_ray(t_input *input)
@@ -54,5 +64,23 @@ int ft_calculate_ray(t_input *input)
 		// printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
 	}
 	printf("here 10\n");
+	return (0);
+}
+
+void	ft_initiate_variables(t_input *input)
+{
+	ft_set_player_position(input);
+	ft_set_player_orientation(input);
+	ft_set_plane_orientation(input);
+	// printf("direction_x is %f\n", direction_x);
+	// printf("direction_y is %f\n", direction_y);
+	// printf("plane_dir_x is %f\n", plane_dir_x);
+	// printf("plane_dir_y is %f\n", plane_dir_y);
+}
+
+int 	ft_cast_ray(t_input *input)
+{
+	ft_initiate_variables(input);
+	ft_calculate_ray(input);
 	return (0);
 }

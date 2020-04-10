@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 10:36:07 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 14:42:07 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,8 +181,6 @@ int 				ft_check_sprawning_pos(char c, t_input *input);
 int 				ft_calculate_ray(t_input *input);
 int 				ft_dda(t_input *input);
 void				ft_reset_input(t_input *input);
-void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
-int 				ft_set_player_position(t_input *input);
 int 				ft_draw_line(t_input *input);
 int					create_rgb(int r, int g, int b);
 int					get_r(int rgb);
@@ -190,5 +188,39 @@ int					get_g(int rgb);
 int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
 int 				ft_check_position(int c);
+
+/*
+** ---------------------------CALCULATIONS----------------------------------------
+*/
+
+int 				ft_set_player_position(t_input *input);
+void 				ft_set_player_orientation(t_input *input);
+void				ft_set_plane_orientation(t_input *input);
+void 				ft_calculate_camera(t_input *input, int x);
+void 				ft_calculate_ray_dir(t_input *input);
+void 				ft_map_location(t_input *input);
+void 				ft_calculate_delta(t_input *input);
+void 				ft_calculate_side_dist(t_input *input);
+void 				ft_calculate_ray_len(t_input *input);
+void 				ft_calculate_line_height(t_input *input);
+void 				ft_calculate_draw_start(t_input *input);
+void 				ft_calculate_draw_end(t_input *input);
+void 				ft_perform_dda(t_input *input);
+
+/*
+** ---------------------------COLORS----------------------------------------
+*/
+
+void 				ft_choose_color(t_input *input);
+void 				ft_put_color_ceilling(t_input *input, int x);
+void 				ft_put_color_wall(t_input *input, int x);
+void 				ft_put_color_floor(t_input *input, int x);
+
+/*
+** ---------------------------MLX----------------------------------------
+*/
+
+void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
+
 
 #endif

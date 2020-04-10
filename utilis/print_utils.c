@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   0_print_utils.c                                    :+:    :+:            */
+/*   print_utils.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 10:44:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 14:44:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "/home/qli/codam/cub3d/cub3d.h"
 
 void 	ft_print_2d_array(t_input *input)
 {

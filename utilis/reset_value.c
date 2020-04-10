@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   0_reset_value.c                                    :+:    :+:            */
+/*   reset_value.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/09 17:11:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/10 14:44:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "/home/qli/codam/cub3d/cub3d.h"
 
 void	ft_reset_input(t_input *input)
 {

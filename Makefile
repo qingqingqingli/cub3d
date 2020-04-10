@@ -6,25 +6,38 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/09 17:26:34 by qli           ########   odam.nl          #
+#    Updated: 2020/04/10 14:44:21 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	cub3d
 
-SRC 			=	0_general_utils.c \
-					0_print_utils.c \
-					0_reset_value.c \
+SRC 			=	utilis/general_utils.c \
+					utilis/print_utils.c \
+					utilis/reset_value.c \
 					1_main.c \
 					2_input_parse.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
-					5_initiate_ray_casting.c \
-					6_calculate_ray.c \
-					7_dda.c \
-					8_mlx.c \
-					9_draw_line.c \
-					10_put_color.c
+					5_cast_ray.c \
+					calculations/ft_calculate_camera.c \
+					calculations/ft_calculate_ray_dir.c \
+					calculations/ft_map_location.c \
+					calculations/ft_calculate_delta.c \
+					calculations/ft_calculate_side_dist.c \
+					calculations/ft_calculate_ray_len.c \
+					calculations/ft_calculate_line_height.c \
+					calculations/ft_calculate_draw_start.c \
+					calculations/ft_calculate_draw_end.c \
+					calculations/ft_perform_dda.c \
+					calculations/ft_set_player_orientation.c \
+					calculations/ft_set_plane_orientation.c \
+					calculations/ft_set_player_position.c \
+					colors/ft_choose_color.c \
+					colors/ft_put_color_ceilling.c \
+					colors/ft_put_color_wall.c \
+					colors/ft_put_color_floor.c \
+					mlx/my_mlx_pixel_put.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 
