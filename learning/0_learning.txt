@@ -175,12 +175,6 @@ int ft_calculate_ray(t_input *input)
 		ft_draw_line(input);
 		ft_put_color(input, x);
 		x++;
-		// printf("camera_x_pos is %f\n", camera_x_pos);
-		// printf("ray_dir_x is %f\n", ray_dir_x);
-		// printf("ray_dir_y is %f\n", ray_dir_y);
-		// printf("input->dda.line_height is %d\n", input->dda.line_height);
-		// printf("input->dda.draw_start is %d\n", input->dda.draw_start);
-		// printf("input->dda.draw_end is %d\n", input->dda.draw_end);		
 	}
 	printf("here 10\n");
 	return (0);
@@ -188,7 +182,13 @@ int ft_calculate_ray(t_input *input)
 - If there are multiple S / N, it does not give an error but provide a 
 seg fault.
 
+- It gives seg fault when the direction is different
+
 ***********************************ACTIONS*********************************
+
+- Review all the calculations against the tutorial and make sure they are correct
+
+- Learn about minilibx and try to make it to move with the keyboard
 
 - Need to change all the defines to the entire variable name
 
