@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_put_color_wall.c                                :+:    :+:            */
+/*   ft_step_direction.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/10 14:31:38 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/13 14:16:58 by qli           ########   odam.nl         */
+/*   Created: 2020/04/13 14:43:12 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/13 14:44:14 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-void 	ft_put_color_wall(t_input *input, int x)
+void 	ft_step_direction(t_input *input)
 {
-	int y;
-
-	y = input->dda.draw_start;
-	while (y < input->dda.draw_end)
-	{
-		my_mlx_pixel_put(&input->img, x, y, BLUE);
-		y++;
-	}
+	if (ray_dir_x < 0)
+		input->dda.step_x = -1;
+	else
+		input->dda.step_x = 1;
+	if (ray_dir_y < 0)
+		input->dda.step_y = -1;
+	else
+		input->dda.step_y = 1;
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:13:33 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 14:14:22 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/13 14:59:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,16 @@
 /* calculate step & initial side_dis */
 void 	ft_calculate_side_dist(t_input *input)
 {
-	if (ray_dir_x < 0)
-	{
-		input->dda.step_x = -1;
+	if (input->dda.step_x == -1)
 		input->dda.side_dis_x = (position_x - input->dda.map_x) *
 		input->dda.delta_dis_x;
-	}
 	else
-	{
-		input->dda.step_x = 1;
-		input->dda.side_dis_x = (input->dda.map_x + 1.0 - position_x) *
+		input->dda.side_dis_x = (input->dda.map_x + 1 - position_x) *
 		input->dda.delta_dis_x;
-	}
-	if (ray_dir_y < 0)
-	{
-		input->dda.step_y = -1;
+	if (input->dda.step_y == -1)
 		input->dda.side_dis_y = (position_y - input->dda.map_y) *
 		input->dda.delta_dis_y;
-	}
 	else
-	{
-		input->dda.step_y = 1;
-		input->dda.side_dis_y = (input->dda.map_y + 1.0 - position_y) *
+		input->dda.side_dis_y = (input->dda.map_y + 1 - position_y) *
 		input->dda.delta_dis_y;
-	}	
 }

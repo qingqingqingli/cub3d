@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:32:32 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 14:32:46 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/13 14:16:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void 	ft_put_color_floor(t_input *input, int x)
 		y = input->dda.draw_end;
 	while (y <= input->res_y)
 	{
-		my_mlx_pixel_put(&input->img, x, y, BLUE);
+		my_mlx_pixel_put(&input->img, x, y, DARK_PINK);
 		y++;
 	}
 }

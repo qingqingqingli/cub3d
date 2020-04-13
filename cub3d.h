@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 14:42:07 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/13 14:45:28 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,7 @@ void 				ft_calculate_camera(t_input *input, int x);
 void 				ft_calculate_ray_dir(t_input *input);
 void 				ft_map_location(t_input *input);
 void 				ft_calculate_delta(t_input *input);
+void 				ft_step_direction(t_input *input);
 void 				ft_calculate_side_dist(t_input *input);
 void 				ft_calculate_ray_len(t_input *input);
 void 				ft_calculate_line_height(t_input *input);

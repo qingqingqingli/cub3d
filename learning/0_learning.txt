@@ -184,6 +184,10 @@ seg fault.
 
 - It gives seg fault when the direction is different
 
+- Why is there 0.5 added to pos_x & pos_y?
+  data->raycast.pos.x = x + 0.5;
+	data->raycast.pos.y = y + 0.5;
+
 ***********************************ACTIONS*********************************
 
 - Review all the calculations against the tutorial and make sure they are correct

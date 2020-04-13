@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/10 14:44:21 by qli           ########   odam.nl          #
+#    Updated: 2020/04/13 14:45:28 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC 			=	utilis/general_utils.c \
 					calculations/ft_calculate_ray_dir.c \
 					calculations/ft_map_location.c \
 					calculations/ft_calculate_delta.c \
+					calculations/ft_step_direction.c \
 					calculations/ft_calculate_side_dist.c \
 					calculations/ft_calculate_ray_len.c \
 					calculations/ft_calculate_line_height.c \
@@ -65,10 +66,6 @@ RESET			=	$(C_WHITE)
 
 all: $(NAME)
 
-%.o: %.c
-	@echo "CUB3D: Compiling $<"
-	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
-
 $(NAME): $(SRC_O)
 	@echo "$(C_GREEN)compiling libft ... $(RESET)"
 	@make bonus -C libft
@@ -79,6 +76,10 @@ $(NAME): $(SRC_O)
 	@echo "$(C_GREEN)compiling cub3d ... $(RESET)"
 	@$(COMPILE) $(FLAGS) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
+
+%.o: %.c
+	@echo "CUB3D: Compiling $<"
+	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
 
 clean:
 	@echo "$(C_ORANGE)cleaning libft...$(RESET)"
