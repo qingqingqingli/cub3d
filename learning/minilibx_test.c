@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 16:18:13 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/08 19:48:08 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/13 19:29:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "/home/qli/codam/cub3d/cub3d.h"
 
 void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 {

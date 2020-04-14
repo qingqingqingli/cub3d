@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test.c                                             :+:    :+:            */
+/*   main_test.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/09 16:18:13 by qli            #+#    #+#                */
-/*   Updated: 2020/03/10 13:55:54 by qli           ########   odam.nl         */
+/*   Created: 2020/03/09 16:18:13 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/13 19:29:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "/home/qli/codam/cub3d/cub3d.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -29,7 +29,7 @@ int	main(void)
 {
 	void	*mlx;
 	void	*mlx_win;
-	t_data	img;
+	t_mlx	img;
 
 	/* 
 	** initialise mlx:

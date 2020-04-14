@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/13 14:45:28 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/14 11:30:57 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,17 @@ typedef struct 		s_dda
 }					t_dda;
 
 /*
+** -----------------------------MOVEMENT-----------------------------------
+*/
+
+typedef struct 		s_movement
+{
+	double 			move_speed;
+	double 			rotate_speed;
+}					t_movement;
+
+
+/*
 ** -----------------------------INPUT STRUCT-----------------------------------
 */
 typedef struct 		s_input
@@ -126,6 +137,7 @@ typedef struct 		s_input
 	t_mlx		 	img;
 	t_dda 			dda;
 	t_rgb 			color;
+	t_movement 		move;
 	int				res_present;
 	int				res_x;
 	int				res_y;

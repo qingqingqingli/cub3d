@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/13 18:27:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/13 19:32:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int		main(int argc, char **argv)
 		output = get_next_line(fd, &line);
 	}
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 250, 250, "Hello world!");
-	input.img.img = mlx_new_image(mlx, 250, 250);
+	mlx_win = mlx_new_window(mlx, input.res_x, input.res_y, "Hello world!");
+	input.img.img = mlx_new_image(mlx, input.res_x, input.res_y);
 	input.img.addr = mlx_get_data_addr(input.img.img, &input.img.bits_per_pixel,
 	&input.img.line_length, &input.img.endian);
 	ft_validate_map(&input);

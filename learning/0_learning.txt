@@ -158,16 +158,14 @@ in which grid is the ray
     return (0);
   }
 
-***********************************QUESTIONS*********************************
-
-- should x be < or <= input->res_x
+- x < input->res_x and input->res_x make no difference
 int ft_calculate_ray(t_input *input)
 {
 	int x; 
 
 	x = 0;
 	/* should this be < or <= */
-	while (x <= input->res_x)
+	while (x < input->res_x)
 	{
 		ft_calculate_camera(input, x);
 		ft_calculate_ray_dir(input);
@@ -178,21 +176,41 @@ int ft_calculate_ray(t_input *input)
 	}
 	printf("here 10\n");
 	return (0);
-
-- If there are multiple S / N, it does not give an error but provide a 
-seg fault.
-
-- It gives seg fault when the direction is different
+}
+ANSWER: because the x resolution starts from 0, if the x goes to 
+res_x (500 for instance). It would have calculated 501 verticals, 
+instead of 500
 
 - Why is there 0.5 added to pos_x & pos_y?
   data->raycast.pos.x = x + 0.5;
 	data->raycast.pos.y = y + 0.5;
 
+0.5 will put the player at the middle of the map square
+
+- mlx_hook & mlx_key_hook difference. What does the 2 mean?
+
+int             close(int keycode, t_vars *vars)
+{
+    mlx_destroy_window(vars->mlx, vars->win);
+}
+
+    mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+
+    mlx_key_hook(vars.win, close, &vars);
+
+mlx_key_hook only deals key events, while mlx_hook deals with all kinds 
+of events. So mlx_hook is more versatile to apply to more cases
+
+- Swapped x & y so they are consistent to the tutorial
+  Need to be concious to choose which x and y to use
+
+***********************************QUESTIONS*********************************
+
+- How to define move_speed & rotate_speed?
+
+
 ***********************************ACTIONS*********************************
 
-- Review all the calculations against the tutorial and make sure they are correct
-
-- Learn about minilibx and try to make it to move with the keyboard
 
 - Need to change all the defines to the entire variable name
 

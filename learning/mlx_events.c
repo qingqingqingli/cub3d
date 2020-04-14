@@ -9,7 +9,7 @@
 */
 
 /*
-** Each each has an according mask
+** Each event has an according mask
 ** so you can register to only one key when it triggers
 ** or to all keys if you leave your mask to the default
 ** such as: NoEventMask 0L, KeyPressMask (1L<<0), KeyReleaseMask (1L<<1)
@@ -20,7 +20,7 @@
 ** Now whenever we press a key, the window will be closed.
 */
 
-#include <mlx.h>
+#include "/home/qli/codam/cub3d/cub3d.h"
 
 typedef struct  s_vars {
         void    *mlx;

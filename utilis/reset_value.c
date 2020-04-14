@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 14:44:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/14 11:31:20 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ void	ft_reset_input(t_input *input)
 	input->color.ceilling = 0;
 	input->color.floor = 0;
 	input->color.reserve = 0;
+	input->move.move_speed = 0.5;
+	input->move.rotate_speed = 0.3;
 }

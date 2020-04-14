@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 10:45:22 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/14 11:40:18 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,16 +100,16 @@ int	ft_change_map_back(t_input *input)
 
 	x = 0;
 	y = 0;
-	while(input->array[y] != 0)
+	while(input->array[x] != 0)
 	{
-		while(input->array[y][x] != '\0')
+		while(input->array[x][y] != '\0')
 		{
-			if(input->array[y][x] == 'f')
-				input->array[y][x] = '0';
-			x++;
+			if(input->array[x][y] == 'f')
+				input->array[x][y] = '0';
+			y++;
 		}
-		x = 0;
-		y++;
+		y = 0;
+		x++;
 	}
 	return (0);
 }
