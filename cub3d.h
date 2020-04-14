@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 11:30:57 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/14 17:56:51 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,25 @@
 #define delta_len_y input->dda.delta_dis_y
 
 /*
+** ---------------------------KEY-------------------------------------------
+** These values identify characters or functions associated with each key
+*/
+
+#define KEY_UP							65362
+#define KEY_LEFT						65361
+#define KEY_RIGHT						65363
+#define KEY_DOWN						65364
+
+/*
 ** ---------------------------COLOR-------------------------------------------
 */
 
-#define RED 0x00FF0000
-#define GREEN 0x0000FF00
-#define BLUE 0x000099ff
-#define ORANGE 0x00ff9900
-#define DARK_GREEN 0x00009933
-#define DARK_PINK 0x00cc3399
+#define RED 							0x00FF0000
+#define GREEN 							0x0000FF00
+#define BLUE 							0x000099ff
+#define ORANGE 							0x00ff9900
+#define DARK_GREEN 						0x00009933
+#define DARK_PINK 						0x00cc3399
 
 
 /*
@@ -69,6 +79,8 @@ typedef struct 		s_rgb
 
 typedef struct		s_mlx
 {
+	void 			*mlx;
+	void 			*mlx_win;
 	void			*img;
 	char			*addr;
 	int				bits_per_pixel;
@@ -230,10 +242,15 @@ void 				ft_put_color_wall(t_input *input, int x);
 void 				ft_put_color_floor(t_input *input, int x);
 
 /*
-** ---------------------------MLX----------------------------------------
+** ---------------------------MLX & MOVEMENT---------------------------------
 */
 
 void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
-
-
+int 				ft_movement(t_input *input);
+int 				ft_move_forward(int keycode, t_input *input);
+int					ft_move_backward(int keycode, t_input *input);
+int 				ft_move_right(int keycode, t_input *input);
+int 				ft_move_left(int keycode, t_input *input);
+int 				ft_close(int keycode, t_input *input);
+int 				ft_render_next_frame(t_input *input);
 #endif

@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/13 14:45:28 by qli           ########   odam.nl          #
+#    Updated: 2020/04/14 17:53:52 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC 			=	utilis/general_utils.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
 					5_cast_ray.c \
+					6_ft_movement.c \
 					calculations/ft_calculate_camera.c \
 					calculations/ft_calculate_ray_dir.c \
 					calculations/ft_map_location.c \
@@ -39,6 +40,11 @@ SRC 			=	utilis/general_utils.c \
 					colors/ft_put_color_wall.c \
 					colors/ft_put_color_floor.c \
 					mlx/my_mlx_pixel_put.c \
+					mlx/ft_close.c \
+					movement/ft_move_forward.c \
+					movement/ft_move_backward.c \
+					movement/ft_move_left.c \
+					movement/ft_move_right.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 

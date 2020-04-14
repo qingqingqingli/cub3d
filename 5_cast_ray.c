@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 10:51:18 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/14 18:17:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int ft_calculate_ray(t_input *input)
 		ft_put_color(input, x);
 		x++;
 	}
+	mlx_put_image_to_window(input->img.mlx, input->img.mlx_win,
+	input->img.img, 0, 0);
 	return (0);
 }
 

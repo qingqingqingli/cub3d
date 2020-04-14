@@ -1,0 +1,50 @@
+MinilibX
+- An easy way to create graphical software, without any X-Window programming knowledge
+
+X-Window (display)
+- A network-oriented graphical system for Unix
+- One side: my software wants to draw something on the screen and get keyboard and mouse entries
+- The other side: the X-Server manages the screen, keyboard and mouse
+- A network must be established between these two to
+	* send drawing orders (from the software to the X-Server)
+	* keyboard/mouse events (from the X-Server to the software)
+
+Step 1: initiatlize the connection between the software and the display
+	mlx_init() returns a void pointer, to be used for further calls;
+	if mlx_init() fails, it will return NULL;
+
+Other functions
+ 
+	mlx_new_window : manage windows
+	mlx_pixel_put : draw inside window
+	mlx_new_image : manipulate images
+	mlx_loop : handle keyboard or mouse events
+
+Handle events
+- mlx_loop(void *mlx_ptr);
+To receive events, you must use mlx_loop(). This function never returns. It is an infinite
+loop that waits for an events, and then calls a user-defined associated with this event. 
+
+- mlx_key_hook(void *win_ptr, int (*function ptr), void *param);
+- mlx_loop_hook(void *win_ptr, int (*function ptr), void *param);
+- mlx_mouse_hook(void *win_ptr, int (*function ptr), void *param);
+
+When it catches an event, the library calls the corresponding function with fixed params:
+- expose_hook(void *param);
+- key_hook(int keycode, void *param);
+- mouse_hook(int button, int x, int y, void *param);
+- loop_hook(void *param);
+
+X-Window events
+- The X-Window system is bi-directional
+- On one hand, the program sends orders to the screen to display pixels, images
+- On the other hand, it can get info from the keyboard and mouse associated to the screen.
+  To do so, the program receives "events" from the keyboard or the mouse
+
+Different events
+- A key is pressed
+- A mouse button is pressed
+- A part of the window should be re-drawn ("expose" event. It's the program's job to handle it)
+
+Key value:
+https://www.cl.cam.ac.uk/~mgk25/ucs/keysymdef.h

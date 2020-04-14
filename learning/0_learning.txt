@@ -204,10 +204,39 @@ of events. So mlx_hook is more versatile to apply to more cases
 - Swapped x & y so they are consistent to the tutorial
   Need to be concious to choose which x and y to use
 
+- How do I know when a key is pressed? How to tell which key is pressed?
+  When a key is pressed, how to trigger certain action? 
+  ANSWER: with mlx_hook(int keycode, t_input *input), you can define only this action is 
+  taken when a certain key is pressed. In order to know the keycode value, you 
+  can ask the function to print the keycode value while you press them
+
+
+
 ***********************************QUESTIONS*********************************
 
 - How to define move_speed & rotate_speed?
+	* input->move.move_speed = 0.5;
+	* input->move.rotate_speed = 0.3;
 
+- My structure now is:
+
+  * Render the first frame based on initial value;
+    calculation all the variables
+    mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
+	input.img.img, 0, 0);
+
+  * mlx_hook for all four movements & relevant calculations;
+        mlx_hook(input->img.mlx_win, 2, 1L<<0, *ft_move_forward, input);
+        mlx_hook(input->img.mlx_win, 2, 1L<<0, *ft_move_backward, input);
+        mlx_hook(input->img.mlx_win, 2, 1L<<0, *ft_move_left, input);
+        mlx_hook(input->img.mlx_win, 2, 1L<<0, *ft_move_right, input);
+
+	* mlx_loop_hook(input->img.mlx, *ft_calculate_ray, &input); 
+  --> to render the next one
+
+  * put the image to window
+  mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
+	input.img.img, 0, 0);
 
 ***********************************ACTIONS*********************************
 
