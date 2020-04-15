@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 18:17:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 10:41:52 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int ft_calculate_ray(t_input *input)
 	int x; 
 
 	x = 0;
-	while (x <= input->res_x)
+	while (x < input->res_x)
 	{
 		ft_calculate_camera(input, x);
 		ft_calculate_ray_dir(input);

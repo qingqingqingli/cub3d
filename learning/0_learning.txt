@@ -210,20 +210,18 @@ of events. So mlx_hook is more versatile to apply to more cases
   taken when a certain key is pressed. In order to know the keycode value, you 
   can ask the function to print the keycode value while you press them
 
-
-
-***********************************QUESTIONS*********************************
-
 - How to define move_speed & rotate_speed?
 	* input->move.move_speed = 0.5;
 	* input->move.rotate_speed = 0.3;
 
+  You can indeed give a value to these speed and test out how fast it is
+
 - My structure now is:
 
   * Render the first frame based on initial value;
-    calculation all the variables
-    mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
-	input.img.img, 0, 0);
+    - calculation all the variables
+    - mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
+	    input.img.img, 0, 0);
 
   * mlx_hook for all four movements & relevant calculations;
         mlx_hook(input->img.mlx_win, 2, 1L<<0, *ft_move_forward, input);
@@ -235,14 +233,39 @@ of events. So mlx_hook is more versatile to apply to more cases
   --> to render the next one
 
   * put the image to window
-  mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
-	input.img.img, 0, 0);
+    - mlx_put_image_to_window(input.img.mlx, input.img.mlx_win,
+	    input.img.img, 0, 0);
+
+ANSWER: 
+  - Change to mlx_hook to one function
+  - Add one mlx_key_release
+
+	/* why is it &input and not &input.img */
+	mlx_hook(input.img.mlx_win, KEY_PRESS, 1L<<0, *ft_movement, &input);
+	mlx_hook(input.img.mlx_win, KEY_RELEASE, 1L<<1, *ft_release, &input);
+
+  ANSWER: because the &input is the parameter to give to the pointer function
+  *ft_movement. As it requires &input in the function ft_movement, so it won't work
+  if you give &input.img
+
+***********************************QUESTIONS*********************************
+
+- Potential problem that I can walk across the wall
+
+- The left & right calculation needs to be swapped
 
 ***********************************ACTIONS*********************************
 
+TEXTURE
 
+SPRITE
+
+AREAS THAT NEED TO WORK ON:
+
+DEFINES
 - Need to change all the defines to the entire variable name
 
+FLOOD FILL ALGORITHM
 - flood fill: 4 way flood fill does not detect certain edge cases. 
   It can be changed to a 8-way flood fill algorithm
 
@@ -251,12 +274,17 @@ of events. So mlx_hook is more versatile to apply to more cases
 - flood fill: need to make a copy of the original array before flood fill.
   After validating the map, free the copy version of the array 
 
+ERROR MANAGEMENT
+
+INPUT VALIDATION
+
+MEMORY LEAK
+
+CLEAN CODE
+
+OTHERS
 - (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly
 
 - If the player is facing west (-1, 0), why is the camera plane vector (0, -0.66)?
   Why can't it be (0, 0.66)? It will also be perpendicular
   Try it out when I can see something on the screen
-
-- Next step:
-  assign different colors to wall, ceiling and floor
-  draw the wall on the screen

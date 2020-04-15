@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 17:56:51 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 14:42:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
-# include <time.h>
 # include "minilibx-master/mlx.h"
 
 /*
@@ -39,12 +38,20 @@
 /*
 ** ---------------------------KEY-------------------------------------------
 ** These values identify characters or functions associated with each key
+** changed left and right
 */
 
 #define KEY_UP							65362
 #define KEY_LEFT						65361
 #define KEY_RIGHT						65363
 #define KEY_DOWN						65364
+#define ESC								65307
+#define W								119
+#define A								97
+#define D								100
+#define Z								122
+#define KEY_PRESS						2
+#define KEY_RELEASE						3
 
 /*
 ** ---------------------------COLOR-------------------------------------------
@@ -56,7 +63,20 @@
 #define ORANGE 							0x00ff9900
 #define DARK_GREEN 						0x00009933
 #define DARK_PINK 						0x00cc3399
+#define WHITE							0x00FFFFFF
+#define BLACK							0x00000000
+#define GRAY							0x00808080
+#define DARK_GRAY						0x00191919
+#define ALICE_BLUE						0x00f0f8ff
 
+#define CEILLING_COLOR					ALICE_BLUE
+#define WALL_COLOR						BLUE
+#define FLOOR_COLOR						BLACK
+/*
+** ---------------------------MOVEMENT-------------------------------------------
+*/
+#define MOVE_SPEED						0.005
+#define ROTATE_SPEED					0.0025
 
 /*
 ** ---------------------------COLORS-------------------------------------------
@@ -104,8 +124,6 @@ typedef struct 		s_ray_casting
 	double			ray_direction_x;
 	double 			ray_direction_y;
 	double 			camera_x;
-	time_t 			current_time;
-	time_t 			old_time;
 }					t_ray_casting;
 
 /*
@@ -135,8 +153,10 @@ typedef struct 		s_dda
 
 typedef struct 		s_movement
 {
-	double 			move_speed;
-	double 			rotate_speed;
+	int 			move_forward;
+	int 			move_backward;
+	int 			move_right;
+	int 			move_left;
 }					t_movement;
 
 
@@ -245,12 +265,15 @@ void 				ft_put_color_floor(t_input *input, int x);
 ** ---------------------------MLX & MOVEMENT---------------------------------
 */
 
+void 				ft_initiate_window(t_input *input);
 void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
-int 				ft_movement(t_input *input);
-int 				ft_move_forward(int keycode, t_input *input);
-int					ft_move_backward(int keycode, t_input *input);
-int 				ft_move_right(int keycode, t_input *input);
-int 				ft_move_left(int keycode, t_input *input);
+int 				ft_key_movement(int keycode, t_input *input);
+int 				ft_release(int keycode, t_input *input);
+int 				ft_process_movement(t_input *input);
+int 				ft_move_forward(t_input *input);
+int					ft_move_backward(t_input *input);
+int 				ft_move_right(t_input *input);
+int 				ft_move_left(t_input *input);
 int 				ft_close(int keycode, t_input *input);
 int 				ft_render_next_frame(t_input *input);
 #endif

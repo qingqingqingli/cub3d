@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 11:31:20 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 11:05:06 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_reset_input(t_input *input)
 {
-	time_t seconds;
 
-	seconds = time(NULL);
 	input->res_present = 0;
 	input->res_x = 0;
 	input->res_y = 0;
@@ -51,8 +49,6 @@ void	ft_reset_input(t_input *input)
 	input->ray_casting.ray_direction_x = 0;
 	input->ray_casting.ray_direction_y = 0;
 	input->ray_casting.camera_x = 0;
-	input->ray_casting.current_time = seconds;
-	input->ray_casting.old_time = 0;
 	input->dda.map_x = 0;
 	input->dda.map_y = 0;
 	input->dda.side_dis_x = 0;
@@ -73,6 +69,8 @@ void	ft_reset_input(t_input *input)
 	input->color.ceilling = 0;
 	input->color.floor = 0;
 	input->color.reserve = 0;
-	input->move.move_speed = 0.5;
-	input->move.rotate_speed = 0.3;
+	input->move.move_backward = 0;
+	input->move.move_forward = 0;
+	input->move.move_left = 0;
+	input->move.move_right = 0;
 }

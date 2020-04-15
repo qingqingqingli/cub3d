@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 18:17:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 14:42:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,13 @@ int		main(int argc, char **argv)
 		output = get_next_line(fd, &line);
 	}
 	input.img.mlx = mlx_init();
-	input.img.mlx_win = mlx_new_window(input.img.mlx, input.res_x, input.res_y, "Hello world!");
-	input.img.img = mlx_new_image(input.img.mlx, input.res_x, input.res_y);
-	input.img.addr = mlx_get_data_addr(input.img.img, &input.img.bits_per_pixel,
-	&input.img.line_length, &input.img.endian);
+	ft_initiate_window(&input);
 	ft_validate_map(&input);
 	ft_cast_ray(&input);
 	ft_print_input(input);
-	ft_movement(&input);
+	mlx_hook(input.img.mlx_win, KEY_PRESS, 1L<<0, *ft_key_movement, &input);
+	mlx_hook(input.img.mlx_win, KEY_RELEASE, 1L<<1, *ft_release, &input);
+	mlx_loop_hook(input.img.mlx, *ft_process_movement, &input);
 	mlx_loop(input.img.mlx);
 	return (0);
 }

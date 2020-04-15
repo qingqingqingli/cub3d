@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_move_forward.c                                  :+:    :+:            */
+/*   ft_initiate_window.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/14 11:18:55 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 12:06:53 by qli           ########   odam.nl         */
+/*   Created: 2020/04/15 14:40:03 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/15 14:42:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-int 	ft_move_forward(t_input *input)
+void 	ft_initiate_window(t_input *input)
 {
-	if (input->array[(int)(position_x + direction_x * MOVE_SPEED)]
-	[(int)(position_y)] != '1')
-		position_x = position_x + direction_x * MOVE_SPEED;
-	if (input->array[(int)(position_x)]
-	[(int)(position_y + direction_y * MOVE_SPEED)] != '1')
-		position_y = position_y + direction_y * MOVE_SPEED;
-	return (0);
+	input->img.mlx_win = mlx_new_window(input->img.mlx, input->res_x, input->res_y, "Hello world!");
+	input->img.img = mlx_new_image(input->img.mlx, input->res_x, input->res_y);
+	input->img.addr = mlx_get_data_addr(input->img.img, &input->img.bits_per_pixel,
+	&input->img.line_length, &input->img.endian);
 }
