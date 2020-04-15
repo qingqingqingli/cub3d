@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 14:42:26 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 17:26:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,16 @@ typedef struct 		s_movement
 	int 			move_left;
 }					t_movement;
 
+/*
+** -----------------------------WALL TEXTURE-----------------------------------
+*/
+
+typedef struct 		s_wall_texture
+{
+	int 			texture_res_x;
+	int				texture_res_y;
+}					t_wall_texture;
+
 
 /*
 ** -----------------------------INPUT STRUCT-----------------------------------
@@ -170,6 +180,7 @@ typedef struct 		s_input
 	t_dda 			dda;
 	t_rgb 			color;
 	t_movement 		move;
+	t_wall_texture 	wall;
 	int				res_present;
 	int				res_x;
 	int				res_y;

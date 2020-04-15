@@ -254,8 +254,6 @@ ANSWER:
 
 - The left & right calculation needs to be swapped
 
-- Testing
-
 ***********************************ACTIONS*********************************
 
 TEXTURE

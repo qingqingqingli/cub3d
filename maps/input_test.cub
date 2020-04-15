@@ -1,9 +1,9 @@
 R 600 600
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
-S ./path_to_the_sprite_texture
+NO ./home/qli/codam/cub3d/pics/colorstone.png
+SO ./home/qli/codam/cub3d/pics/eagle.png
+WE ./home/qli/codam/cub3d/pics/greystone.png
+EA ./home/qli/codam/cub3d/pics/redbrick.png
+S ./home/qli/codam/cub3d/pics/pillar.png
 F 220,100,0
 C 225,30,0
 

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 10:41:52 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 17:16:28 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int 	ft_draw_line(t_input *input)
 	ft_calculate_line_height(input);
 	ft_calculate_draw_start(input);
 	ft_calculate_draw_end(input);
-	ft_choose_color(input);
 	return (0);
 }
 

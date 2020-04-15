@@ -1,0 +1,49 @@
+
+***********************************LEARNINGS*************************************
+
+- A loop in the y_direction to go through every pixel to determine which texture
+  pixel of the texture should be used
+
+- Every pixel has to be drawn seperately
+
+- Best way is to use a 2D array as screen buffer and copy it to the screen at once.
+  That goes much faster
+
+- Need an extra array for the texture. Textures are stored in the format. Need to 
+  load the textures from a texture file
+
+- res_x and res_y are needed to create a screen buffer
+
+- texture width and height (number of pixels of the texture) are defined as well
+
+- When you hit a wall, check which texture pixel to use.
+	* The x cooridinate will be the same
+	* A loop is needed to give each pixel of the vertical stripe the correct texture pixel
+	* A step size is needed to determine how much to increase in the texture cooridinates
+	  for every pixel in vertical screen cooridinates
+
+- Need to turn the texture to texture[textNum][texX][texY]
+
+***********************************STEPS*************************************
+- read texture png
+	* store the texture png into a 2d array (array[x][y] = color)
+	* texture array is an array of std::vectors, each with a certain width * height pixels.
+
+- determine the width & height of the texture pixel (64 64 for the available ones)
+
+- for each x coordinate with (hit == 1), run a loop to determine which texture pixel to 
+  put on each pixel between (x, draw_start) to (x, draw_end)
+
+	* Need to understand for how each pixel, how much of a texture pixel needs to be rendered
+	  line_lenghth as compared to pixel height ??
+
+    * Put the color to the pixel
+
+- later it needs to be synced 
+	-> make all the calculations of the pixels and print them together
+
+***********************************QUESTIONS*************************************
+
+- When do we use color with one single value or when use R/G/B values?
+
+- How to read a png file as we can't use <png.h>

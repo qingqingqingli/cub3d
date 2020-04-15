@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/15 14:42:26 by qli           ########   odam.nl          #
+#    Updated: 2020/04/15 17:22:28 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ SRC 			=	utilis/general_utils.c \
 					calculations/ft_set_player_orientation.c \
 					calculations/ft_set_plane_orientation.c \
 					calculations/ft_set_player_position.c \
-					colors/ft_choose_color.c \
 					colors/ft_put_color_ceilling.c \
 					colors/ft_put_color_wall.c \
 					colors/ft_put_color_floor.c \

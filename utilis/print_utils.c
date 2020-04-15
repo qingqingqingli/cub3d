@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 11:04:49 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/15 17:27:20 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_print_input(t_input input)
 	printf("input.color.floor is %d\n", input.color.floor);
 	printf("input.color.reserve is %d\n", input.color.reserve);
 	printf("*********************************\n");
-
+	printf("input.wall.texture_res_x is %d\n", input.wall.texture_res_x);
+	printf("input.wall.texture_res_y is %d\n", input.wall.texture_res_y);
 	ft_print_2d_array(&input);
 }
