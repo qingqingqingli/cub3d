@@ -282,6 +282,10 @@ MEMORY LEAK
 
 CLEAN CODE
 
+MAKEFILE
+- does not work properly 
+- sometimes I need to make re to make sure all files are recompiled
+
 OTHERS
 - (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly
 

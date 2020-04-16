@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 17:26:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/16 16:07:51 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,12 @@ void	ft_reset_input(t_input *input)
 	input->move.move_forward = 0;
 	input->move.move_left = 0;
 	input->move.move_right = 0;
-	input->wall.texture_res_x = 0;
-	input->wall.texture_res_y = 0;
+	input->wall.texture_height = 0;
+	input->wall.texture_width = 0;
+	input->wall.texture_number = 0;
+	input->wall.texture_wall_x = 0;
+	input->wall.texture_x = 0;
+	input->wall.texture_step = 0;
+	input->wall.texture_start_pos = 0;
+	input->wall.texture_y = 0;
 }

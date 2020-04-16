@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 17:26:26 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/16 16:59:06 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,8 +165,14 @@ typedef struct 		s_movement
 
 typedef struct 		s_wall_texture
 {
-	int 			texture_res_x;
-	int				texture_res_y;
+	int 			texture_height;
+	int				texture_width;
+	int  			texture_number;
+	double 			texture_wall_x;
+	int 			texture_x;
+	double 			texture_step;
+	double 			texture_start_pos;
+	int 			texture_y;
 }					t_wall_texture;
 
 
@@ -287,4 +293,16 @@ int 				ft_move_right(t_input *input);
 int 				ft_move_left(t_input *input);
 int 				ft_close(int keycode, t_input *input);
 int 				ft_render_next_frame(t_input *input);
+
+/*
+** ---------------------------WALL---------------------------------
+*/
+
+void 				ft_calculate_texture_num(t_input *input);
+int 				ft_render_wall(t_input *input, int x);
+void 				ft_calculate_wall_x(t_input *input);
+void 				ft_calculate_texture_x(t_input *input);
+void 				ft_calculate_texture_step(t_input *input);
+void 				ft_calculate_texture_start_pos(t_input *input);
+void 				ft_calculate_texture_y(t_input *input);
 #endif

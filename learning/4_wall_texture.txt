@@ -24,6 +24,9 @@
 
 - Need to turn the texture to texture[textNum][texX][texY]
 
+- floor,  floorf,  floorl - largest integral value not greater than argument
+	* floor(0.5) is 0. floor(-0.5) is -1.0
+
 ***********************************STEPS*************************************
 - read texture png
 	* store the texture png into a 2d array (array[x][y] = color)
@@ -44,6 +47,24 @@
 
 ***********************************QUESTIONS*************************************
 
+- How to read png file and actually transform it into a texture array?
+
+After I use the png_file_to_image function I run the mlx_get_data_addr function on
+it, just like I do when creating the images that I use to put my frames on the 
+screen. And then you should be able to 'get' a pixel from it the same way you set 
+a pixel on an image, just in reverse
+
+What I read was the Getting Started page, where he explains how to make a custom 
+pixel_put function, instead of the default one MLX uses (which is really really 
+slow). And then I made a get_pixel function that does that in reverse, to get 
+the RGB value of a pixel at a certain x,y location in an image 
+
+https://harm-smits.github.io/42docs/libs/minilibx/images.html
+
+- Look into how to sync the different frames and so I don't need to create a buffer
+
 - When do we use color with one single value or when use R/G/B values?
 
-- How to read a png file as we can't use <png.h>
+- within ft_calculate_texture_num(), it is always input->array[input->dda.map_x][input->dda.map_y]
+
+- Is it that with the path to texture, you are not supposed to add .
