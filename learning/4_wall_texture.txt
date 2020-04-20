@@ -27,27 +27,69 @@
 - floor,  floorf,  floorl - largest integral value not greater than argument
 	* floor(0.5) is 0. floor(-0.5) is -1.0
 
-***********************************STEPS*************************************
+- extract the RGB value from bits_per_pixel?
+
+int		get_r(int trgb)
+{
+	return ((trgb >> 8) & 0xFF);
+}
+
+int		get_g(int trgb)
+{
+	return ((trgb >> 16) & 0xFF);
+}
+
+int		get_b(int trgb)
+{
+	return ((trgb >> 24) & 0xFF);
+}
+
+- how do I store all the information? 
+	array[x][y] = bits_per_pixel;
+	R = get_r(array[x][y]);
+	G = get_g(array[x][y]);
+	B = get_b(array[x][y])
+
+	ANSWER: You don't have to extract color. You can use the value you extracted directly
+
 - read texture png
 	* store the texture png into a 2d array (array[x][y] = color)
 	* texture array is an array of std::vectors, each with a certain width * height pixels.
 
+ANSWER: You don't necessarily need to have a 2d array, as you can extract the color value real time 
+when you want to render texture(x, y)
+
 - determine the width & height of the texture pixel (64 64 for the available ones)
+
+ANSWER: Function mlx_xpm_file_to_image() will set the texture width and height 
 
 - for each x coordinate with (hit == 1), run a loop to determine which texture pixel to 
   put on each pixel between (x, draw_start) to (x, draw_end)
 
 	* Need to understand for how each pixel, how much of a texture pixel needs to be rendered
-	  line_lenghth as compared to pixel height ??
+	  line_lenghth as compared to pixel height ?
 
-    * Put the color to the pixel
+ANSWER: 
+- input->wall.texture_step = 1.0 * input->wall.texture_height / input->dda.line_height;
+- This works as we are working on a perpendicular surface. If not, another method is needed
+- NOTE: The stepping being done here is affine texture mapping, which means we can 
+	interpolate linearly between two points rather than have to compute a different 
+	division for each pixel. This is not perspective correct in general, but for 
+	perfectly vertical walls (and also perfectly horizontal floors/ceilings) it is, 
+	so we can use it for raycasting.
 
-- later it needs to be synced 
-	-> make all the calculations of the pixels and print them together
+- Need to have a seperate structure for all the direction paths and sprite, as otherwise
+mlx will be confused about which window you want to render.
 
-***********************************QUESTIONS*************************************
+- mlx sync does not work properly
+	* mlx_sync requires some behaviour changes that would be weird to implement for X11.
 
-- How to read png file and actually transform it into a texture array?
+	/* to read the png file based on which wall that is facing */
+	/* (a combination of 1/0) */
+
+***********************************STEPS*************************************
+
+- Read color from texture pixel 
 
 After I use the png_file_to_image function I run the mlx_get_data_addr function on
 it, just like I do when creating the images that I use to put my frames on the 
@@ -59,11 +101,13 @@ pixel_put function, instead of the default one MLX uses (which is really really
 slow). And then I made a get_pixel function that does that in reverse, to get 
 the RGB value of a pixel at a certain x,y location in an image 
 
-https://harm-smits.github.io/42docs/libs/minilibx/images.html
+- need to detect which wall it is to choose the texture png to read
 
-- Look into how to sync the different frames and so I don't need to create a buffer
+- frame buffer 
 
-- When do we use color with one single value or when use R/G/B values?
+For each frame you render, you toggle a boolean and swap the frame pointers around
+
+***********************************STEPS*************************************
 
 - within ft_calculate_texture_num(), it is always input->array[input->dda.map_x][input->dda.map_y]
 

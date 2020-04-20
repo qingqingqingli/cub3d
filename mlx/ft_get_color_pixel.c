@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calculate_texture_num.c                         :+:    :+:            */
+/*   ft_get_color_pixel.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/16 14:17:57 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/16 18:08:28 by qli           ########   odam.nl         */
+/*   Created: 2020/04/17 10:50:57 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/20 16:53:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-/* be aware that it is the ASCII value of the characters */
-void 	ft_calculate_texture_num(t_input *input)
+void 	ft_get_color_pixel(t_input *input, int x, int y)
 {
-	// printf("input->array[input->dda.map_x][input->dda.map_y] is %c\n", 
-	// input->array[input->dda.map_x][input->dda.map_y]);
-	input->wall.texture_number = input->array[input->dda.map_x]
-	[input->dda.map_y] - 1;
+	char 	*dst;
+
+	dst = input->north.addr + (y * input->north.line_length +
+	x * (input->north.bits_per_pixel / 8));
+	input->wall.wall_color = *(unsigned int*)dst;
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/16 16:59:06 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 18:16:04 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ typedef struct 		s_rgb
 }					t_rgb;
 
 /*
-** ---------------------------STRUCT-------------------------------------------
+** ---------------------------MLX STRUCT-------------------------------------------
 */
 
 typedef struct		s_mlx
@@ -106,7 +106,20 @@ typedef struct		s_mlx
 	int				bits_per_pixel;
 	int				line_length;
 	int				endian;
+	int 			texture_height;
+	int				texture_width;
 }           	    t_mlx;
+
+typedef struct		s_mlx_2
+{
+	void			*img;
+	int				*addr;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
+	int 			texture_height;
+	int				texture_width;
+}           	    t_mlx_2;
 
 /*
 ** -----------------------------RAY CASTING STRUCT-----------------------------------
@@ -173,8 +186,8 @@ typedef struct 		s_wall_texture
 	double 			texture_step;
 	double 			texture_start_pos;
 	int 			texture_y;
+	int 			wall_color;
 }					t_wall_texture;
-
 
 /*
 ** -----------------------------INPUT STRUCT-----------------------------------
@@ -183,6 +196,11 @@ typedef struct 		s_input
 {
 	t_ray_casting 	ray_casting;
 	t_mlx		 	img;
+	t_mlx_2		 	north;
+	t_mlx_2		 	south;
+	t_mlx_2		 	east;
+	t_mlx_2		 	west;
+	t_mlx_2		 	sprite;
 	t_dda 			dda;
 	t_rgb 			color;
 	t_movement 		move;
@@ -305,4 +323,8 @@ void 				ft_calculate_texture_x(t_input *input);
 void 				ft_calculate_texture_step(t_input *input);
 void 				ft_calculate_texture_start_pos(t_input *input);
 void 				ft_calculate_texture_y(t_input *input);
+int 				ft_read_png_file(t_input *input);
+void 				ft_select_texture_path(t_input *input);
+void				ft_get_texture_color(t_input *input);
+
 #endif

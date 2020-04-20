@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/16 17:01:33 by qli           ########   odam.nl          #
+#    Updated: 2020/04/20 19:36:26 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,16 +42,18 @@ SRC 			=	utilis/general_utils.c \
 					mlx/my_mlx_pixel_put.c \
 					mlx/ft_close.c \
 					mlx/ft_initiate_window.c \
+					mlx/ft_read_png_file.c \
 					movement/ft_move_forward.c \
 					movement/ft_move_backward.c \
 					movement/ft_move_left.c \
 					movement/ft_move_right.c \
-					wall/ft_calculate_texture_num.c \
 					wall/ft_calculate_wall_x.c \
 					wall/ft_calculate_texture_x.c \
 					wall/ft_calculate_texture_step.c \
 					wall/ft_calculate_texture_start_pos.c \
 					wall/ft_calculate_texture_y.c \
+					wall/ft_select_texture_path.c \
+					wall/ft_get_texture_color.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 

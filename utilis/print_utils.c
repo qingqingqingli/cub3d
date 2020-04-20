@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/16 16:09:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 18:16:04 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,17 @@ void	ft_print_input(t_input input)
 	printf("input.wall.texture_step is %f\n", input.wall.texture_step);
 	printf("input.wall.texture_start_pos is %f\n", input.wall.texture_start_pos);
 	printf("input.wall.texture_y is %d\n", input.wall.texture_y);
+	printf("input.wall.wall_color is %d\n", input.wall.wall_color);
+	printf("*********************************\n");
+	printf("input.north.texture_width is %d\n", input.north.texture_width);
+	printf("input.north.texture_height is %d\n", input.north.texture_height);
+	printf("input.south.texture_width is %d\n", input.south.texture_width);
+	printf("input.south.texture_height is %d\n", input.south.texture_height);
+	printf("input.west.texture_width is %d\n", input.west.texture_width);
+	printf("input.west.texture_height is %d\n", input.west.texture_height);
+	printf("input.east.texture_width is %d\n", input.east.texture_width);
+	printf("input.east.texture_height is %d\n", input.east.texture_height);
+	printf("input.sprite.texture_width is %d\n", input.sprite.texture_width);
+	printf("input.sprite.texture_height is %d\n", input.sprite.texture_height);
 	ft_print_2d_array(&input);
 }
