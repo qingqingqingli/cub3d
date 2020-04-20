@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 18:16:04 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 21:01:16 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	ft_print_input(t_input input)
 	printf("input.wall.texture_start_pos is %f\n", input.wall.texture_start_pos);
 	printf("input.wall.texture_y is %d\n", input.wall.texture_y);
 	printf("input.wall.wall_color is %d\n", input.wall.wall_color);
+	printf("input.wall.line_length is %d\n", input.wall.line_length);
 	printf("*********************************\n");
 	printf("input.north.texture_width is %d\n", input.north.texture_width);
 	printf("input.north.texture_height is %d\n", input.north.texture_height);

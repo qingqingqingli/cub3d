@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 19:30:51 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 20:17:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_put_color(t_input *input, int x)
 {
 	ft_put_color_ceilling(input, x);
 	ft_render_wall(input, x);
-	ft_put_color_wall(input, x);
+	// ft_put_color_wall(input, x);
 	ft_put_color_floor(input, x);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/17 10:58:59 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 20:16:04 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		main(int argc, char **argv)
 		output = get_next_line(fd, &line);
 	}
 	input.img.mlx = mlx_init();
+	if (input.img.mlx == NULL)
+		return (ft_return_error("Invalid mlx connection\n"));
 	ft_initiate_window(&input);
 	ft_validate_map(&input);
 	ft_cast_ray(&input);

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 18:16:04 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 21:01:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,7 @@ typedef struct 		s_wall_texture
 	double 			texture_start_pos;
 	int 			texture_y;
 	int 			wall_color;
+	int				line_length;
 }					t_wall_texture;
 
 /*

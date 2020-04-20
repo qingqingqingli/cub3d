@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 10:53:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 18:09:39 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/20 20:58:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,5 @@ int 	ft_read_png_file(t_input *input)
 		input->west.addr = (int *)mlx_get_data_addr(input->west.img, &input->west.bits_per_pixel,
 		&input->west.line_length, &input->west.endian);
 	}
-	// printf("input->north.texture_width is %d\n", input->north.texture_width);
-	// printf("input->north.texture_height is %d\n", input->north.texture_height);
-	// printf("input->north.line_length is %d\n", input->north.line_length);
-	// printf("input->north.bits_per_pixel is %d\n", input->north.bits_per_pixel);
-	// printf("input->north.endian is %d\n", input->north.endian);
 	return (0);
 }
