@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:01:14 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 15:43:10 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,6 +233,8 @@ typedef struct 		s_input
 	char 			**array;
 	unsigned int 	flood_fill_x;
 	unsigned int 	flood_fill_y;
+	int 			ceilling_color;
+	int 			floor_color;
 }					t_input;
 
 /*
@@ -298,7 +300,7 @@ void 				ft_choose_color(t_input *input);
 void 				ft_put_color_ceilling(t_input *input, int x);
 void 				ft_put_color_wall(t_input *input, int x);
 void 				ft_put_color_floor(t_input *input, int x);
-
+void 				ft_set_color(t_input *input);
 /*
 ** ---------------------------MLX & MOVEMENT---------------------------------
 */

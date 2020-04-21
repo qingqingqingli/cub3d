@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:18:47 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 15:37:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_initiate_variables(t_input *input)
 	ft_set_player_position(input);
 	ft_set_player_orientation(input);
 	ft_set_plane_orientation(input);
+	ft_set_color(input);
 }
 
 int 	ft_cast_ray(t_input *input)

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 13:57:26 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 15:40:08 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_reset_input(t_input *input)
 	input->line = "null";
 	input->flood_fill_x = 0;
 	input->flood_fill_y = 0;
+	input->ceilling_color = 0;
+	input->floor_color = 0;
 	input->ray_casting.pos_x = 0;
 	input->ray_casting.pos_y = 0;
 	input->ray_casting.sprawing_dir= 0;

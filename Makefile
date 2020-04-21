@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/21 14:38:46 by qli           ########   odam.nl          #
+#    Updated: 2020/04/21 15:43:19 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC 			=	utilis/general_utils.c \
 					colors/ft_put_color_ceilling.c \
 					colors/ft_put_color_wall.c \
 					colors/ft_put_color_floor.c \
+					colors/ft_set_color.c \
 					mlx/my_mlx_pixel_put.c \
 					mlx/ft_close.c \
 					mlx/ft_initiate_window.c \

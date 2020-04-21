@@ -137,14 +137,15 @@ which it is and the maintenance (edited)
 
 *	That worked alot to get better performance for me (and less glitching on the screen)
 
-***********************************TASKS*************************************
-
 - frame buffer 
 
 For each frame you render, you toggle a boolean and swap the frame pointers around
 
-*******************************NEXT STEPS*************************************
+***********************************TASKS*************************************
 
 - Change the ceilling color & floor color
 
-- Render sprites 
+*******************************NEXT STEPS*************************************
+
+- Need to double check in gaucomolo whether my image rendering is smooth or does it still 
+	jump up and down
