@@ -256,8 +256,6 @@ ANSWER:
 
 ***********************************ACTIONS*********************************
 
-TEXTURE
-
 SPRITE
 
 AREAS THAT NEED TO WORK ON:
