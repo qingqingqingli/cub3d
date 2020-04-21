@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 21:01:15 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 13:57:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	ft_reset_input(t_input *input)
 	input->wall.wall_color = 0;
 	input->wall.texture_number = 0;
 	input->wall.line_length = 0;
+	input->wall.img_active = 0;
 	input->north.texture_height = 0;
 	input->north.texture_width = 0;
 	input->south.texture_height = 0;

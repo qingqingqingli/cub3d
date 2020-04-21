@@ -87,9 +87,13 @@ mlx will be confused about which window you want to render.
 	/* to read the png file based on which wall that is facing */
 	/* (a combination of 1/0) */
 
-***********************************STEPS*************************************
+- Wall rendering
+	*tutorial: https://github.com/keuhdall/images_example
 
-- Read color from texture pixel 
+- need to detect which wall it is to choose the texture png to read
+	*a combination of side & ray direction
+
+- Other's approach of reading color from texture pixel 
 
 After I use the png_file_to_image function I run the mlx_get_data_addr function on
 it, just like I do when creating the images that I use to put my frames on the 
@@ -99,16 +103,48 @@ a pixel on an image, just in reverse
 What I read was the Getting Started page, where he explains how to make a custom 
 pixel_put function, instead of the default one MLX uses (which is really really 
 slow). And then I made a get_pixel function that does that in reverse, to get 
-the RGB value of a pixel at a certain x,y location in an image 
+the RGB value of a pixel at a certain x,y location in an image
 
-- need to detect which wall it is to choose the texture png to read
+- After the wall was rendered, it was super slow to move around.
+	* the rotation speed and move speed need to be changed
+	* when you have more things to render, things will move slower so you need to change your speed
+
+- Buffer management
+
+Roy's ANSWER:
+*	Well what you want is the following, you start with IMG_ONE and you going
+to put your pixels to that image. When you're done rendering you put IMG_ONE
+to window. When you start to walk you need to render a new image so now IMG_TWO is 
+needed and you put your pixels to image two and when you done you put IMG_TWO to window.
+
+*	Important with this is that you always know which image is displayed at the window at
+which moment so you know which one you can modify
+
+Mark's ANSWER
+
+*	It might be useful to use 2 images, switching them every frame. This gave me a huge
+performance boost anyway. So when img1 is on the screen, I fill in img2, then put 
+that one to the screen, etc.
+
+*	I keep track which one has been put to the screen last with a variable in my main struct
+
+*	I made 2 subfunctions 'get_new_image()' which will give me the pointer to the one
+that is not on the screen, and 'set_new_image()' which will put the one that is not
+active to the screen, and toggle the variable keeping track of it
+
+*	So in my drawing code I just ask img = get_new_image() and never need to worry about
+which it is and the maintenance (edited) 
+
+*	That worked alot to get better performance for me (and less glitching on the screen)
+
+***********************************TASKS*************************************
 
 - frame buffer 
 
 For each frame you render, you toggle a boolean and swap the frame pointers around
 
-***********************************STEPS*************************************
+*******************************NEXT STEPS*************************************
 
-- within ft_calculate_texture_num(), it is always input->array[input->dda.map_x][input->dda.map_y]
+- Change the ceilling color & floor color
 
-- Is it that with the path to texture, you are not supposed to add .
+- Render sprites 

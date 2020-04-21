@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:29:56 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 16:27:08 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 14:28:19 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void 	ft_put_color_ceilling(t_input *input, int x)
 	y = 0;
 	while (y < input->dda.draw_start)
 	{
-		my_mlx_pixel_put(&input->img, x, y, CEILLING_COLOR);
+		ft_render_img(input, x, y, CEILLING_COLOR);
 		y++;
 	}
 }

@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_set_player_orientation.c                        :+:    :+:            */
+/*   ft_render_img.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/10 14:22:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 10:16:14 by qli           ########   odam.nl         */
+/*   Created: 2020/04/21 14:24:06 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/21 14:27:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-/*
-** From original
-** S <-> N
-** E <-> W
-*/
-
-void 	ft_set_player_orientation(t_input *input)
+void 	ft_render_img(t_input *input, int x, int y, int color)
 {
-	if (direction == 'W')
+	if (input->wall.img_active == 1)
 	{
-		direction_x = 0;
-		direction_y = -1;
+		my_mlx_pixel_put(&input->img, x, y, color);
 	}
-	else if (direction == 'E')
+	else if (input->wall.img_active == 2)
 	{
-		direction_x = 0;
-		direction_y = 1;
-	}
-	else if (direction == 'N')
-	{
-		direction_x = -1;
-		direction_y = 0;
-	}
-	else if (direction == 'S')
-	{
-		direction_x = 1;
-		direction_y = 0;
+		my_mlx_pixel_put(&input->img_2, x, y, color);
 	}
 }

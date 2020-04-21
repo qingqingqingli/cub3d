@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/16 14:23:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 21:03:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 15:26:35 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int 	ft_render_wall(t_input *input, int x)
 		ft_calculate_texture_y(input);
 		input->wall.texture_start_pos += input->wall.texture_step;
 		ft_get_texture_color(input);
-		my_mlx_pixel_put(&input->img, x, y, input->wall.wall_color);
+		ft_render_img(input, x, y, input->wall.wall_color);
 		y++;
 	}
 	return (0);

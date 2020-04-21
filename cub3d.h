@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/20 21:01:09 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 15:01:14 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@
 /*
 ** ---------------------------MOVEMENT-------------------------------------------
 */
-#define MOVE_SPEED						0.005
-#define ROTATE_SPEED					0.0025
+#define MOVE_SPEED						0.15
+#define ROTATE_SPEED					0.15
 
 /*
 ** ---------------------------COLORS-------------------------------------------
@@ -188,6 +188,7 @@ typedef struct 		s_wall_texture
 	int 			texture_y;
 	int 			wall_color;
 	int				line_length;
+	int 			img_active;
 }					t_wall_texture;
 
 /*
@@ -197,6 +198,7 @@ typedef struct 		s_input
 {
 	t_ray_casting 	ray_casting;
 	t_mlx		 	img;
+	t_mlx		 	img_2;
 	t_mlx_2		 	north;
 	t_mlx_2		 	south;
 	t_mlx_2		 	east;
@@ -312,6 +314,9 @@ int 				ft_move_right(t_input *input);
 int 				ft_move_left(t_input *input);
 int 				ft_close(int keycode, t_input *input);
 int 				ft_render_next_frame(t_input *input);
+void 				ft_initiate_img_2(t_input *input);
+void 				ft_render_img(t_input *input, int x, int y, int color);
+void 				ft_display_img(t_input *input);
 
 /*
 ** ---------------------------WALL---------------------------------

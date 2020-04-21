@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:31:38 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 16:35:20 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 14:29:15 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void 	ft_put_color_wall(t_input *input, int x)
 		if (input->dda.side == 1)
 		{
 			color = (WALL_COLOR >> 1) & 8355711; 
-			my_mlx_pixel_put(&input->img, x, y, color);
+			ft_render_img(input, x, y, color);
 		}
 		else if (input->dda.side == 0)
-			my_mlx_pixel_put(&input->img, x, y, WALL_COLOR);
+			ft_render_img(input, x, y, WALL_COLOR);
 		y++;
 	}
 }
