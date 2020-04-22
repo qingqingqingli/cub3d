@@ -1,1 +1,41 @@
 **********************SPRITE*********************************
+
+Sprites are 2D pictures that are always facing you 
+
+Sprites become smaller if they're further away
+
+Techniques to draw sprites are totally different from raycasting techiniques 
+
+Draw the sprites after the wall, floor and ceilings are drawn
+
+Steps:
+1: While raycasting the walls, store the perpendicular distance of each vertical
+stripe in a 1D ZBuffer
+
+2: Calculate the distance of each sprite to the player
+
+3: Use this distance to sort the sprites, from furthest away to closest to the camera
+
+4: Project the sprite on the camera plane (in 2D): subtract the player position
+from the sprite position, then multiply the result with the inverse of the 2x2 
+camera matrix
+
+5: Calculate the size of the sprite on the screen (both in x and y direction) 
+by using the perpendicular distance
+
+6: Draw the sprites vertical stripe by vertical stripe, don't draw the vertical
+stripe if the distance is further away than the 1D ZBuffer of the walls of the 
+current stripe
+
+7: Draw the vertical stripe pixel by pixel, make sure there's an invisible color 
+or all sprites would be rectangles
+
+**********************QUESTIONS*********************************
+
+- Step 1: ray_len buffer
+	*With malloc, how do you best free the memory?
+
+- check why does the order in wall rendering works
+
+- Need to change my flood fill. Create a copy before flood fill
+free it when it succeeds

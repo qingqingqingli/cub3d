@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:40:08 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 20:28:47 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ void	ft_reset_input(t_input *input)
 	input->east.texture_width = 0;
 	input->sprite.texture_height = 0;
 	input->sprite.texture_width = 0;
+	input->sprite_data.sprite_number = 0;
 }

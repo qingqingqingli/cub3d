@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/07 14:56:26 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 10:27:23 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,7 +226,7 @@ int		ft_parse_input(char *line, t_input *input)
 			ft_choose_element(line, input, &i);
 	}
 	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 0)
-		return (ft_return_error("Invalid element input\n"));
+		return (ft_return_error("Invalid element input\n", input));
 	else if (ft_check_element(*input) == 1 && ft_validate_element(*input) == 1)
 	{
 		ft_process_map_line(line, input);

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:43:10 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 13:50:19 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,19 @@ typedef struct 		s_wall_texture
 }					t_wall_texture;
 
 /*
+** -----------------------------SPRITE TEXTURE-----------------------------------
+*/
+
+typedef struct 		s_sprites_data
+{
+	double 			*buffer;
+	int 			*sprite_order;
+	double 			*sprite_distance;
+	int 			sprite_number;
+}					t_sprites_data;
+
+
+/*
 ** -----------------------------INPUT STRUCT-----------------------------------
 */
 typedef struct 		s_input
@@ -208,6 +221,7 @@ typedef struct 		s_input
 	t_rgb 			color;
 	t_movement 		move;
 	t_wall_texture 	wall;
+	t_sprites_data 	sprite_data;
 	int				res_present;
 	int				res_x;
 	int				res_y;
@@ -231,6 +245,7 @@ typedef struct 		s_input
 	int				ceilling_b;
 	char			*line;
 	char 			**array;
+	char 			**array_copy;
 	unsigned int 	flood_fill_x;
 	unsigned int 	flood_fill_y;
 	int 			ceilling_color;
@@ -243,7 +258,7 @@ typedef struct 		s_input
 
 int					get_next_line(int fd, char **line);
 void				ft_putstr_fd(char *s, int fd);
-int					ft_return_error(char *s);
+int					ft_return_error(char *s, t_input *input);
 int					ft_atoi(const char *str);
 int					ft_isspace(int c);
 int					ft_isdigit(int c);
@@ -272,6 +287,17 @@ int					get_g(int rgb);
 int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
 int 				ft_check_position(int c);
+void 				ft_free_malloc(t_input *input);
+
+/*
+** ---------------------------FLOOD FILL----------------------------------------
+*/
+int 				ft_duplicate_array(t_input *input);
+unsigned int 		ft_calculate_height(char **array);
+int 				ft_check_border(t_input *input);
+void 				ft_flood_fill(t_input *input, unsigned int x, unsigned int y,
+					unsigned int height);
+int 				ft_find_player_position(t_input *input);
 
 /*
 ** ---------------------------CALCULATIONS----------------------------------------
@@ -334,5 +360,16 @@ void 				ft_calculate_texture_y(t_input *input);
 int 				ft_read_png_file(t_input *input);
 void 				ft_select_texture_path(t_input *input);
 void				ft_get_texture_color(t_input *input);
+
+/*
+** ---------------------------SPRITES---------------------------------
+*/
+
+void 				ft_store_ray_len(t_input *input, int x);
+int 				ft_initiate_sprite_buffer(t_input *input);
+int 				ft_initiate_sprite_texture(t_input *input);
+void 				ft_calculate_sprite_number(t_input *input);
+int 				ft_initiate_sprite_distance(t_input *input);
+int 				ft_initiate_sprite_order(t_input *input);
 
 #endif

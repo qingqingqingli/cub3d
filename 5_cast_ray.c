@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:37:58 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/21 20:46:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int ft_calculate_ray(t_input *input)
 		ft_calculate_ray_dir(input);
 		ft_dda(input);
 		ft_draw_line(input);
+		ft_store_ray_len(input, x); //sprite
 		ft_put_color(input, x);
 		x++;
 	}
@@ -66,10 +67,21 @@ void	ft_initiate_variables(t_input *input)
 	ft_set_color(input);
 }
 
+int 	ft_initiate_sprite(t_input *input)
+{
+	ft_initiate_sprite_texture(input); //sprite
+	ft_initiate_sprite_buffer(input); //sprite
+	ft_calculate_sprite_number(input); //sprite
+	ft_initiate_sprite_order(input); //sprite
+	ft_initiate_sprite_distance(input); //sprite
+	return (0);
+}
+
 int 	ft_cast_ray(t_input *input)
 {
 	ft_initiate_variables(input);
 	ft_initiate_img_2(input);
+	ft_initiate_sprite(input);
 	ft_calculate_ray(input);
 	return (0);
 }

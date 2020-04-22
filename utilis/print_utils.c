@@ -6,20 +6,20 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 15:40:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 13:38:49 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-void 	ft_print_2d_array(t_input *input)
+void 	ft_print_2d_array(char **array)
 {
 	int i;
 
 	i = 0;
-	while (input->array[i])
+	while (array[i])
 	{
-		printf("%s\n", input->array[i]);
+		printf("%s\n", array[i]);
 		i++;
 	}
 }
@@ -40,16 +40,16 @@ void	ft_print_input(t_input input)
 	// printf("input.east_path is %s\n", input.east_path);
 	// printf("input.sprite_present is %d\n", input.sprite_present);
 	// printf("input.sprite_path is %s\n", input.sprite_path);
-	printf("input.floor_present is %d\n", input.floor_present);
-	printf("input.floor_r is %d\n", input.floor_r);
-	printf("input.floor_g is %d\n", input.floor_g);
-	printf("input.floor_b is %d\n", input.floor_b);
-	printf("input.ceilling_present is %d\n", input.ceilling_present);
-	printf("input.ceilling_r is %d\n", input.ceilling_r);
-	printf("input.ceilling_g is %d\n", input.ceilling_g);
-	printf("input.ceilling_b is %d\n", input.ceilling_b);
-	printf("input.ceilling_color is %d\n", input.ceilling_color);
-	printf("input.floor_color is %d\n", input.floor_color);
+	// printf("input.floor_present is %d\n", input.floor_present);
+	// printf("input.floor_r is %d\n", input.floor_r);
+	// printf("input.floor_g is %d\n", input.floor_g);
+	// printf("input.floor_b is %d\n", input.floor_b);
+	// printf("input.ceilling_present is %d\n", input.ceilling_present);
+	// printf("input.ceilling_r is %d\n", input.ceilling_r);
+	// printf("input.ceilling_g is %d\n", input.ceilling_g);
+	// printf("input.ceilling_b is %d\n", input.ceilling_b);
+	// printf("input.ceilling_color is %d\n", input.ceilling_color);
+	// printf("input.floor_color is %d\n", input.floor_color);
 	// printf("*********************************\n");
 	// printf("input.ray_casting.pos_x is %f\n", input.ray_casting.pos_x);
 	// printf("input.ray_casting.pos_y is %f\n", input.ray_casting.pos_y);
@@ -106,5 +106,10 @@ void	ft_print_input(t_input input)
 	// printf("input.east.texture_height is %d\n", input.east.texture_height);
 	// printf("input.sprite.texture_width is %d\n", input.sprite.texture_width);
 	// printf("input.sprite.texture_height is %d\n", input.sprite.texture_height);
-	ft_print_2d_array(&input);
+	// printf("*********************************\n");
+	// printf("input.sprite_data.sprite_number is %d\n", input.sprite_data.sprite_number);
+	printf("*************original array********************\n");
+	ft_print_2d_array(input.array);
+	printf("*************copy array********************\n");
+	ft_print_2d_array(input.array_copy);
 }

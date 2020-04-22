@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/21 15:43:19 by qli           ########   odam.nl          #
+#    Updated: 2020/04/22 13:50:26 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,13 @@ SRC 			=	utilis/general_utils.c \
 					3_input_2d_array.c \
 					4_validate_map.c \
 					5_cast_ray.c \
-					6_ft_movement.c \
+					6_movement.c \
 					7_ft_render_wall.c \
+					flood_fill/ft_duplicate_array.c \
+					flood_fill/ft_calculate_height.c \
+					flood_fill/ft_check_border.c \
+					flood_fill/ft_flood_fill.c \
+					flood_fill/ft_find_player_position.c \
 					calculations/ft_calculate_camera.c \
 					calculations/ft_calculate_ray_dir.c \
 					calculations/ft_map_location.c \
@@ -58,6 +63,12 @@ SRC 			=	utilis/general_utils.c \
 					wall/ft_calculate_texture_y.c \
 					wall/ft_select_texture_path.c \
 					wall/ft_get_texture_color.c \
+					sprites/ft_store_ray_len.c \
+					sprites/ft_initiate_sprite_buffer.c \
+					sprites/ft_initiate_sprite_texture.c \
+					sprites/ft_calculate_sprite_number.c \
+					sprites/ft_initiate_sprite_distance.c \
+					sprites/ft_initiate_sprite_order.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 

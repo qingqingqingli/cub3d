@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   input_parse.c                                      :+:    :+:            */
+/*   3_input_2d_array.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/11 13:47:27 by qli            #+#    #+#                */
-/*   Updated: 2020/03/11 14:24:29 by qli           ########   odam.nl         */
+/*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/22 10:27:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int 	ft_lines_join(char *line, t_input *input)
 	new_line = (char *)malloc((ft_strlen(input->line) + ft_strlen(line)
 	+ 2) * sizeof(char));
 	if (new_line == 0)
-		return (ft_return_error("Malloc error\n"));
+		return (ft_return_error("Malloc error\n", input));
 	while (input->line[i1] != '\0')
 	{
 		new_line[i1] = input->line[i1];
@@ -93,6 +93,6 @@ int		ft_process_map_line(char *line, t_input *input)
 			ft_lines_join(line, input);
 	}
 	else if (ft_check_map(line) != -1 && ft_check_spaces_nextline(line) != 1)
-		return (ft_return_error("Invalid map input\n"));
+		return (ft_return_error("Invalid map input\n", input));
 	return (0);
 }
