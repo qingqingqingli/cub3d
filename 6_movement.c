@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   6_ft_movement.c                                    :+:    :+:            */
+/*   6_movement.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/14 11:57:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/15 16:46:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 15:17:45 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int 	ft_key_movement(int keycode, t_input *input)
 		input->move.move_left = 1;
 	else if (keycode == KEY_RIGHT || keycode == D)
 		input->move.move_right = 1;
+	else if (keycode == ESC)
+		ft_close(keycode, input);	
 	return (0);
 }
 

@@ -6,15 +6,16 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/14 16:34:12 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 17:39:57 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 15:20:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-int 	ft_close(int keycode, t_input *input)
+void	ft_close(int keycode, t_input *input)
 {
-	if (keycode == KEY_DOWN)
+	if (keycode == ESC)
 		mlx_destroy_window(input->img.mlx, input->img.mlx_win);
-	return (0);
+	ft_free_malloc(input);
+	exit (0);
 }

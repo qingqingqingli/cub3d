@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 13:50:19 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 15:18:51 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -340,7 +340,7 @@ int 				ft_move_forward(t_input *input);
 int					ft_move_backward(t_input *input);
 int 				ft_move_right(t_input *input);
 int 				ft_move_left(t_input *input);
-int 				ft_close(int keycode, t_input *input);
+void 				ft_close(int keycode, t_input *input);
 int 				ft_render_next_frame(t_input *input);
 void 				ft_initiate_img_2(t_input *input);
 void 				ft_render_img(t_input *input, int x, int y, int color);

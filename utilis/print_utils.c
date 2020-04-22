@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 13:38:49 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 15:24:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ void	ft_print_input(t_input input)
 	// printf("input.sprite_data.sprite_number is %d\n", input.sprite_data.sprite_number);
 	printf("*************original array********************\n");
 	ft_print_2d_array(input.array);
-	printf("*************copy array********************\n");
-	ft_print_2d_array(input.array_copy);
+	// printf("*************copy array********************\n");
+	// ft_print_2d_array(input.array_copy);
 }
