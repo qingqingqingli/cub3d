@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 10:53:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 15:33:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/23 18:57:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int 	ft_read_png_file(t_input *input)
 		&input->east.line_length, &input->east.endian);
 		input->wall.texture_width = input->east.texture_width;
 		input->wall.texture_height = input->east.texture_height;
-
 	}
 	else if (input->wall.texture_number == 2) // west
 	{
@@ -43,7 +42,6 @@ int 	ft_read_png_file(t_input *input)
 		&input->west.line_length, &input->west.endian);
 		input->wall.texture_width = input->west.texture_width;
 		input->wall.texture_height = input->west.texture_height;
-
 	}
 	else if (input->wall.texture_number == 3) // south
 	{
@@ -55,7 +53,6 @@ int 	ft_read_png_file(t_input *input)
 		&input->south.line_length, &input->south.endian);
 		input->wall.texture_width = input->south.texture_width;
 		input->wall.texture_height = input->south.texture_height;
-
 	}
 	else if (input->wall.texture_number == 4) // north
 	{

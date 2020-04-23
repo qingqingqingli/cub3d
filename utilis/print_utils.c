@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 17:17:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/23 19:12:13 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,23 @@ void	ft_print_input(t_input input)
 	printf("input.sprite_data.draw_end_x is %d\n", input.sprite_data.draw_end_x);
 	printf("input.sprite_data.draw_start_y is %d\n", input.sprite_data.draw_start_y);
 	printf("input.sprite_data.draw_end_y is %d\n", input.sprite_data.draw_end_y);
+	printf("input.sprite.texture_width is %d\n", input.sprite.texture_width);
+	printf("input.sprite.texture_height is %d\n", input.sprite.texture_height);
+	printf("input.sprite_data.sprite_color is %d\n", input.sprite_data.sprite_color);
+
 }
+
+
+		// printf("i is %d\n",i);
+		// printf("input->sprite_data.transform_x is %f\n",input->sprite_data.transform_x);
+		// printf("input->sprite_data.transform_y is %f\n",input->sprite_data.transform_y);
+		// printf("input->sprite_data.sprite_x is %f\n",input->sprite_data.sprite_x);
+		// printf("input->sprite_data.sprite_y is %f\n",input->sprite_data.sprite_y);
+		// printf("input->sprite_data.inverse_camera is %f\n",input->sprite_data.inverse_camera);
+		// printf("input->sprite_data.sprite_screen_x is %d\n",input->sprite_data.sprite_screen_x);
+		// printf("input->sprite_data.sprite_height is %d\n",input->sprite_data.sprite_height);
+		// printf("input->sprite_data.draw_start_y is %d\n",input->sprite_data.draw_start_y);
+		// printf("input->sprite_data.draw_end_y is %d\n",input->sprite_data.draw_end_y);
+		// printf("input->sprite_data.sprite_width is %d\n",input->sprite_data.sprite_width);
+		// printf("input->sprite_data.draw_start_x is %d\n",input->sprite_data.draw_start_x);
+		// printf("input->sprite_data.draw_end_x is %d\n",input->sprite_data.draw_end_x);

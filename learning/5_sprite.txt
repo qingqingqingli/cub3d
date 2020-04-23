@@ -51,3 +51,19 @@ before assigning it new value
 
 **********************QUESTIONS*********************************
 
+calculation of sprite_width is the same as sprite_height
+
+//calculate height of the sprite on screen
+      int spriteHeight = abs(int(h / (transformY))); //using 'transformY' instead of the real distance prevents fisheye
+      //calculate lowest and highest pixel to fill in current stripe
+      int drawStartY = -spriteHeight / 2 + h / 2;
+      if(drawStartY < 0) drawStartY = 0;
+      int drawEndY = spriteHeight / 2 + h / 2;
+      if(drawEndY >= h) drawEndY = h - 1;
+
+      //calculate width of the sprite
+      int spriteWidth = abs( int (h / (transformY)));
+      int drawStartX = -spriteWidth / 2 + spriteScreenX;
+      if(drawStartX < 0) drawStartX = 0;
+      int drawEndX = spriteWidth / 2 + spriteScreenX;
+      if(drawEndX >= w) drawEndX = w - 1;

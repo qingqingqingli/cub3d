@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 17:20:21 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/23 19:13:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,6 +214,7 @@ typedef struct 		s_sprites_data
 	int 			draw_end_x;
 	int 			draw_start_y;
 	int 			draw_end_y;
+	int 			sprite_color;
 }					t_sprites_data;
 
 
@@ -396,5 +397,7 @@ void 				ft_transform_sprite(t_input *input, int i);
 void 				ft_sprite_screen_x(t_input *input);
 void 				ft_calculate_sprite_height(t_input *input);
 void 				ft_draw_sprite_y(t_input *input);
-
+void 				ft_calculate_sprite_width(t_input *input);
+void 				ft_draw_sprite_x(t_input *input);
+int 				ft_read_sprite_png(t_input *input);
 #endif
