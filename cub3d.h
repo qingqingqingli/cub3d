@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 15:18:51 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/23 17:20:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,19 @@ typedef struct 		s_sprites_data
 	int 			*sprite_order;
 	double 			*sprite_distance;
 	int 			sprite_number;
+	int 			**sprite_pos;
+	double 			sprite_x;
+	double 			sprite_y;
+	double 			inverse_camera;
+	double 			transform_x;
+	double 			transform_y;
+	int 			sprite_screen_x;
+	int				sprite_height;
+	int 			sprite_width;
+	int 			draw_start_x;
+	int 			draw_end_x;
+	int 			draw_start_y;
+	int 			draw_end_y;
 }					t_sprites_data;
 
 
@@ -371,5 +384,17 @@ int 				ft_initiate_sprite_texture(t_input *input);
 void 				ft_calculate_sprite_number(t_input *input);
 int 				ft_initiate_sprite_distance(t_input *input);
 int 				ft_initiate_sprite_order(t_input *input);
+int 				ft_render_sprites(t_input *input);
+void 				ft_locate_sprite(t_input *input);
+void 				ft_inverse_camera(t_input *input);
+int 				ft_initiate_sprite_pos(t_input *input);
+void 				ft_calculate_sprite_distance(t_input *input, int i);
+void 				ft_calculate_sprite_distance(t_input *input, int i);
+void 				ft_sort_distance(t_input *input);
+void 				ft_translate_sprite_pos(t_input *input, int i);
+void 				ft_transform_sprite(t_input *input, int i);
+void 				ft_sprite_screen_x(t_input *input);
+void 				ft_calculate_sprite_height(t_input *input);
+void 				ft_draw_sprite_y(t_input *input);
 
 #endif

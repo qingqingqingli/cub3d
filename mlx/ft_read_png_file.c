@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 10:53:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 10:31:56 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/22 15:33:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int 	ft_read_png_file(t_input *input)
 			return (ft_return_error("Invalid route\n", input));
 		input->east.addr = (int *)mlx_get_data_addr(input->east.img, &input->east.bits_per_pixel,
 		&input->east.line_length, &input->east.endian);
+		input->wall.texture_width = input->east.texture_width;
+		input->wall.texture_height = input->east.texture_height;
+
 	}
 	else if (input->wall.texture_number == 2) // west
 	{
@@ -38,6 +41,9 @@ int 	ft_read_png_file(t_input *input)
 			return (ft_return_error("Invalid route\n", input));
 		input->west.addr = (int *)mlx_get_data_addr(input->west.img, &input->west.bits_per_pixel,
 		&input->west.line_length, &input->west.endian);
+		input->wall.texture_width = input->west.texture_width;
+		input->wall.texture_height = input->west.texture_height;
+
 	}
 	else if (input->wall.texture_number == 3) // south
 	{
@@ -47,6 +53,9 @@ int 	ft_read_png_file(t_input *input)
 			return (ft_return_error("Invalid route\n", input));
 		input->south.addr = (int *)mlx_get_data_addr(input->south.img, &input->south.bits_per_pixel,
 		&input->south.line_length, &input->south.endian);
+		input->wall.texture_width = input->south.texture_width;
+		input->wall.texture_height = input->south.texture_height;
+
 	}
 	else if (input->wall.texture_number == 4) // north
 	{
@@ -56,6 +65,8 @@ int 	ft_read_png_file(t_input *input)
 			return (ft_return_error("Invalid route\n", input));
 		input->north.addr = (int *)mlx_get_data_addr(input->north.img, &input->north.bits_per_pixel,
 		&input->north.line_length, &input->north.endian);
+		input->wall.texture_width = input->north.texture_width;
+		input->wall.texture_height = input->north.texture_height;
 	}
 	return (0);
 }

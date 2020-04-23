@@ -1,4 +1,4 @@
-**********************SPRITE*********************************
+**********************SPRITE STEPS*********************************
 
 Sprites are 2D pictures that are always facing you 
 
@@ -11,6 +11,7 @@ Draw the sprites after the wall, floor and ceilings are drawn
 Steps:
 1: While raycasting the walls, store the perpendicular distance of each vertical
 stripe in a 1D ZBuffer
+
 
 2: Calculate the distance of each sprite to the player
 
@@ -30,12 +31,23 @@ current stripe
 7: Draw the vertical stripe pixel by pixel, make sure there's an invisible color 
 or all sprites would be rectangles
 
-**********************QUESTIONS*********************************
+**********************LEARNINGS*********************************
 
 - Step 1: ray_len buffer
 	*With malloc, how do you best free the memory?
 
-- check why does the order in wall rendering works
+ANSWER:
+1. free it before exiting with failures
+2. free it before exiting with ESC
 
-- Need to change my flood fill. Create a copy before flood fill
-free it when it succeeds
+- 2D camera matrix
+It is more handy to use a 2D camera matrix, rather than representing the player with an angle
+and a position
+
+- after I malloced the 2D int array input->sprite_data.sprite_pos,
+it gives me seg fault when I wanted to assign value to it. 
+ISSUE: I didn't iniatiate the value. Need to initiate each int element to 0,
+before assigning it new value
+
+**********************QUESTIONS*********************************
+

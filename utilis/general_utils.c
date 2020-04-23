@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 10:21:30 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/23 13:24:13 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void 	ft_free_malloc(t_input *input)
 	free(input->sprite_data.buffer);
 	free(input->sprite_data.sprite_order);
 	free(input->sprite_data.sprite_distance);
+	free(input->sprite_data.sprite_pos);
+	printf("freed all malloc\n");
 }
 
 int		ft_return_error(char *s, t_input *input)

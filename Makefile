@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/22 13:50:26 by qli           ########   odam.nl          #
+#    Updated: 2020/04/23 17:20:21 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC 			=	utilis/general_utils.c \
 					5_cast_ray.c \
 					6_movement.c \
 					7_ft_render_wall.c \
+					8_render_sprites.c \
 					flood_fill/ft_duplicate_array.c \
 					flood_fill/ft_calculate_height.c \
 					flood_fill/ft_check_border.c \
@@ -69,6 +70,16 @@ SRC 			=	utilis/general_utils.c \
 					sprites/ft_calculate_sprite_number.c \
 					sprites/ft_initiate_sprite_distance.c \
 					sprites/ft_initiate_sprite_order.c \
+					sprites/ft_locate_sprite.c \
+					sprites/ft_inverse_camera.c \
+					sprites/ft_initiate_sprite_pos.c \
+					sprites/ft_calculate_sprite_distance.c \
+					sprites/ft_sort_distance.c \
+					sprites/ft_translate_sprite_pos.c \
+					sprites/ft_transform_sprite.c \
+					sprites/ft_sprite_screen_x.c \
+					sprites/ft_calculate_sprite_height.c \
+					sprites/ft_draw_sprite_y.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 
@@ -82,7 +93,7 @@ INLCUDES		=	-Ilibft \
 					-Ignl \
 					-Iminilibx_master
 
-FLAGS 			=	-Wall -Wextra -Werror -g
+FLAGS 			=	-g -Wall -Wextra -Werror
 
 COMPILE 		=	gcc
 

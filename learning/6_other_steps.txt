@@ -7,11 +7,14 @@ DEFINES
 FLOOD FILL ALGORITHM
 - flood fill: 4 way flood fill does not detect certain edge cases. 
   It can be changed to a 8-way flood fill algorithm
+--> still need to look into it
 
 - flood fill: change the starting point from the first 0 to the player position
+DONE
 
 - flood fill: need to make a copy of the original array before flood fill.
   After validating the map, free the copy version of the array 
+DONE
 
 ERROR MANAGEMENT
 
@@ -26,5 +29,10 @@ MAKEFILE
 - sometimes I need to make re to make sure all files are recompiled
 
 EXIT OPTIONS
+- Exit with ESC
+DONE
+
+- EXIT with pressing on red cross button
+--> still need to work on it
 
 BMP FILE CREATION
