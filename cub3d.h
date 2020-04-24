@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 16:15:59 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/24 19:46:20 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,7 @@ typedef struct 		s_input
 	t_mlx_2		 	south;
 	t_mlx_2		 	east;
 	t_mlx_2		 	west;
-	t_mlx		 	sprite;
+	t_mlx_2		 	sprite;
 	t_dda 			dda;
 	t_rgb 			color;
 	t_movement 		move;
