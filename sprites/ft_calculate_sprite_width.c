@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/23 18:40:33 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 18:49:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/24 09:14:31 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void 	ft_calculate_sprite_width(t_input *input)
 {
-	input->sprite_data.sprite_width = abs((int)(input->res_x 
-	/ input->sprite_data.transform_x));
+	input->sprite_data.sprite_width = abs((int)(input->res_y 
+	/ input->sprite_data.transform_y));
 }

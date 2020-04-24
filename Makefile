@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/23 19:02:58 by qli           ########   odam.nl          #
+#    Updated: 2020/04/24 10:59:50 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,9 @@ SRC 			=	utilis/general_utils.c \
 					sprites/ft_draw_sprite_y.c \
 					sprites/ft_draw_sprie_x.c \
 					sprites/ft_calculate_sprite_width.c \
-					sprites/ft_read_sprite_png.c \
+					sprites/ft_draw_sprites.c \
+					sprites/ft_get_sprite_color.c \
+					sprites/ft_calculate_texture_pos.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 

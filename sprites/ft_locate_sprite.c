@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 15:50:01 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 14:24:56 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/24 13:24:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void 	ft_locate_sprite(t_input *input)
 		{
 			if (input->array[x][y] == '2')
 			{
-				input->sprite_data.sprite_pos[i][0] = x;
-				input->sprite_data.sprite_pos[i][1] = y;
+				input->sprite_data.sprite_pos[i][0] = x + 0.5;
+				input->sprite_data.sprite_pos[i][1] = y + 0.5;
 				ft_calculate_sprite_distance(input, i);
 				i++;
 			}

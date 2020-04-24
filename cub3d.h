@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 19:13:09 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/24 16:15:59 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,7 +201,7 @@ typedef struct 		s_sprites_data
 	int 			*sprite_order;
 	double 			*sprite_distance;
 	int 			sprite_number;
-	int 			**sprite_pos;
+	double 			**sprite_pos;
 	double 			sprite_x;
 	double 			sprite_y;
 	double 			inverse_camera;
@@ -215,6 +215,9 @@ typedef struct 		s_sprites_data
 	int 			draw_start_y;
 	int 			draw_end_y;
 	int 			sprite_color;
+	int 			texture_x;
+	int 			texture_y;
+	int 			stripe;
 }					t_sprites_data;
 
 
@@ -230,7 +233,7 @@ typedef struct 		s_input
 	t_mlx_2		 	south;
 	t_mlx_2		 	east;
 	t_mlx_2		 	west;
-	t_mlx_2		 	sprite;
+	t_mlx		 	sprite;
 	t_dda 			dda;
 	t_rgb 			color;
 	t_movement 		move;
@@ -393,11 +396,15 @@ void 				ft_calculate_sprite_distance(t_input *input, int i);
 void 				ft_calculate_sprite_distance(t_input *input, int i);
 void 				ft_sort_distance(t_input *input);
 void 				ft_translate_sprite_pos(t_input *input, int i);
-void 				ft_transform_sprite(t_input *input, int i);
+void 				ft_transform_sprite(t_input *input);
 void 				ft_sprite_screen_x(t_input *input);
 void 				ft_calculate_sprite_height(t_input *input);
 void 				ft_draw_sprite_y(t_input *input);
 void 				ft_calculate_sprite_width(t_input *input);
 void 				ft_draw_sprite_x(t_input *input);
-int 				ft_read_sprite_png(t_input *input);
+int 				ft_draw_sprites(t_input *input);
+void 				ft_get_sprite_color(t_input *input);
+void 				ft_calculate_sprite_texture_x(t_input *input, int stripe);
+void 				ft_calculate_sprite_texture_y(t_input *input, int y);
+
 #endif

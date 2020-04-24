@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 19:13:25 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/24 14:15:46 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,4 +111,6 @@ void	ft_reset_input(t_input *input)
 	input->sprite_data.draw_start_y = 0;
 	input->sprite_data.draw_end_y = 0;
 	input->sprite_data.sprite_color = 0;
+	input->sprite_data.texture_x = 0;
+	input->sprite_data.texture_y = 0;
 }

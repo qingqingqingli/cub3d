@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_initiate_sprite_texture.c                       :+:    :+:            */
+/*   ft_get_sprite_color.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/21 20:06:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 16:17:32 by qli           ########   odam.nl         */
+/*   Created: 2020/04/24 09:40:50 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/24 16:20:15 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
-int	ft_initiate_sprite_texture(t_input *input)
+void 	ft_get_sprite_color(t_input *input)
 {
-	input->sprite.img = mlx_png_file_to_image(input->img.mlx, input->sprite_path,
-		&input->sprite.texture_width, &input->sprite.texture_height);
-	if (input->sprite.img == NULL)
-		return (ft_return_error("Invalid route\n", input));
-	input->sprite.addr = mlx_get_data_addr(input->sprite.img, &input->sprite.bits_per_pixel,
-	&input->sprite.line_length, &input->sprite.endian);
-	return (0);
+	int pixel;
+
+	// input->sprite_data.sprite_color = input->sprite.addr[input->sprite_data.texture_y
+	// + input->sprite_data.texture_x	* input->sprite.line_length / 4];
+	pixel = ((input->sprite_data.texture_y * input->sprite.line_length) + 
+	(input->sprite_data.texture_x * (input->sprite.bits_per_pixel / 8)));
+	input->sprite_data.sprite_color = *(unsigned int *)(input->sprite.addr + pixel);
 }
