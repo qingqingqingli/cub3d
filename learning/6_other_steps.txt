@@ -1,3 +1,15 @@
+**********************COMPLETED WORK*********************************
+
+- flood fill: change the starting point from the first 0 to the player position
+DONE
+
+- flood fill: need to make a copy of the original array before flood fill.
+  After validating the map, free the copy version of the array 
+DONE
+
+EXIT OPTIONS
+- Exit with ESC
+DONE
 
 **********************ELEMENTS TO WORK ON*********************************
 
@@ -9,30 +21,29 @@ FLOOD FILL ALGORITHM
   It can be changed to a 8-way flood fill algorithm
 --> still need to look into it
 
-- flood fill: change the starting point from the first 0 to the player position
-DONE
-
-- flood fill: need to make a copy of the original array before flood fill.
-  After validating the map, free the copy version of the array 
-DONE
-
 ERROR MANAGEMENT
+
+INPUT PARSING
 
 INPUT VALIDATION
 
 MEMORY LEAK
 
-CLEAN CODE
+PLAYER ORIENTATION
+- Make sure the player is facing the correct orientation
+- Make sure the wall texture is the correct rendering
 
 MAKEFILE
 - does not work properly 
 - sometimes I need to make re to make sure all files are recompiled
 
-EXIT OPTIONS
-- Exit with ESC
-DONE
-
 - EXIT with pressing on red cross button
 --> still need to work on it
 
 BMP FILE CREATION
+
+CLEAN CODE
+- One of the last tasks
+
+RESIZE SCREEN
+- Oversize --> resize it to the normal screen

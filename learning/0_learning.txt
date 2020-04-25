@@ -254,35 +254,6 @@ ANSWER:
 
 - The left & right calculation needs to be swapped
 
-***********************************ACTIONS*********************************
-
-SPRITE
-
-AREAS THAT NEED TO WORK ON:
-
-DEFINES
-- Need to change all the defines to the entire variable name
-
-FLOOD FILL ALGORITHM
-- flood fill: 4 way flood fill does not detect certain edge cases. 
-  It can be changed to a 8-way flood fill algorithm
-
-- flood fill: change the starting point from the first 0 to the player position
-
-- flood fill: need to make a copy of the original array before flood fill.
-  After validating the map, free the copy version of the array 
-
-ERROR MANAGEMENT
-
-INPUT VALIDATION
-
-MEMORY LEAK
-
-CLEAN CODE
-
-MAKEFILE
-- does not work properly 
-- sometimes I need to make re to make sure all files are recompiled
 
 OTHERS
 - (NOAH) My lldb does not work properly. Ask Noah to check if I am running it correctly

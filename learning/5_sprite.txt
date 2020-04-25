@@ -49,21 +49,16 @@ it gives me seg fault when I wanted to assign value to it.
 ISSUE: I didn't iniatiate the value. Need to initiate each int element to 0,
 before assigning it new value
 
-**********************QUESTIONS*********************************
+- it only rendered one vertical pixel
+ANSWER: the y (draw_start_y) is initialsised outside of the while loop. However, it needs
+to be initialised every time before the while loop starts
 
-calculation of sprite_width is the same as sprite_height
+- It rendered multiple versions of the barrel. 
+ANSWER: instead of using sprite dimensions, I used screen resolution. Therefore, it does not give 
+a correct rendering
 
-//calculate height of the sprite on screen
-      int spriteHeight = abs(int(h / (transformY))); //using 'transformY' instead of the real distance prevents fisheye
-      //calculate lowest and highest pixel to fill in current stripe
-      int drawStartY = -spriteHeight / 2 + h / 2;
-      if(drawStartY < 0) drawStartY = 0;
-      int drawEndY = spriteHeight / 2 + h / 2;
-      if(drawEndY >= h) drawEndY = h - 1;
 
-      //calculate width of the sprite
-      int spriteWidth = abs( int (h / (transformY)));
-      int drawStartX = -spriteWidth / 2 + spriteScreenX;
-      if(drawStartX < 0) drawStartX = 0;
-      int drawEndX = spriteWidth / 2 + spriteScreenX;
-      if(drawEndX >= w) drawEndX = w - 1;
+- Removed 0.5 otherwise the sprite locations shift when you move further away
+
+	input->sprite_data.sprite_pos[i][0] = x + 0.5;
+	input->sprite_data.sprite_pos[i][1] = y + 0.5;

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 19:44:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 20:10:22 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 08:45:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int 	ft_render_sprites(t_input *input)
 		// printf("input->sprite_data.inverse_camera is %f\n", input->sprite_data.inverse_camera);
 		ft_transform_sprite(input);
 		// printf("input->sprite_data.transform_x is %f\n", input->sprite_data.transform_x);
-		// printf("input->sprite_data.transform_y is %f\n", input->sprite_data.transform_y);		ft_sprite_screen_x(input);
+		// printf("input->sprite_data.transform_y is %f\n", input->sprite_data.transform_y);
 		ft_sprite_screen_x(input);
 		// printf("input->sprite_data.sprite_screen_x is %d\n", input->sprite_data.sprite_screen_x);
 		ft_calculate_sprite_height(input);
