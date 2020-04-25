@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:22:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/21 10:16:14 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:30:55 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@
 
 void 	ft_set_player_orientation(t_input *input)
 {
-	if (direction == 'W')
+	if (input->ray_casting.sprawing_dir == 'W')
 	{
-		direction_x = 0;
-		direction_y = -1;
+		input->ray_casting.dir_x = 0;
+		input->ray_casting.dir_y = -1;
 	}
-	else if (direction == 'E')
+	else if (input->ray_casting.sprawing_dir == 'E')
 	{
-		direction_x = 0;
-		direction_y = 1;
+		input->ray_casting.dir_x = 0;
+		input->ray_casting.dir_y = 1;
 	}
-	else if (direction == 'N')
+	else if (input->ray_casting.sprawing_dir == 'N')
 	{
-		direction_x = -1;
-		direction_y = 0;
+		input->ray_casting.dir_x = -1;
+		input->ray_casting.dir_y = 0;
 	}
-	else if (direction == 'S')
+	else if (input->ray_casting.sprawing_dir == 'S')
 	{
-		direction_x = 1;
-		direction_y = 0;
+		input->ray_casting.dir_x = 1;
+		input->ray_casting.dir_y = 0;
 	}
 }

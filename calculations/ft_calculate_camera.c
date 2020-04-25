@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:04:40 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/13 14:10:19 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:33:39 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void ft_calculate_camera(t_input *input, int x)
 {
-	camera_x_pos = 2 * x / (double)input->res_x - 1;
+	input->ray_casting.camera_x = 2 * x / (double)input->res_x - 1;
 }

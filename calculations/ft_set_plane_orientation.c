@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:24:15 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 19:05:36 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:32:32 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@
 
 void	ft_set_plane_orientation(t_input *input)
 {
-	if (direction == 'W')
+	if (input->ray_casting.sprawing_dir == 'W')
 	{
-		plane_dir_x = 0.66;
-		plane_dir_y = 0;
+		input->ray_casting.plane_x = 0.66;
+		input->ray_casting.plane_y = 0;
 	}
-	else if (direction == 'E')
+	else if (input->ray_casting.sprawing_dir == 'E')
 	{
-		plane_dir_x = -0.66;
-		plane_dir_y = 0;
+		input->ray_casting.plane_x = -0.66;
+		input->ray_casting.plane_y = 0;
 	}
-	else if (direction == 'N')
+	else if (input->ray_casting.sprawing_dir == 'N')
 	{
-		plane_dir_x = 0;
-		plane_dir_y = -0.66;
+		input->ray_casting.plane_x = 0;
+		input->ray_casting.plane_y = -0.66;
 	}
-	else if (direction == 'S')
+	else if (input->ray_casting.sprawing_dir == 'S')
 	{
-		plane_dir_x = 0;
-		plane_dir_y = 0.66;
+		input->ray_casting.plane_x = 0;
+		input->ray_casting.plane_y = 0.66;
 	}
 }

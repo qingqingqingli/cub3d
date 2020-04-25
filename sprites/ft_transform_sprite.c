@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/23 16:41:03 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 19:10:02 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:27:04 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void 	ft_transform_sprite(t_input *input)
 {
 	input->sprite_data.transform_x = input->sprite_data.inverse_camera *
-	(direction_y * input->sprite_data.sprite_x - direction_x * 
+	(input->ray_casting.dir_y * input->sprite_data.sprite_x - input->ray_casting.dir_x * 
 	input->sprite_data.sprite_y);
 	input->sprite_data.transform_y = input->sprite_data.inverse_camera *
-	(-plane_dir_y * input->sprite_data.sprite_x + plane_dir_x * 
+	(-input->ray_casting.plane_y * input->sprite_data.sprite_x + input->ray_casting.plane_x * 
 	input->sprite_data.sprite_y);
 }

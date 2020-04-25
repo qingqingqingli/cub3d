@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:08:00 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/10 14:08:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:17:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void ft_calculate_ray_dir(t_input *input)
 {
-	ray_dir_x = direction_x + (plane_dir_x * camera_x_pos);
-	ray_dir_y = direction_y + (plane_dir_y * camera_x_pos);
+	input->ray_casting.ray_direction_x = input->ray_casting.dir_x +
+	(input->ray_casting.plane_x * input->ray_casting.camera_x);
+	input->ray_casting.ray_direction_y = input->ray_casting.dir_y +
+	(input->ray_casting.plane_y * input->ray_casting.camera_x);
 }

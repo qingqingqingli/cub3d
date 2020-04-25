@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/25 08:44:35 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/25 12:37:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,6 @@
 # include <stdlib.h>
 # include <math.h>
 # include "minilibx-master/mlx.h"
-
-/*
-** ---------------------------SHORT NAMES-------------------------------------------
-*/
-
-#define position_y input->ray_casting.pos_y
-#define position_x input->ray_casting.pos_x
-#define direction_x input->ray_casting.dir_x
-#define direction_y input->ray_casting.dir_y
-#define direction input->ray_casting.sprawing_dir
-#define plane_dir_x input->ray_casting.plane_x
-#define plane_dir_y input->ray_casting.plane_y
-#define camera_x_pos input->ray_casting.camera_x
-#define ray_dir_x input->ray_casting.ray_direction_x
-#define ray_dir_y input->ray_casting.ray_direction_y
-#define delta_len_x input->dda.delta_dis_x
-#define delta_len_y input->dda.delta_dis_y
 
 /*
 ** ---------------------------KEY-------------------------------------------
