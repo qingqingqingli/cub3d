@@ -11,39 +11,47 @@ EXIT OPTIONS
 - Exit with ESC
 DONE
 
-**********************ELEMENTS TO WORK ON*********************************
-
 DEFINES
 - Need to change all the defines to the entire variable name
+DONE
 
-FLOOD FILL ALGORITHM
+**********************ELEMENTS TO WORK ON*********************************
+
+[FLOOD FILL ALGORITHM]
 - flood fill: 4 way flood fill does not detect certain edge cases. 
   It can be changed to a 8-way flood fill algorithm
---> still need to look into it
+NOT FIXED
 
-ERROR MANAGEMENT
-
-INPUT PARSING
-
-INPUT VALIDATION
-
-MEMORY LEAK
-
-PLAYER ORIENTATION
+[PLAYER ORIENTATION]
 - Make sure the player is facing the correct orientation
 - Make sure the wall texture is the correct rendering
+Problem: West and East are swapped
+NOT FIXED
 
-MAKEFILE
-- does not work properly 
-- sometimes I need to make re to make sure all files are recompiled
+[ERROR MANAGEMENT]
 
-- EXIT with pressing on red cross button
+[INPUT PARSING]
+
+[INPUT VALIDATION]
+
+[MEMORY LEAK]
+
+[EXIT with pressing on red cross button]
 --> still need to work on it
 
-BMP FILE CREATION
+[BMP FILE CREATION]
 
-CLEAN CODE
+[RESIZE SCREEN]
+- Oversize --> resize it to the normal screen
+
+[CLEAN CODE]
 - One of the last tasks
 
-RESIZE SCREEN
-- Oversize --> resize it to the normal screen
+[NORMINETTE]
+
+[MORE TESTS BEFORE EVALUATION]
+
+**********************QUESTION*********************************
+
+MAKEFILE
+- how to compile the header file when it has been modified

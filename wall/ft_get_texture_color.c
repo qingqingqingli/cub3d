@@ -6,17 +6,17 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/20 18:09:55 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 19:04:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 11:17:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
 /*
-** 1 = South --> East
-** 2 = North --> West
-** 3 = East --> South
-** 4 = West --> North
+** 1 = East
+** 2 = West
+** 3 = South
+** 4 = North
 */
 
 void	ft_get_texture_color(t_input *input)

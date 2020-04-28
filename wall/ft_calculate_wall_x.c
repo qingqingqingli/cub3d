@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/16 14:28:58 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/25 12:36:06 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 11:18:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void 	ft_calculate_wall_x(t_input *input)
 	else
 		input->wall.texture_wall_x = input->ray_casting.pos_x + input->dda.ray_len *
 		input->ray_casting.ray_direction_x;
-	input->wall.texture_wall_x -= floor(input->wall.texture_wall_x);
+	input->wall.texture_wall_x -= (int)input->wall.texture_wall_x;
 }

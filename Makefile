@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/25 08:45:43 by qli           ########   odam.nl          #
+#    Updated: 2020/04/27 19:42:33 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ SRC 			=	utilis/general_utils.c \
 					calculations/ft_set_plane_orientation.c \
 					calculations/ft_set_player_position.c \
 					colors/ft_put_color_ceilling.c \
-					colors/ft_put_color_wall.c \
 					colors/ft_put_color_floor.c \
 					colors/ft_set_color.c \
 					mlx/my_mlx_pixel_put.c \
@@ -68,8 +67,6 @@ SRC 			=	utilis/general_utils.c \
 					sprites/ft_initiate_sprite_buffer.c \
 					sprites/ft_initiate_sprite_texture.c \
 					sprites/ft_calculate_sprite_number.c \
-					sprites/ft_initiate_sprite_distance.c \
-					sprites/ft_initiate_sprite_order.c \
 					sprites/ft_locate_sprite.c \
 					sprites/ft_inverse_camera.c \
 					sprites/ft_initiate_sprite_pos.c \

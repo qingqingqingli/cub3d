@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:20:44 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/14 11:50:43 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 11:03:35 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void 	ft_perform_dda(t_input *input)
 	{
 		if (input->dda.side_dis_x < input->dda.side_dis_y)
 		{
-			input->dda.side_dis_x = input->dda.side_dis_x + input->dda.delta_dis_x;
+			input->dda.side_dis_x += input->dda.delta_dis_x;
 			input->dda.map_x = input->dda.map_x + input->dda.step_x;
 			input->dda.side = 0;
 		}
 		else
 		{
-			input->dda.side_dis_y = input->dda.side_dis_y + input->dda.delta_dis_y;
+			input->dda.side_dis_y += input->dda.delta_dis_y;
 			input->dda.map_y = input->dda.map_y + input->dda.step_y;
 			input->dda.side = 1;
 		}
-		if (input->array[input->dda.map_x][input->dda.map_y] == '1')
+		if (input->array[input->dda.map_y][input->dda.map_x] == '1')
 			hit = 1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 10:27:23 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 19:58:49 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_parse_n(char *line, t_input *input, int *i)
 	if (line[*i] == 'N' && line[*i + 1] == 'O' && ft_isspace(line[*i + 2]) == 1)
 	{
 		input->north_present = 1;
+		input->orientation = 'N';
 		*i = *i + 2;
 		while (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 			*i = *i + 1;
@@ -58,6 +59,7 @@ void	ft_parse_s(char *line, t_input *input, int *i)
 	if (line[*i] == 'S' && line[*i + 1] == 'O' && ft_isspace(line[*i + 2]) == 1)
 	{
 		input->south_present = 1;
+		input->orientation = 'S';
 		*i = *i + 2;
 		while (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 			*i = *i + 1;
@@ -76,6 +78,7 @@ void	ft_parse_w(char *line, t_input *input, int *i)
 	if (line[*i] == 'W' && line[*i + 1] == 'E' && ft_isspace(line[*i + 2]) == 1)
 	{
 		input->west_present = 1;
+		input->orientation = 'W';
 		*i = *i + 2;
 		while (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 			*i = *i + 1;
@@ -94,6 +97,7 @@ void	ft_parse_e(char *line, t_input *input, int *i)
 	if (line[*i] == 'E' && line[*i + 1] == 'A' && ft_isspace(line[*i + 2]) == 1)
 	{
 		input->east_present = 1;
+		input->orientation = 'E';
 		*i = *i + 2;
 		while (line[*i] != '\0' && ft_isspace(line[*i]) == 1)
 			*i = *i + 1;

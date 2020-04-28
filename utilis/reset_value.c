@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 14:15:46 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 19:57:37 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_reset_input(t_input *input)
 	input->res_present = 0;
 	input->res_x = 0;
 	input->res_y = 0;
+	input->orientation = 0;
 	input->north_present = 0;
 	input->north_path = "null";
 	input->south_present = 0;

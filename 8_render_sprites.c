@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 19:44:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/25 12:07:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 19:43:52 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int 	ft_draw_sprites(t_input *input)
 	while (stripe < input->sprite_data.draw_end_x)
 	{
 		ft_calculate_sprite_texture_x(input, stripe);
+		y = input->sprite_data.draw_start_y;
 		if (input->sprite_data.transform_y > 0 && stripe > 0 &&
 		stripe < input->res_x && input->sprite_data.transform_y
 		< input->sprite_data.buffer[stripe])
 		{
-			y = input->sprite_data.draw_start_y;
 			while (y < input->sprite_data.draw_end_y)
 			{
 				ft_calculate_sprite_texture_y(input, y);

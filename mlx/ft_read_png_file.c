@@ -6,17 +6,17 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 10:53:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/23 18:57:09 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 11:14:29 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/qli/codam/cub3d/cub3d.h"
 
 /*
-** 1 = South --> East
-** 2 = North --> West
-** 3 = East --> South
-** 4 = West --> North
+** 1 = East
+** 2 = West
+** 3 = South
+** 4 = North
 */
 
 int 	ft_read_png_file(t_input *input)

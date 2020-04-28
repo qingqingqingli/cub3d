@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/25 12:37:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/27 19:57:24 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,18 @@ typedef struct 		s_wall_texture
 }					t_wall_texture;
 
 /*
+** -----------------------------SPRITE DISTANCE-----------------------------------
+*/
+
+typedef struct 		s_sprite_pos
+{
+	double 			distance;
+	double 			x;
+	double 			y;
+}					t_sprite_pos;
+
+
+/*
 ** -----------------------------SPRITE TEXTURE-----------------------------------
 */
 
@@ -184,7 +196,7 @@ typedef struct 		s_sprites_data
 	int 			*sprite_order;
 	double 			*sprite_distance;
 	int 			sprite_number;
-	double 			**sprite_pos;
+	t_sprite_pos 	*pos;
 	double 			sprite_x;
 	double 			sprite_y;
 	double 			inverse_camera;
@@ -225,6 +237,7 @@ typedef struct 		s_input
 	int				res_present;
 	int				res_x;
 	int				res_y;
+	int 			orientation;
 	int				north_present;
 	char			*north_path;
 	int				south_present;
@@ -303,7 +316,7 @@ int 				ft_find_player_position(t_input *input);
 ** ---------------------------CALCULATIONS----------------------------------------
 */
 
-int 				ft_set_player_position(t_input *input);
+void 				ft_set_player_position(t_input *input);
 void 				ft_set_player_orientation(t_input *input);
 void				ft_set_plane_orientation(t_input *input);
 void 				ft_calculate_camera(t_input *input, int x);
@@ -324,7 +337,6 @@ void 				ft_perform_dda(t_input *input);
 
 void 				ft_choose_color(t_input *input);
 void 				ft_put_color_ceilling(t_input *input, int x);
-void 				ft_put_color_wall(t_input *input, int x);
 void 				ft_put_color_floor(t_input *input, int x);
 void 				ft_set_color(t_input *input);
 /*
@@ -369,13 +381,10 @@ void 				ft_store_ray_len(t_input *input, int x);
 int 				ft_initiate_sprite_buffer(t_input *input);
 int 				ft_initiate_sprite_texture(t_input *input);
 void 				ft_calculate_sprite_number(t_input *input);
-int 				ft_initiate_sprite_distance(t_input *input);
-int 				ft_initiate_sprite_order(t_input *input);
 int 				ft_render_sprites(t_input *input);
 void 				ft_locate_sprite(t_input *input);
 void 				ft_inverse_camera(t_input *input);
 int 				ft_initiate_sprite_pos(t_input *input);
-void 				ft_calculate_sprite_distance(t_input *input, int i);
 void 				ft_calculate_sprite_distance(t_input *input, int i);
 void 				ft_sort_distance(t_input *input);
 void 				ft_translate_sprite_pos(t_input *input, int i);
