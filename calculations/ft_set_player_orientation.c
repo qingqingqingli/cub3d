@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:22:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:19:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	ft_set_player_orientation(t_input *input)
+void	ft_set_player_orientation(t_input *input)
 {
 	if (input->ray_casting.sprawing_dir == 'S')
 	{

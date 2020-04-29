@@ -6,15 +6,19 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/28 15:32:12 by qli           ########   odam.nl          #
+#    Updated: 2020/04/29 19:18:19 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	cub3d
 
-SRC 			=	utilis/general_utils.c \
+SRC 			=	utilis/general_utils_1.c \
+					utilis/general_utils_2.c \
 					utilis/print_utils.c \
-					utilis/reset_value.c \
+					utilis/reset_value_1.c \
+					utilis/reset_value_2.c \
+					utilis/error_management.c \
+					utilis/ft_read_file.c \
 					1_main.c \
 					2_input_parse.c \
 					3_input_2d_array.c \
@@ -95,7 +99,8 @@ INLCUDES		=	-Ilibft \
 					-Ignl \
 					-Iminilibx_master
 
-HEADERS 		= 	cub3d.h
+HEADERS 		= 	cub3d.h \
+					struct.h \
 
 FLAGS 			=	-g -Wall -Wextra -Werror
 

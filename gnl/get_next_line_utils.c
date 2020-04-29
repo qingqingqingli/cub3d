@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/12/04 11:02:48 by qli            #+#    #+#                */
-/*   Updated: 2019/12/18 11:31:31 by qli           ########   odam.nl         */
+/*   Created: 2019/12/04 11:02:48 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/29 18:22:51 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ char		*ft_strjoin_1(char *s1, char *s2)
 		return (0);
 	i1 = 0;
 	i2 = 0;
-	dst = (char *)malloc(sizeof(char) * (ft_strlen_1(s1) + ft_strlen_1(s2) + 1));
+	dst = (char *)malloc(sizeof(char) * (ft_strlen_1(s1) + ft_strlen_1(s2)
+	+ 1));
 	if (dst == NULL)
 		return (0);
 	while (s1[i1] != '\0')

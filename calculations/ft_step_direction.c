@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/13 14:43:12 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:19:36 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	ft_step_direction(t_input *input)
+void	ft_step_direction(t_input *input)
 {
 	if (input->ray_casting.ray_direction_x < 0)
 		input->dda.step_x = -1;

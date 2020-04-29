@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:17:38 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:16:41 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	ft_calculate_draw_start(t_input *input)
+void	ft_calculate_draw_start(t_input *input)
 {
 	input->dda.draw_start = -input->dda.line_height / 2 +
 	input->res_y / 2;

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 15:37:30 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:20:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int		create_trgb(int r, int g, int b)
 {
-	return(r << 16 | g << 8 | b );
+	return (r << 16 | g << 8 | b);
 }
 
-void 	ft_set_color(t_input *input)
+void	ft_set_color(t_input *input)
 {
 	input->ceilling_color = create_trgb(input->ceilling_r,
 	input->ceilling_g, input->ceilling_b);

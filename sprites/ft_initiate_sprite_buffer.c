@@ -6,19 +6,19 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 19:54:44 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 15:12:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:45:01 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int 	ft_initiate_sprite_buffer(t_input *input)
+int		ft_initiate_sprite_buffer(t_input *input)
 {
 	input->sprite_data.buffer = (double *)malloc(sizeof(double) *
 	input->res_x);
 	if (input->sprite_data.buffer == NULL)
-		return (ft_return_error("Malloc failed\n", input));
+		return (ft_return_error("Error\nMalloc failed\n", input));
 	else
-		input->sprite_data.buffer_present = 1;	
+		input->sprite_data.buffer_present = 1;
 	return (0);
 }

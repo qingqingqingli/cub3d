@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdelone_bonus.c                               :+:    :+:            */
+/*   general_utils_2.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/12 12:46:57 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:24:55 by qli           ########   odam.nl         */
+/*   Created: 2020/04/29 18:56:44 by qli           #+#    #+#                 */
+/*   Updated: 2020/04/29 18:57:12 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../cub3d.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+int		ft_isspace(int c)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
+
+int		ft_check_position(int c)
+{
+	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (1);
+	return (0);
+}
+
+int		ft_char_range(int c)
+{
+	if (c == 'R' || c == 'N' || c == 'S' || c == 'W'
+	|| c == 'E' || c == 'F' || c == 'C')
+		return (1);
+	return (0);
 }

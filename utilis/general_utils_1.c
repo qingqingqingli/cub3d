@@ -1,54 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   general_utils.c                                    :+:    :+:            */
+/*   general_utils_1.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 15:13:41 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:57:14 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-void 	ft_free_malloc(t_input *input)
-{
-	if (input->sprite_data.buffer_present == 1)
-		free(input->sprite_data.buffer);
-	if (input->sprite_data.pos_present == 1)
-		free(input->sprite_data.pos);
-	printf("freed all malloc\n");
-}
-
-int		ft_return_error(char *s, t_input *input)
-{
-	ft_putstr_fd(s, 1);
-	ft_free_malloc(input);
-	exit (0);
-}
-
-int		ft_isspace(int c)
-{
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
-
-int 	ft_check_position(int c)
-{
-	if (c == 'N' || c == 'S'|| c == 'W' || c == 'E')
-		return (1);
-	return (0);
-}
-
-int		ft_char_range(int c)
-{
-	if (c == 'R' || c == 'N' || c == 'S'|| c == 'W'
-	|| c == 'E' || c == 'F' || c == 'C')
-		return (1);
-	return (0);
-}
 
 int		ft_check_element(t_input input)
 {
@@ -73,7 +35,7 @@ int		ft_validate_element(t_input input)
 	return (0);
 }
 
-int 	ft_check_sprawning_pos(char c, t_input *input)
+int		ft_check_sprawning_pos(char c, t_input *input)
 {
 	if (c == 'N')
 	{
@@ -89,11 +51,11 @@ int 	ft_check_sprawning_pos(char c, t_input *input)
 	{
 		input->ray_casting.sprawing_dir = 'W';
 		return (1);
-	}	
+	}
 	else if (c == 'E')
 	{
 		input->ray_casting.sprawing_dir = 'E';
 		return (1);
-	}	
+	}
 	return (0);
 }

@@ -6,20 +6,21 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/24 09:54:02 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:43:40 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	ft_calculate_sprite_texture_x(t_input *input, int stripe)
+void	ft_calculate_sprite_texture_x(t_input *input, int stripe)
 {
-	input->sprite_data.texture_x = (int)(256 * (stripe - (-input->sprite_data.sprite_width
-	/ 2 + input->sprite_data.sprite_screen_x)) * input->sprite.texture_width
+	input->sprite_data.texture_x = (int)(256 * (stripe -
+	(-input->sprite_data.sprite_width / 2 +
+	input->sprite_data.sprite_screen_x)) * input->sprite.texture_width
 	/ input->sprite_data.sprite_width) / 256;
 }
 
-void 	ft_calculate_sprite_texture_y(t_input *input, int y)
+void	ft_calculate_sprite_texture_y(t_input *input, int y)
 {
 	int d;
 

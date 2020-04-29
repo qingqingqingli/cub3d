@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 19:44:54 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/27 19:43:52 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:15:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int 	ft_draw_sprites(t_input *input)
+int		ft_draw_sprites(t_input *input)
 {
 	int stripe;
 	int y;
@@ -31,8 +31,9 @@ int 	ft_draw_sprites(t_input *input)
 				ft_calculate_sprite_texture_y(input, y);
 				ft_get_sprite_color(input);
 				if ((input->sprite_data.sprite_color & 0x00FFFFFF) != 0)
-					ft_render_img(input, stripe, y, input->sprite_data.sprite_color);
-				y++;	
+					ft_render_img(input, stripe, y,
+					input->sprite_data.sprite_color);
+				y++;
 			}
 		}
 		stripe++;
@@ -40,8 +41,7 @@ int 	ft_draw_sprites(t_input *input)
 	return (0);
 }
 
-
-int 	ft_render_sprites(t_input *input)
+int		ft_render_sprites(t_input *input)
 {
 	int i;
 

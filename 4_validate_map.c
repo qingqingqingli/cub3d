@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 15:53:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:13:55 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int ft_validate_map(t_input *input)
+int		ft_validate_map(t_input *input)
 {
 	ft_duplicate_array(input);
 	ft_find_player_position(input);

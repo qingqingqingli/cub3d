@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/28 11:19:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 15:19:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 19:06:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void 	ft_initiate_file_header(t_input *input)
+void	ft_initiate_file_header(t_input *input)
 {
 	input->bmp.image_size = input->res_x * input->res_y;
 	input->bmp.file_size = 54 + 4 * input->bmp.image_size;
@@ -25,7 +25,7 @@ void 	ft_initiate_file_header(t_input *input)
 	input->file_header.offset_bits = 0;
 }
 
-void 	ft_initiate_image_header(t_input *input)
+void	ft_initiate_image_header(t_input *input)
 {
 	input->image_header.size_header = sizeof(input->file_header);
 	input->image_header.width = input->res_x;
@@ -40,15 +40,15 @@ void 	ft_initiate_image_header(t_input *input)
 	input->image_header.clr_important = 0;
 }
 
-int 	ft_create_image(t_input *input)
+int		ft_create_image(t_input *input)
 {
 	int 	fd;
 	char 	*file_name;
-	// int 	color;
+	int 	color;
 	int 	x;
 	int 	y;
 
-	// color = 0;
+	color = 0;
 	x = 0;
 	y = 0;
 	file_name = "cub3d.bmp";
@@ -71,8 +71,8 @@ int 	ft_create_image(t_input *input)
 			else if (input->wall.img_active == 2)
 				input->bmp_color.addr = (int *)mlx_get_data_addr(input->img_2.img, &input->bmp_color.bits_per_pixel,
 				&input->bmp_color.line_length, &input->bmp_color.endian);
-			// color = input->bmp_color.addr[x + y * input->bmp_color.line_length / 4];
-			// printf("color is %d\n", color);
+			color = input->bmp_color.addr[x + y * input->bmp_color.line_length / 4];
+			printf("color is %d\n", color);
 			write(fd, &input->bmp_color.addr[x + y * input->bmp_color.line_length / 4],
 			sizeof(input->bmp_color.addr[x + y * input->bmp_color.line_length / 4]));
 			x++;
@@ -82,10 +82,10 @@ int 	ft_create_image(t_input *input)
 	return (0);
 }
 
-int 	ft_create_bmp(t_input *input)
+int		ft_create_bmp(t_input *input)
 {
 	ft_initiate_file_header(input);
 	ft_initiate_image_header(input);
-	ft_create_image(input);
+	// ft_create_image(input);
 	return (0);
 }

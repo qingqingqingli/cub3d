@@ -6,64 +6,75 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 10:53:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:36:11 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-/*
-** 1 = East
-** 2 = West
-** 3 = South
-** 4 = North
-*/
-
-int 	ft_read_png_file(t_input *input)
+int		ft_read_east(t_input *input)
 {
-	if (input->wall.texture_number == 1) // east
-	{
-		input->east.img = mlx_png_file_to_image(input->img.mlx, input->east_path,
-		&input->east.texture_width, &input->east.texture_height);
-		if (input->east.img == NULL)
-			return (ft_return_error("Invalid route\n", input));
-		input->east.addr = (int *)mlx_get_data_addr(input->east.img, &input->east.bits_per_pixel,
-		&input->east.line_length, &input->east.endian);
-		input->wall.texture_width = input->east.texture_width;
-		input->wall.texture_height = input->east.texture_height;
-	}
-	else if (input->wall.texture_number == 2) // west
-	{
-		input->west.img = mlx_png_file_to_image(input->img.mlx, input->west_path,
-		&input->west.texture_width, &input->west.texture_height);
-		if (input->west.img == NULL)
-			return (ft_return_error("Invalid route\n", input));
-		input->west.addr = (int *)mlx_get_data_addr(input->west.img, &input->west.bits_per_pixel,
-		&input->west.line_length, &input->west.endian);
-		input->wall.texture_width = input->west.texture_width;
-		input->wall.texture_height = input->west.texture_height;
-	}
-	else if (input->wall.texture_number == 3) // south
-	{
-		input->south.img = mlx_png_file_to_image(input->img.mlx, input->south_path,
-		&input->south.texture_width, &input->south.texture_height);
-		if (input->south.img == NULL)
-			return (ft_return_error("Invalid route\n", input));
-		input->south.addr = (int *)mlx_get_data_addr(input->south.img, &input->south.bits_per_pixel,
-		&input->south.line_length, &input->south.endian);
-		input->wall.texture_width = input->south.texture_width;
-		input->wall.texture_height = input->south.texture_height;
-	}
-	else if (input->wall.texture_number == 4) // north
-	{
-		input->north.img = mlx_png_file_to_image(input->img.mlx, input->north_path,
-		&input->north.texture_width, &input->north.texture_height);
-		if (input->north.img == NULL)
-			return (ft_return_error("Invalid route\n", input));
-		input->north.addr = (int *)mlx_get_data_addr(input->north.img, &input->north.bits_per_pixel,
-		&input->north.line_length, &input->north.endian);
-		input->wall.texture_width = input->north.texture_width;
-		input->wall.texture_height = input->north.texture_height;
-	}
+	input->east.img = mlx_png_file_to_image(input->img.mlx, input->east_path,
+	&input->east.texture_width, &input->east.texture_height);
+	if (input->east.img == NULL)
+		return (ft_return_error("Invalid route\n", input));
+	input->east.addr = (int *)mlx_get_data_addr(input->east.img,
+	&input->east.bits_per_pixel, &input->east.line_length, &input->east.endian);
+	input->wall.texture_width = input->east.texture_width;
+	input->wall.texture_height = input->east.texture_height;
+	return (0);
+}
+
+int		ft_read_west(t_input *input)
+{
+	input->west.img = mlx_png_file_to_image(input->img.mlx, input->west_path,
+	&input->west.texture_width, &input->west.texture_height);
+	if (input->west.img == NULL)
+		return (ft_return_error("Invalid route\n", input));
+	input->west.addr = (int *)mlx_get_data_addr(input->west.img,
+	&input->west.bits_per_pixel, &input->west.line_length, &input->west.endian);
+	input->wall.texture_width = input->west.texture_width;
+	input->wall.texture_height = input->west.texture_height;
+	return (0);
+}
+
+int		ft_read_south(t_input *input)
+{
+	input->south.img = mlx_png_file_to_image(input->img.mlx, input->south_path,
+	&input->south.texture_width, &input->south.texture_height);
+	if (input->south.img == NULL)
+		return (ft_return_error("Invalid route\n", input));
+	input->south.addr = (int *)mlx_get_data_addr(input->south.img,
+	&input->south.bits_per_pixel, &input->south.line_length,
+	&input->south.endian);
+	input->wall.texture_width = input->south.texture_width;
+	input->wall.texture_height = input->south.texture_height;
+	return (0);
+}
+
+int		ft_read_north(t_input *input)
+{
+	input->north.img = mlx_png_file_to_image(input->img.mlx, input->north_path,
+	&input->north.texture_width, &input->north.texture_height);
+	if (input->north.img == NULL)
+		return (ft_return_error("Invalid route\n", input));
+	input->north.addr = (int *)mlx_get_data_addr(input->north.img,
+	&input->north.bits_per_pixel, &input->north.line_length,
+	&input->north.endian);
+	input->wall.texture_width = input->north.texture_width;
+	input->wall.texture_height = input->north.texture_height;
+	return (0);
+}
+
+int		ft_read_png_file(t_input *input)
+{
+	if (input->wall.texture_number == 1)
+		ft_read_east(input);
+	else if (input->wall.texture_number == 2)
+		ft_read_west(input);
+	else if (input->wall.texture_number == 3)
+		ft_read_south(input);
+	else if (input->wall.texture_number == 4)
+		ft_read_north(input);
 	return (0);
 }

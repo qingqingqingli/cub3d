@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/22 10:27:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 19:00:23 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int 	ft_check_map(char *line)
+int		ft_check_map(char *line)
 {
 	int i;
 	int count;
@@ -31,14 +31,14 @@ int 	ft_check_map(char *line)
 			i++;
 		}
 		else
-			return(-1);
+			return (-1);
 	}
 	if (count >= 2)
 		return (-1);
 	return (1);
 }
 
-int 	ft_check_spaces_nextline(char *line)
+int		ft_check_spaces_nextline(char *line)
 {
 	int i;
 
@@ -53,22 +53,22 @@ int 	ft_check_spaces_nextline(char *line)
 	return (1);
 }
 
-int 	ft_lines_join(char *line, t_input *input)
+int		ft_lines_join(char *line, t_input *input)
 {
-	char *new_line;
-	int i1;
-	int i2;
+	char	*new_line;
+	int		i1;
+	int		i2;
 
 	i1 = 0;
 	i2 = 0;
 	new_line = (char *)malloc((ft_strlen(input->line) + ft_strlen(line)
 	+ 2) * sizeof(char));
 	if (new_line == 0)
-		return (ft_return_error("Malloc error\n", input));
+		return (ft_return_error("Error\nMalloc error\n", input));
 	while (input->line[i1] != '\0')
 	{
 		new_line[i1] = input->line[i1];
-		i1++; 
+		i1++;
 	}
 	new_line[i1] = '\n';
 	i1++;
@@ -93,6 +93,6 @@ int		ft_process_map_line(char *line, t_input *input)
 			ft_lines_join(line, input);
 	}
 	else if (ft_check_map(line) != -1 && ft_check_spaces_nextline(line) != 1)
-		return (ft_return_error("Invalid map input\n", input));
+		return (ft_return_error("Error\nInvalid map input\n", input));
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/23 18:38:41 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:43:49 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	ft_draw_sprite_x(t_input *input)
+void	ft_draw_sprite_x(t_input *input)
 {
 	input->sprite_data.draw_start_x = -input->sprite_data.sprite_width / 2
 	+ input->sprite_data.sprite_screen_x;

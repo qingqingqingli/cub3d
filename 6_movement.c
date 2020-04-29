@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/14 11:57:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/28 16:33:10 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:14:59 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int 	ft_key_movement(int keycode, t_input *input)
+int		ft_key_movement(int keycode, t_input *input)
 {
 	if (keycode == KEY_DOWN || keycode == Z)
 		input->move.move_backward = 1;
@@ -23,12 +23,11 @@ int 	ft_key_movement(int keycode, t_input *input)
 	else if (keycode == KEY_RIGHT || keycode == D)
 		input->move.move_right = 1;
 	else if (keycode == ESC)
-		ft_close(input);	
+		ft_close(input);
 	return (0);
 }
 
-
-int 	ft_release(int keycode, t_input *input)
+int		ft_release(int keycode, t_input *input)
 {
 	if (keycode == KEY_DOWN || keycode == Z)
 		input->move.move_backward = 0;
@@ -41,7 +40,7 @@ int 	ft_release(int keycode, t_input *input)
 	return (0);
 }
 
-int 	ft_process_movement(t_input *input)
+int		ft_process_movement(t_input *input)
 {
 	if (input->move.move_backward == 1)
 		ft_move_backward(input);
@@ -54,5 +53,5 @@ int 	ft_process_movement(t_input *input)
 	if (input->move.move_backward == 1 || input->move.move_forward == 1
 	|| input->move.move_left == 1 || input->move.move_right == 1)
 		ft_calculate_ray(input);
-	return (0);	
+	return (0);
 }

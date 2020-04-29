@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/20 17:56:56 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:30:53 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 ** 4 = North -> West -> East
 */
 
-void ft_select_texture_path(t_input *input)
+void	ft_select_texture_path(t_input *input)
 {
-	if (input->dda.side == 1 && input->ray_casting.ray_direction_y > 0)
-		input->wall.texture_number = 3; //west
-	else if (input->dda.side == 1 && input->ray_casting.ray_direction_y < 0)
-		input->wall.texture_number = 4; //east
-	else if (input->dda.side == 0 && input->ray_casting.ray_direction_x > 0)
-		input->wall.texture_number = 1; //south
+	if (input->dda.side == 0 && input->ray_casting.ray_direction_x > 0)
+		input->wall.texture_number = 1;
 	else if (input->dda.side == 0 && input->ray_casting.ray_direction_x < 0)
-		input->wall.texture_number = 2; //north
+		input->wall.texture_number = 2;
+	else if (input->dda.side == 1 && input->ray_casting.ray_direction_y > 0)
+		input->wall.texture_number = 3;
+	else if (input->dda.side == 1 && input->ray_casting.ray_direction_y < 0)
+		input->wall.texture_number = 4;
 }

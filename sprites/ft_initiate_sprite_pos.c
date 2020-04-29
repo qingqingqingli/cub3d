@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/23 12:51:26 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 15:13:07 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 18:45:20 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int 	ft_initiate_sprite_pos(t_input *input)
+int		ft_initiate_sprite_pos(t_input *input)
 {
 	int i;
 
@@ -20,9 +20,9 @@ int 	ft_initiate_sprite_pos(t_input *input)
 	input->sprite_data.pos = malloc(sizeof(t_sprite_pos) *
 	input->sprite_data.sprite_number);
 	if (input->sprite_data.pos == NULL)
-		return (ft_return_error("Malloc failure\n", input));
+		return (ft_return_error("Error\nMalloc failure\n", input));
 	else
-		input->sprite_data.pos_present = 1;	
+		input->sprite_data.pos_present = 1;
 	while (i < input->sprite_data.sprite_number)
 	{
 		input->sprite_data.pos[i].distance = 0.0;
