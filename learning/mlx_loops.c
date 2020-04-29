@@ -6,7 +6,7 @@
 /* to initiate a loop */
 /* call the mlx_loop function with the mlx instance as only parameter */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 int     main(void)
 {

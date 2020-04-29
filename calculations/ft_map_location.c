@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:10:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/25 12:08:09 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 void 	ft_map_location(t_input *input)
 {

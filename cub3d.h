@@ -6,12 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/27 19:57:24 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 15:16:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
+# include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
@@ -35,6 +36,7 @@
 #define Z								122
 #define KEY_PRESS						2
 #define KEY_RELEASE						3
+#define DESTROY_NOTIFY					17
 
 /*
 ** ---------------------------COLOR-------------------------------------------
@@ -67,14 +69,49 @@
 
 typedef struct 		s_rgb
 {
-	int				red;
-	int 			green;
-	int 			blue;
+	int				r;
+	int 			g;
+	int 			b;
 	int 			wall;
 	int 			ceilling;
 	int 			floor;
 	int 			reserve;
 }					t_rgb;
+
+/*
+** ---------------------------BMP-------------------------------------------
+*/
+typedef struct 		s_file_header
+{
+	unsigned char	bitmap_type[2];
+	int 			file_size;
+	short 			reserved1;
+	short 			reserved2;
+	unsigned int	offset_bits;
+}					t_file_header;
+
+typedef struct 		s_image_header
+{
+	unsigned int 	size_header;
+	unsigned int 	width;
+	unsigned int 	height;
+	short int 		planes;
+	short int 		bit_count;
+	unsigned int 	compression;
+	unsigned int 	image_size;
+	unsigned int 	ppm_x;
+	unsigned int 	ppm_y;
+	unsigned int	clr_used;
+	unsigned int 	clr_important;
+}					t_image_header;
+
+typedef struct 		s_bmp_data
+{
+	int 			image_size;
+	int 			file_size;
+	int 			dpi;
+	int 			ppm;
+}					t_bmp_data;
 
 /*
 ** ---------------------------MLX STRUCT-------------------------------------------
@@ -153,6 +190,7 @@ typedef struct 		s_movement
 	int 			move_backward;
 	int 			move_right;
 	int 			move_left;
+	int 			close_window;
 }					t_movement;
 
 /*
@@ -193,10 +231,10 @@ typedef struct 		s_sprite_pos
 typedef struct 		s_sprites_data
 {
 	double 			*buffer;
-	int 			*sprite_order;
-	double 			*sprite_distance;
+	int 			buffer_present;
 	int 			sprite_number;
 	t_sprite_pos 	*pos;
+	int 			pos_present;
 	double 			sprite_x;
 	double 			sprite_y;
 	double 			inverse_camera;
@@ -229,15 +267,19 @@ typedef struct 		s_input
 	t_mlx_2		 	east;
 	t_mlx_2		 	west;
 	t_mlx_2		 	sprite;
+	t_mlx_2 		bmp_color;
 	t_dda 			dda;
 	t_rgb 			color;
 	t_movement 		move;
 	t_wall_texture 	wall;
 	t_sprites_data 	sprite_data;
+	t_file_header 	file_header;
+	t_image_header 	image_header;
+	t_bmp_data 		bmp;
+	int 			bmp_needed;
 	int				res_present;
 	int				res_x;
 	int				res_y;
-	int 			orientation;
 	int				north_present;
 	char			*north_path;
 	int				south_present;
@@ -352,7 +394,7 @@ int 				ft_move_forward(t_input *input);
 int					ft_move_backward(t_input *input);
 int 				ft_move_right(t_input *input);
 int 				ft_move_left(t_input *input);
-void 				ft_close(int keycode, t_input *input);
+int					ft_close(t_input *input);
 int 				ft_render_next_frame(t_input *input);
 void 				ft_initiate_img_2(t_input *input);
 void 				ft_render_img(t_input *input, int x, int y, int color);
@@ -398,5 +440,17 @@ int 				ft_draw_sprites(t_input *input);
 void 				ft_get_sprite_color(t_input *input);
 void 				ft_calculate_sprite_texture_x(t_input *input, int stripe);
 void 				ft_calculate_sprite_texture_y(t_input *input, int y);
+
+/*
+** ---------------------------BMP---------------------------------
+*/
+
+int					ft_create_bmp(t_input *input);
+
+/*
+** ---------------------------UTILS TO REMOVE---------------------------------
+*/
+
+void 				ft_print_2d_array(char **array);
 
 #endif

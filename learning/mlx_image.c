@@ -7,7 +7,7 @@
 /* if the img variable is NULL, it means that the image reading has failed */
 /* it will aslo set the img_width & img_height accordingly */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 int     main(void)
 {

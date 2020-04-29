@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 10:34:31 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 15:08:31 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 void 	ft_print_2d_array(char **array)
 {
@@ -76,9 +76,9 @@ void	ft_print_input(t_input input)
 	// printf("input.dda.draw_start is %d\n", input.dda.draw_start);
 	// printf("input.dda.draw_end is %d\n", input.dda.draw_end);
 	// printf("*********************************\n");
-	// printf("input.color.red is %d\n", input.color.red);
-	// printf("input.color.green is %d\n", input.color.green);
-	// printf("input.color.blue is %d\n", input.color.blue);
+	// printf("input.color.r is %d\n", input.color.r);
+	// printf("input.color.g is %d\n", input.color.g);
+	// printf("input.color.b is %d\n", input.color.b);
 	// printf("input.color.wall is %d\n", input.color.wall);
 	// printf("input.color.ceilling is %d\n", input.color.ceilling);
 	// printf("input.color.floor is %d\n", input.color.floor);
@@ -111,17 +111,6 @@ void	ft_print_input(t_input input)
 	// printf("*************copy array********************\n");
 	// ft_print_2d_array(input.array_copy);
 
-	// printf("*********************************\n");
-	// printf("input.sprite_data.sprite_number is %d\n", input.sprite_data.sprite_number);
-	// int i = 0;
-	// 	while (i < input.sprite_data.sprite_number)
-	// {
-	// 	printf("input.sprite_data.sprite_order[i] is %d\n", i);
-	// 	printf("input.sprite_data.sprite_distance[i] is %f\n", input.sprite_data.sprite_distance[i]);
-	// 	printf("input.sprite_data.sprite_pos[i][0] is %d\n", input.sprite_data.sprite_pos[i][0]);
-	// 	printf("input.sprite_data.sprite_pos[i][1] is %d\n", input.sprite_data.sprite_pos[i][1]);
-	// 	i++;
-	// }
 	// printf("input.sprite_data.sprite_x is %f\n", input.sprite_data.sprite_x);
 	// printf("input.sprite_data.sprite_y is %f\n", input.sprite_data.sprite_y);
 	// printf("input.sprite_data.inverse_camera is %f\n", input.sprite_data.inverse_camera);

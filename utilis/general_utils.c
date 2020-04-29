@@ -6,18 +6,18 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/27 19:34:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 15:13:41 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 void 	ft_free_malloc(t_input *input)
 {
-	free(input->sprite_data.buffer);
-	// free(input->sprite_data.sprite_order);
-	// free(input->sprite_data.sprite_distance);
-	free(input->sprite_data.pos);
+	if (input->sprite_data.buffer_present == 1)
+		free(input->sprite_data.buffer);
+	if (input->sprite_data.pos_present == 1)
+		free(input->sprite_data.pos);
 	printf("freed all malloc\n");
 }
 
@@ -25,7 +25,7 @@ int		ft_return_error(char *s, t_input *input)
 {
 	ft_putstr_fd(s, 1);
 	ft_free_malloc(input);
-	return (-1);
+	exit (0);
 }
 
 int		ft_isspace(int c)

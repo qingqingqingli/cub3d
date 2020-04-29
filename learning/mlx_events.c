@@ -20,7 +20,7 @@
 ** Now whenever we press a key, the window will be closed.
 */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 typedef struct  s_vars {
         void    *mlx;

@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/27 19:57:37 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 15:22:42 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 void	ft_reset_input(t_input *input)
 {
@@ -18,7 +18,6 @@ void	ft_reset_input(t_input *input)
 	input->res_present = 0;
 	input->res_x = 0;
 	input->res_y = 0;
-	input->orientation = 0;
 	input->north_present = 0;
 	input->north_path = "null";
 	input->south_present = 0;
@@ -65,9 +64,9 @@ void	ft_reset_input(t_input *input)
 	input->dda.line_height = 0;
 	input->dda.draw_start = 0;
 	input->dda.draw_end = 0;
-	input->color.red = 0;
-	input->color.green = 0;
-	input->color.blue = 0;
+	input->color.r = 0;
+	input->color.g = 0;
+	input->color.b = 0;
 	input->color.wall = 0;
 	input->color.ceilling = 0;
 	input->color.floor = 0;
@@ -76,6 +75,7 @@ void	ft_reset_input(t_input *input)
 	input->move.move_forward = 0;
 	input->move.move_left = 0;
 	input->move.move_right = 0;
+	input->move.close_window = 0;
 	input->wall.texture_height = 0;
 	input->wall.texture_width = 0;
 	input->wall.texture_number = 0;
@@ -114,4 +114,10 @@ void	ft_reset_input(t_input *input)
 	input->sprite_data.sprite_color = 0;
 	input->sprite_data.texture_x = 0;
 	input->sprite_data.texture_y = 0;
+	input->sprite_data.buffer_present = 0;
+	input->sprite_data.pos_present = 0;
+	input->bmp.image_size = 0;
+	input->bmp.file_size = 0;
+	input->bmp.dpi = 0;
+	input->bmp.ppm = 0;
 }

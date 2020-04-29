@@ -15,18 +15,33 @@ DEFINES
 - Need to change all the defines to the entire variable name
 DONE
 
-**********************ELEMENTS TO WORK ON*********************************
-
 [FLOOD FILL ALGORITHM]
 - flood fill: 4 way flood fill does not detect certain edge cases. 
   It can be changed to a 8-way flood fill algorithm
-NOT FIXED
+CHANGED TO 8 WAY FLOOD FILL
 
-[PLAYER ORIENTATION]
+[PLAYER ORIENTATION & WALL RENDERING]
 - Make sure the player is facing the correct orientation
 - Make sure the wall texture is the correct rendering
 Problem: West and East are swapped
-NOT FIXED
+FIXED
+
+MAKEFILE
+- how to compile the header file when it has been modified
+ANSWER: add header file next to where you compile the c file
+
+%.o: %.c $(HEADERS)
+	@echo "CUB3D: Compiling $<"
+	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
+
+**********************ELEMENTS TO WORK ON*********************************
+
+[EXIT with pressing on red cross button]
+
+[BMP FILE CREATION]
+
+[RESIZE SCREEN]
+- Oversize --> resize it to the normal screen
 
 [ERROR MANAGEMENT]
 
@@ -35,14 +50,6 @@ NOT FIXED
 [INPUT VALIDATION]
 
 [MEMORY LEAK]
-
-[EXIT with pressing on red cross button]
---> still need to work on it
-
-[BMP FILE CREATION]
-
-[RESIZE SCREEN]
-- Oversize --> resize it to the normal screen
 
 [CLEAN CODE]
 - One of the last tasks
@@ -53,5 +60,6 @@ NOT FIXED
 
 **********************QUESTION*********************************
 
-MAKEFILE
-- how to compile the header file when it has been modified
+[EXIT with pressing on red cross button]
+- Not sure why it does not work properly
+

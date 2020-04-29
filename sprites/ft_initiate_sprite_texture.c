@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 20:06:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/24 19:46:39 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 int	ft_initiate_sprite_texture(t_input *input)
 {

@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/27 19:42:33 by qli           ########   odam.nl          #
+#    Updated: 2020/04/28 15:32:12 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC 			=	utilis/general_utils.c \
 					6_movement.c \
 					7_ft_render_wall.c \
 					8_render_sprites.c \
+					9_create_bmp.c \
 					flood_fill/ft_duplicate_array.c \
 					flood_fill/ft_calculate_height.c \
 					flood_fill/ft_check_border.c \
@@ -94,6 +95,8 @@ INLCUDES		=	-Ilibft \
 					-Ignl \
 					-Iminilibx_master
 
+HEADERS 		= 	cub3d.h
+
 FLAGS 			=	-g -Wall -Wextra -Werror
 
 COMPILE 		=	gcc
@@ -119,7 +122,7 @@ $(NAME): $(SRC_O)
 	@$(COMPILE) $(FLAGS) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
-%.o: %.c
+%.o: %.c $(HEADERS)
 	@echo "CUB3D: Compiling $<"
 	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
 

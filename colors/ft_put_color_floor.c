@@ -6,11 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:32:32 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/27 20:18:30 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/qli/codam/cub3d/cub3d.h"
+#include "../cub3d.h"
 
 void 	ft_put_color_floor(t_input *input, int x)
 {
