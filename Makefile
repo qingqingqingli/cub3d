@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/30 15:35:46 by qli           ########   odam.nl          #
+#    Updated: 2020/04/30 16:04:33 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ SRC 			=	utilis/general_utils_1.c \
 					sprites/ft_calculate_sprite_width.c \
 					sprites/ft_get_sprite_color.c \
 					sprites/ft_calculate_texture_pos.c \
-					parsing/ft_read_file.c \
+					parsing/ft_process_file.c \
 					parsing/error_management.c \
 					parsing/ft_parse_path.c \
 					parsing/ft_parse_res_floor_ceilling.c \
