@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 19:17:14 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 15:48:19 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define W 119
 # define A 97
 # define D 100
-# define Z 122
+# define S 115
 # define KEY_PRESS 2
 # define KEY_RELEASE 3
 # define DESTROY_NOTIFY	17
@@ -76,7 +76,7 @@ void				ft_print_input(t_input input);
 int					ft_parse_input(char *line, t_input *input);
 int					ft_check_element(t_input input);
 int					ft_validate_element(t_input input);
-int					ft_check_map(char *line);
+int					ft_check_map(char *line, t_input *input);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 int					ft_process_map_line(char *line, t_input *input);
@@ -101,6 +101,19 @@ int					ft_validate_input(int argc, char **argv, t_input *input);
 int					ft_read_file(char **argv, t_input *input);
 
 /*
+** ---------------------------PARSING-----------------------------
+*/
+int					ft_parse_n(char *line, t_input *input, int *i);
+int					ft_parse_s(char *line, t_input *input, int *i);
+int					ft_parse_w(char *line, t_input *input, int *i);
+int					ft_parse_e(char *line, t_input *input, int *i);
+int					ft_parse_sprite(char *line, t_input *input, int *i);
+int					ft_parse_res(char *line, t_input *input, int *i);
+int					ft_parse_floor(char *line, t_input *input, int *i);
+int					ft_parse_ceilling(char *line, t_input *input, int *i);
+int					ft_check_map_line(char *line);
+
+/*
 ** ---------------------------UTILIS----------------------------------------
 */
 void				ft_reset_move(t_input *input);
@@ -111,8 +124,8 @@ void				ft_reset_bmp(t_input *input);
 /*
 ** ---------------------------FLOOD FILL----------------------------------------
 */
-int					ft_duplicate_array(t_input *input);
-unsigned int		ft_calculate_height(char **array);
+int					ft_duplicate_array(t_input *input, int x, int y);
+int					ft_calculate_height(char **array);
 int					ft_check_border(t_input *input);
 void				ft_flood_fill(t_input *input, unsigned int x,
 					unsigned int y, unsigned int height);
@@ -149,7 +162,7 @@ void				ft_set_color(t_input *input);
 ** ---------------------------MLX & MOVEMENT---------------------------------
 */
 
-void				ft_initiate_window(t_input *input);
+int					ft_initiate_window(t_input *input);
 void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
 int					ft_key_movement(int keycode, t_input *input);
 int					ft_release(int keycode, t_input *input);
@@ -160,7 +173,7 @@ int					ft_move_right(t_input *input);
 int					ft_move_left(t_input *input);
 int					ft_close(t_input *input);
 int					ft_render_next_frame(t_input *input);
-void				ft_initiate_img_2(t_input *input);
+int					ft_initiate_img_2(t_input *input);
 void				ft_render_img(t_input *input, int x, int y, int color);
 void				ft_display_img(t_input *input);
 

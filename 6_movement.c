@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/14 11:57:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:14:59 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 20:31:14 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_key_movement(int keycode, t_input *input)
 {
-	if (keycode == KEY_DOWN || keycode == Z)
+	if (keycode == KEY_DOWN || keycode == S)
 		input->move.move_backward = 1;
 	else if (keycode == KEY_UP || keycode == W)
 		input->move.move_forward = 1;
@@ -29,7 +29,7 @@ int		ft_key_movement(int keycode, t_input *input)
 
 int		ft_release(int keycode, t_input *input)
 {
-	if (keycode == KEY_DOWN || keycode == Z)
+	if (keycode == KEY_DOWN || keycode == S)
 		input->move.move_backward = 0;
 	else if (keycode == KEY_UP || keycode == W)
 		input->move.move_forward = 0;

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 11:55:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:21:42 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 21:17:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ unsigned int height)
 		ft_flood_fill(input, x + 1, y, height);
 	if (y < height - 1)
 		ft_flood_fill(input, x, y + 1, height);
-	if (x > 0 && y > 0)
-		ft_flood_fill(input, x - 1, y - 1, height);
-	if (x > 0 && y < height - 1)
-		ft_flood_fill(input, x - 1, y + 1, height);
-	if (x < ft_strlen(input->array_copy[y]) - 1 && y < height - 1)
-		ft_flood_fill(input, x + 1, y + 1, height);
-	if (x < ft_strlen(input->array_copy[y]) - 1 && y > 0)
-		ft_flood_fill(input, x + 1, y - 1, height);
+	// if (x > 0 && y > 0)
+	// 	ft_flood_fill(input, x - 1, y - 1, height);
+	// if (x > 0 && y < height - 1)
+	// 	ft_flood_fill(input, x - 1, y + 1, height);
+	// if (x < ft_strlen(input->array_copy[y]) - 1 && y < height - 1)
+	// 	ft_flood_fill(input, x + 1, y + 1, height);
+	// if (x < ft_strlen(input->array_copy[y]) - 1 && y > 0)
+	// 	ft_flood_fill(input, x + 1, y - 1, height);
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 15:56:25 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 16:21:37 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 09:17:40 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_free_malloc(t_input *input)
 
 int		ft_return_error(char *s, t_input *input)
 {
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd(s, 2);
 	ft_free_malloc(input);
 	exit(0);
 }

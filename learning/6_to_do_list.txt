@@ -34,32 +34,66 @@ ANSWER: add header file next to where you compile the c file
 	@echo "CUB3D: Compiling $<"
 	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
 
-**********************ELEMENTS TO WORK ON*********************************
-
 [EXIT with pressing on red cross button]
+- Check on imacs
+
+**********************ELEMENTS TO WORK ON*********************************
 
 [BMP FILE CREATION]
 
 [RESIZE SCREEN]
-- Oversize --> resize it to the normal screen
+- Oversize --> resize it to the screen resolution
 
 [ERROR MANAGEMENT]
+- double check
 
 [INPUT PARSING]
+- double check
 
 [INPUT VALIDATION]
+- double check
+***map validate gives seg fault
 
 [MEMORY LEAK]
+- check on imac
 
 [CLEAN CODE]
-- One of the last tasks
+- one of the last tasks
 
 [NORMINETTE]
 
-[MORE TESTS BEFORE EVALUATION]
+[EVAL LIST BEFORE EVALUATION]
+- makefile relinking
+- norminette
+- works properly on imac
+- check different maps
+- resolution variation (0, negative, super big)
+- memory leaks on imac
 
 **********************QUESTION*********************************
 
-[EXIT with pressing on red cross button]
-- Not sure why it does not work properly
+[ERROR MANAGEMENT]
+- double check
+- Protection for mlx_get_data_addr. As in the Man page, it does
+not say that it returns NULL when it fails to create
+
+	input->img_2.addr = mlx_get_data_addr(input->img_2.img,
+	&input->img_2.bits_per_pixel, &input->img_2.line_length,
+	&input->img_2.endian);
+	-- to protect
+- Protect all the malloc in gnl & libft? So need to send struct to function
+- ft_split
+
+[MAP FILES]
+- To ask Roy to share
+
+[KEY MOVEMENT]
+- left right to rotate
+- ask in the group
+
+[check valid map]
+- check borders?
+- change the method
+
+[BMP FILE CREATION]
 

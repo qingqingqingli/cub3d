@@ -6,11 +6,12 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/28 11:19:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 19:06:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 10:40:10 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include "sys/stat.h"
 
 void	ft_initiate_file_header(t_input *input)
 {
@@ -53,28 +54,25 @@ int		ft_create_image(t_input *input)
 	y = 0;
 	file_name = "cub3d.bmp";
 	/* create a file*/
-	fd = open(file_name, O_TRUNC | O_WRONLY | O_APPEND | O_CREAT);
+	fd = open(file_name, O_TRUNC | O_RDWR | S_IRWXU | O_CREAT);
 	if (fd == -1)
 		return (ft_return_error("Open file error\n", input));
-	/* write file header and image header */
+	/* write file header and image header / error management*/
 	write(fd, &input->file_header, 14);
 	write(fd, &input->image_header, sizeof(input->file_header));
 	/* write the color pixels to the pixel array*/
 	while (y < input->res_y)
 	{
 		x = 0;
+		/*it will always be active image*/
+		/* going up*/
 		while (x < input->res_x)
 		{
-			if (input->wall.img_active == 1)
-				input->bmp_color.addr = (int *)mlx_get_data_addr(input->img.img, &input->bmp_color.bits_per_pixel,
-				&input->bmp_color.line_length, &input->bmp_color.endian);
-			else if (input->wall.img_active == 2)
-				input->bmp_color.addr = (int *)mlx_get_data_addr(input->img_2.img, &input->bmp_color.bits_per_pixel,
-				&input->bmp_color.line_length, &input->bmp_color.endian);
+			input->bmp_color.addr = (int *)mlx_get_data_addr(input->img.img, &input->bmp_color.bits_per_pixel,
+			&input->bmp_color.line_length, &input->bmp_color.endian);
 			color = input->bmp_color.addr[x + y * input->bmp_color.line_length / 4];
 			printf("color is %d\n", color);
-			write(fd, &input->bmp_color.addr[x + y * input->bmp_color.line_length / 4],
-			sizeof(input->bmp_color.addr[x + y * input->bmp_color.line_length / 4]));
+			write(fd, &color, sizeof(input->bmp_color.addr[x + y * input->bmp_color.line_length / 4]));
 			x++;
 		}
 		y++;

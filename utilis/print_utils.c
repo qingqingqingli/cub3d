@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 16:21:21 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:58:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 21:17:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void		ft_print_2d_array(char **array)
 	int i;
 
 	i = 0;
-	while (array[i])
+	printf("111\n");
+	while (array[i] != NULL)
 	{
 		printf("%s\n", array[i]);
+		printf("222\n");
 		i++;
 	}
 }

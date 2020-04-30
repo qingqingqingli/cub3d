@@ -6,13 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 19:00:23 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 15:47:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		ft_check_map(char *line)
+int		ft_check_map(char *line, t_input *input)
 {
 	int i;
 	int count;
@@ -34,7 +34,7 @@ int		ft_check_map(char *line)
 			return (-1);
 	}
 	if (count >= 2)
-		return (-1);
+		return (ft_return_error("Error\nToo many players\n", input));
 	return (1);
 }
 
@@ -63,7 +63,7 @@ int		ft_lines_join(char *line, t_input *input)
 	i2 = 0;
 	new_line = (char *)malloc((ft_strlen(input->line) + ft_strlen(line)
 	+ 2) * sizeof(char));
-	if (new_line == 0)
+	if (new_line == NULL)
 		return (ft_return_error("Error\nMalloc error\n", input));
 	while (input->line[i1] != '\0')
 	{
@@ -85,14 +85,15 @@ int		ft_lines_join(char *line, t_input *input)
 
 int		ft_process_map_line(char *line, t_input *input)
 {
-	if (ft_check_map(line) == 1 && ft_check_spaces_nextline(line) != 1)
+	if (ft_check_map(line, input) == 1 && ft_check_spaces_nextline(line) != 1)
 	{
 		if (ft_strncmp(input->line, "null", 6) == 0)
 			input->line = ft_strdup(line);
 		else
 			ft_lines_join(line, input);
 	}
-	else if (ft_check_map(line) != -1 && ft_check_spaces_nextline(line) != 1)
+	else if (ft_check_map(line, input) != -1 &&
+	ft_check_spaces_nextline(line) != 1)
 		return (ft_return_error("Error\nInvalid map input\n", input));
 	return (0);
 }

@@ -6,15 +6,15 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 11:52:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:20:18 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/29 21:23:40 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-unsigned int	ft_calculate_height(char **array)
+int	ft_calculate_height(char **array)
 {
-	unsigned int height;
+	int height;
 
 	height = 0;
 	while (array[height])

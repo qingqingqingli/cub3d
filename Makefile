@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/29 19:18:19 by qli           ########   odam.nl          #
+#    Updated: 2020/04/30 15:35:46 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,6 @@ SRC 			=	utilis/general_utils_1.c \
 					utilis/print_utils.c \
 					utilis/reset_value_1.c \
 					utilis/reset_value_2.c \
-					utilis/error_management.c \
-					utilis/ft_read_file.c \
 					1_main.c \
 					2_input_parse.c \
 					3_input_2d_array.c \
@@ -86,6 +84,11 @@ SRC 			=	utilis/general_utils_1.c \
 					sprites/ft_calculate_sprite_width.c \
 					sprites/ft_get_sprite_color.c \
 					sprites/ft_calculate_texture_pos.c \
+					parsing/ft_read_file.c \
+					parsing/error_management.c \
+					parsing/ft_parse_path.c \
+					parsing/ft_parse_res_floor_ceilling.c \
+					parsing/validate_info.c \
 
 SRC_O 			=	$(SRC:.c=.o)
 
