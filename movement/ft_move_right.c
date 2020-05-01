@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/01 11:49:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 11:50:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 12:01:11 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 void	ft_move_right(t_input *input)
 {
-	if (input->array[(int)(input->ray_casting.pos_y + input->ray_casting.dir_x * MOVE_SPEED)]
-	[(int)(input->ray_casting.pos_x)] != '1' && input->array[(int)(input->ray_casting.pos_y)]
-	[(int)(input->ray_casting.pos_x - input->ray_casting.dir_y * MOVE_SPEED)] != '1')
+	double new_pos_y;
+	double new_pos_x;
+
+	new_pos_y = input->ray_casting.pos_y +
+	input->ray_casting.dir_x * MOVE_SPEED;
+	new_pos_x = input->ray_casting.pos_x -
+	input->ray_casting.dir_y * MOVE_SPEED;
+	if (input->array[(int)(new_pos_y)][(int)(input->ray_casting.pos_x)] != '1'
+	&& input->array[(int)(input->ray_casting.pos_y)][(int)(new_pos_x)] != '1')
 	{
-		input->ray_casting.pos_y += input->ray_casting.dir_x * MOVE_SPEED;
-		input->ray_casting.pos_x -= input->ray_casting.dir_y * MOVE_SPEED;
+		input->ray_casting.pos_y = new_pos_y;
+		input->ray_casting.pos_x = new_pos_x;
 	}
 }
