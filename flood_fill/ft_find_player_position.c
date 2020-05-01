@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 13:46:32 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:21:16 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 10:00:50 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 
 int	ft_find_player_position(t_input *input)
 {
-	char c;
+	char	c;
+	int		player_present;
 
 	c = 0;
-	while (input->array_copy[input->flood_fill_y] != NULL)
+	player_present = 0;
+	while (input->array[input->flood_fill_y] != NULL)
 	{
-		while (input->array_copy[input->flood_fill_y]
+		while (input->array[input->flood_fill_y]
 		[input->flood_fill_x] != '\0')
 		{
-			c = input->array_copy[input->flood_fill_y][input->flood_fill_x];
+			c = input->array[input->flood_fill_y][input->flood_fill_x];
 			if (c == 'S' || c == 'N' || c == 'W' || c == 'E')
-				return (0);
+			{
+				player_present = 1;
+				return (player_present);
+			}
 			else
 				input->flood_fill_x++;
 		}
 		input->flood_fill_x = 0;
 		input->flood_fill_y++;
 	}
-	return (0);
+	return (player_present);
 }

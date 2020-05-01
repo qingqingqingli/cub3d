@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/30 16:01:10 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 18:48:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int		ft_parse_input(char *line, t_input *input)
 	int i;
 
 	i = 0;
+	if (line == NULL)
+		return (ft_return_error("Error\nNo line\n", input));
 	if (ft_check_element(*input) == 0)
 	{
 		while (line[i] != '\0' && ft_isspace(line[i]) == 1)

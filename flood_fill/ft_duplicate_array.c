@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 10:59:00 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 20:46:32 by qli           ########   odam.nl         */
+/*   Updated: 2020/04/30 18:47:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_duplicate_array(t_input *input, int x, int y)
 {
 	int height;
 
+	if (!input->array)
+		return (ft_return_error("Error\nWrong input\n", input));
 	height = (int)ft_calculate_height(input->array);
 	input->array_copy = (char **)malloc(sizeof(char *) * height);
 	if (input->array_copy == NULL)
