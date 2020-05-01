@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/30 18:52:21 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 11:16:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,10 +168,12 @@ void				my_mlx_pixel_put(t_mlx *img, int x, int y, int color);
 int					ft_key_movement(int keycode, t_input *input);
 int					ft_release(int keycode, t_input *input);
 int					ft_process_movement(t_input *input);
-int					ft_move_forward(t_input *input);
-int					ft_move_backward(t_input *input);
-int					ft_move_right(t_input *input);
-int					ft_move_left(t_input *input);
+void				ft_move_forward(t_input *input);
+void				ft_move_backward(t_input *input);
+void				ft_rotate_right(t_input *input);
+void				ft_rotate_left(t_input *input);
+void				ft_move_left(t_input *input);
+void				ft_move_right(t_input *input);
 int					ft_close(t_input *input);
 int					ft_render_next_frame(t_input *input);
 int					ft_initiate_img_2(t_input *input);

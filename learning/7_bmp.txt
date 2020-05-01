@@ -62,3 +62,14 @@ If an image is not created, create one;
 if an image has been created, modify it;
 
 - Now if an image is created, the overwriting of the file does not work properly
+
+- not sure if S_IRWXU is needed
+
+
+**********************LEARNINGS***********************************
+
+y should start from input->res_y - 1
+		/*bmp starts writing from bottom, therefore, it needs to start from input->res_y*/
+
+it will always be an active image
+		/*it will always be active image*/

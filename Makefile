@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/04/30 19:11:19 by qli           ########   odam.nl          #
+#    Updated: 2020/05/01 11:50:34 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,10 @@ SRC 			=	utilis/general_utils_1.c \
 					mlx/ft_display_img.c \
 					movement/ft_move_forward.c \
 					movement/ft_move_backward.c \
-					movement/ft_move_left.c \
+					movement/ft_rotate_left.c \
+					movement/ft_rotate_right.c \
 					movement/ft_move_right.c \
+					movement/ft_move_left.c \
 					wall/ft_calculate_wall_x.c \
 					wall/ft_calculate_texture_x.c \
 					wall/ft_calculate_texture_step.c \

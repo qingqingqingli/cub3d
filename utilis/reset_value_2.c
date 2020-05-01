@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 16:30:41 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 16:31:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 11:00:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_reset_move(t_input *input)
 	input->move.move_forward = 0;
 	input->move.move_left = 0;
 	input->move.move_right = 0;
+	input->move.rotate_left = 0;
+	input->move.rotate_right = 0;
 	input->move.close_window = 0;
 }
 

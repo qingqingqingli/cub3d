@@ -5,27 +5,20 @@
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/14 15:00:19 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 10:57:24 by qli           ########   odam.nl         */
+/*   Created: 2020/05/01 11:49:52 by qli           #+#    #+#                 */
+/*   Updated: 2020/05/01 11:50:05 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int 	ft_move_right(t_input *input)
+void	ft_move_right(t_input *input)
 {
-	double old_direction_x;
-	double old_plane_x;
-
-	old_direction_x = input->ray_casting.dir_x;
-	old_plane_x = input->ray_casting.plane_x;
-	input->ray_casting.dir_x = input->ray_casting.dir_x * cos(ROTATE_SPEED)
-	- input->ray_casting.dir_y * sin(ROTATE_SPEED);
-	input->ray_casting.dir_y = old_direction_x * sin(ROTATE_SPEED)
-	+ input->ray_casting.dir_y * cos(ROTATE_SPEED);
-	input->ray_casting.plane_x = input->ray_casting.plane_x * cos(ROTATE_SPEED)
-	- input->ray_casting.plane_y * sin(ROTATE_SPEED);
-	input->ray_casting.plane_y = old_plane_x * sin(ROTATE_SPEED)
-	+ input->ray_casting.plane_y * cos(ROTATE_SPEED);
-	return (0);
+	if (input->array[(int)(input->ray_casting.pos_y + input->ray_casting.dir_x * MOVE_SPEED)]
+	[(int)(input->ray_casting.pos_x)] != '1' && input->array[(int)(input->ray_casting.pos_y)]
+	[(int)(input->ray_casting.pos_x - input->ray_casting.dir_y * MOVE_SPEED)] != '1')
+	{
+		input->ray_casting.pos_y += input->ray_casting.dir_x * MOVE_SPEED;
+		input->ray_casting.pos_x -= input->ray_casting.dir_y * MOVE_SPEED;
+	}
 }
