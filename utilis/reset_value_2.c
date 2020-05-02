@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 16:30:41 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 11:00:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 16:03:50 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,6 @@ void	ft_reset_bmp(t_input *input)
 	input->bmp.file_size = 0;
 	input->bmp.dpi = 0;
 	input->bmp.ppm = 0;
+	input->bmp.pixel_color = 0;
+	input->bmp.padding = 0;
 }

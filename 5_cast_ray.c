@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 10:21:32 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 21:17:12 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,23 +79,15 @@ int		ft_initiate_sprite(t_input *input)
 
 int		ft_cast_ray(t_input *input)
 {
-	printf("*0\n");
 	ft_initiate_variables(input);
-	printf("**1\n");
 	if (input->bmp_needed == 0)
 		ft_initiate_img_2(input);
-	printf("***2\n");
 	ft_initiate_sprite(input);
-	printf("****3\n");
 	ft_calculate_ray(input);
-	printf("******4\n");
 	if (input->bmp_needed == 1)
 	{
-		printf("********5\n");
 		ft_create_bmp(input);
-		printf("**************6\n");
 		ft_close(input);
-		printf("**************000\n");
 	}
 	return (0);
 }

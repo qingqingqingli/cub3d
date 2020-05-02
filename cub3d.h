@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 11:16:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 21:17:12 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,7 @@
 /*
 ** ---------------------------FUNCTIONS----------------------------------------
 */
-
-int					get_next_line(int fd, char **line);
-void				ft_putstr_fd(char *s, int fd);
 int					ft_return_error(char *s, t_input *input);
-int					ft_atoi(const char *str);
 int					ft_isspace(int c);
 int					ft_isdigit(int c);
 int					ft_char_range(int c);
@@ -77,12 +73,7 @@ int					ft_parse_input(char *line, t_input *input);
 int					ft_check_element(t_input input);
 int					ft_validate_element(t_input input);
 int					ft_check_map(char *line, t_input *input);
-size_t				ft_strlen(const char *s);
-char				*ft_strdup(const char *s1);
 int					ft_process_map_line(char *line, t_input *input);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
-void				*ft_memcpy(void *dst, const void *src, size_t n);
-char				**ft_split(char const *s, char c);
 int					ft_validate_map(t_input *input);
 int					ft_cast_ray(t_input *input);
 int					ft_check_sprawning_pos(char c, t_input *input);
@@ -99,6 +90,19 @@ int					ft_check_position(int c);
 void				ft_free_malloc(t_input *input);
 int					ft_validate_input(int argc, char **argv, t_input *input);
 int					ft_process_input_file(char **argv, t_input *input);
+
+/*
+** ---------------------------LIBRARIES----------------------------------------
+*/
+void				ft_bzero(void *s, size_t n);
+int					get_next_line(int fd, char **line);
+void				ft_putstr_fd(char *s, int fd);
+size_t				ft_strlen(const char *s);
+char				*ft_strdup(const char *s1);
+int					ft_atoi(const char *str);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
+char				**ft_split(char const *s, char c);
 
 /*
 ** ---------------------------PARSING-----------------------------

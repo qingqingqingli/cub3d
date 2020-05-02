@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 11:00:03 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/01 21:05:30 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ typedef struct		s_bmp_data
 	int				file_size;
 	int				dpi;
 	int				ppm;
+	int				pixel_color;
+	int				padding;
 }					t_bmp_data;
 
 /*
