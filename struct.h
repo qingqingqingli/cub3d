@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 05:57:57 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 07:23:00 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,8 +255,8 @@ typedef struct		s_input
 	char			*line;
 	char			**array;
 	char			**array_copy;
-	unsigned int	flood_fill_x;
-	unsigned int	flood_fill_y;
+	int				flood_fill_x;
+	int				flood_fill_y;
 	int				ceilling_color;
 	int				floor_color;
 }					t_input;

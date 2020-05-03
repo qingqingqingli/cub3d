@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 06:23:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 06:35:13 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		ft_process_input_file(char **argv, t_input *input)
 		if (!line)
 			return (ft_return_error("Error\nRead line error\n", input));
 		ft_parse_input(line, input);
-		// ft_validate_input(line, input);
+		ft_validate_input(line, input);
 		output = get_next_line(fd, &line);
 		if (output < 0)
 			return (ft_return_error("Error\nRead line error\n", input));
