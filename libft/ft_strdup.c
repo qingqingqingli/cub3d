@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 12:47:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:26:50 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 12:52:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strdup(const char *s1)
 	len = ft_strlen(src);
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (dst == 0)
-		return (0);
+		return ("null");
 	while (src[i] != '\0')
 	{
 		dst[i] = src[i];

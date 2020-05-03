@@ -93,5 +93,7 @@ If the return value is negative, start the error management process
 - resolution variation (0, negative, super big)
 - memory leaks on imac
 
+[clean all unnecessary prototypes]
+
 **********************QUESTION*********************************
 

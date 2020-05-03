@@ -6,12 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 10:59:00 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/30 18:47:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 11:32:30 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
+/* double check this one */
 int	ft_duplicate_array(t_input *input, int x, int y)
 {
 	int height;

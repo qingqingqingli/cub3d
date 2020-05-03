@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 07:23:00 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 16:21:44 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,8 @@ typedef struct		s_input
 	t_file_header	file_header;
 	t_image_header	image_header;
 	t_bmp_data		bmp;
+	char			*cub_line;
+	char			**cub_array;
 	int				bmp_needed;
 	int				res_present;
 	int				res_x;
@@ -259,6 +261,8 @@ typedef struct		s_input
 	int				flood_fill_y;
 	int				ceilling_color;
 	int				floor_color;
+	int				map_line_present;
+	int				element_line_present;
 }					t_input;
 
 #endif
