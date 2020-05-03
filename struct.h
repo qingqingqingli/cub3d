@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 21:05:30 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:32:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,9 @@ typedef struct		s_movement
 	int				move_forward;
 	int				move_backward;
 	int				move_right;
-	int 			rotate_right;
+	int				rotate_right;
 	int				move_left;
-	int 			rotate_left;
+	int				rotate_left;
 	int				close_window;
 }					t_movement;
 
@@ -232,6 +232,8 @@ typedef struct		s_input
 	int				res_present;
 	int				res_x;
 	int				res_y;
+	int				res_x_present;
+	int				res_y_present;
 	int				north_present;
 	char			*north_path;
 	int				south_present;

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 16:31:18 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:32:49 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ static void	ft_reset_color(t_input *input)
 
 void		ft_reset_input(t_input *input)
 {
+	input->res_x_present = 0;
+	input->res_y_present = 0;
 	ft_reset_struct(input);
 	ft_reset_ray_casting(input);
 	ft_reset_dda(input);

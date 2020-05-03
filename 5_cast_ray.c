@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 21:17:12 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:38:15 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		ft_initiate_sprite(t_input *input)
 
 int		ft_cast_ray(t_input *input)
 {
+	printf("here\n");
 	ft_initiate_variables(input);
 	if (input->bmp_needed == 0)
 		ft_initiate_img_2(input);
@@ -89,5 +90,6 @@ int		ft_cast_ray(t_input *input)
 		ft_create_bmp(input);
 		ft_close(input);
 	}
+	printf("here 2\n");
 	return (0);
 }
