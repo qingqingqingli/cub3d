@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/01 11:50:34 by qli           ########   odam.nl          #
+#    Updated: 2020/05/03 06:09:10 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,13 @@ SRC 			=	utilis/general_utils_1.c \
 					utilis/reset_value_1.c \
 					utilis/reset_value_2.c \
 					1_main.c \
-					2_input_parse.c \
-					3_input_2d_array.c \
+					2_parse_input.c \
+					3_validate_input.c \
+					3_validate_input_new.c \
 					4_validate_map.c \
 					5_cast_ray.c \
 					6_movement.c \
-					7_ft_render_wall.c \
+					7_render_wall.c \
 					8_render_sprites.c \
 					9_create_bmp.c \
 					flood_fill/ft_duplicate_array.c \
@@ -86,11 +87,10 @@ SRC 			=	utilis/general_utils_1.c \
 					sprites/ft_calculate_sprite_width.c \
 					sprites/ft_get_sprite_color.c \
 					sprites/ft_calculate_texture_pos.c \
-					parsing/ft_process_input_file.c \
 					parsing/error_management.c \
 					parsing/ft_parse_path.c \
 					parsing/ft_parse_res_floor_ceilling.c \
-					parsing/validate_input.c \
+					parsing/validate_input.c				
 
 SRC_O 			=	$(SRC:.c=.o)
 

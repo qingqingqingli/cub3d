@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 21:17:12 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:55:41 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
 int					ft_check_position(int c);
 void				ft_free_malloc(t_input *input);
-int					ft_validate_input(int argc, char **argv, t_input *input);
+int					ft_validate_file_input(int argc, char **argv, t_input *input);
 int					ft_process_input_file(char **argv, t_input *input);
 
 /*
@@ -117,6 +117,7 @@ int					ft_parse_floor(char *line, t_input *input, int *i);
 int					ft_parse_ceilling(char *line, t_input *input, int *i);
 int					ft_check_map_line(char *line);
 int					ft_check_next_line(int c);
+int					ft_validate_input(char *line, t_input *input);
 
 /*
 ** ---------------------------UTILIS----------------------------------------

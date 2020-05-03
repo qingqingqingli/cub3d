@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 15:34:53 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/30 18:49:21 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:52:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_validate_file_type(char *name)
 	return (-1);
 }
 
-int		ft_validate_input(int argc, char **argv, t_input *input)
+int		ft_validate_file_input(int argc, char **argv, t_input *input)
 {
 	if (argc < 2)
 		return (ft_return_error("Error\nNo map description\n", input));
@@ -64,21 +64,4 @@ int		ft_validate_input(int argc, char **argv, t_input *input)
 	if (argc > 3)
 		return (ft_return_error("Error\nToo many arguments\n", input));
 	return (0);
-}
-
-int		ft_check_map_line(char *line)
-{
-	int i;
-
-	i = 0;
-	while (line[i] != '\0')
-	{
-		if (line[i] == '1' || line[i] == ' ' || line[i] == '0'
-		|| line[i] == 'N' || line[i] == 'S' || line[i] == 'W'
-		|| line[i] == 'E' || line[i] == '2')
-			i++;
-		else
-			return (-1);
-	}
-	return (1);
 }
