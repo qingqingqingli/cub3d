@@ -6,20 +6,16 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:19:37 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 17:20:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 18:49:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		ft_lines_join(char *line, t_input *input)
+int		ft_lines_join(char *line, t_input *input, int i1, int i2)
 {
 	char	*new_line;
-	int		i1;
-	int		i2;
 
-	i1 = 0;
-	i2 = 0;
 	new_line = (char *)malloc((ft_strlen(input->line) + ft_strlen(line)
 	+ 2) * sizeof(char));
 	if (new_line == NULL)
@@ -42,14 +38,10 @@ int		ft_lines_join(char *line, t_input *input)
 	return (0);
 }
 
-int		ft_lines_join_cub(char *line, t_input *input)
+int		ft_lines_join_cub(char *line, t_input *input, int i1, int i2)
 {
 	char	*new_line;
-	int		i1;
-	int		i2;
 
-	i1 = 0;
-	i2 = 0;
 	new_line = (char *)malloc((ft_strlen(input->cub_line) + ft_strlen(line)
 	+ 2) * sizeof(char));
 	if (new_line == NULL)

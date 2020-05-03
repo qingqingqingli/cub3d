@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 14:07:37 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 15:05:10 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 18:53:26 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_parse_floor(t_input *input, int line, int *i)
 	if (input->floor_present == 1)
 		return (ft_return_error("Error\nRedundant element input\n", input));
 	if (input->cub_array[line][*i] == 'F' &&
-	ft_isspace(input->cub_array[line][*i + 1] ) == 1)
+	ft_isspace(input->cub_array[line][*i + 1]) == 1)
 	{
 		input->floor_present = 1;
 		*i = *i + 1;
@@ -64,7 +64,7 @@ int		ft_parse_ceilling(t_input *input, int line, int *i)
 	if (input->ceilling_present == 1)
 		return (ft_return_error("Error\nRedundant element input\n", input));
 	if (input->cub_array[line][*i] == 'C' &&
-	ft_isspace(input->cub_array[line][*i + 1] ) == 1)
+	ft_isspace(input->cub_array[line][*i + 1]) == 1)
 	{
 		input->ceilling_present = 1;
 		*i = *i + 1;

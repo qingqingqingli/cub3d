@@ -6,33 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 12:47:40 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 17:23:01 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 18:55:23 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-char	*ft_strdup_2(const char *s1)
-{
-	char	*dst;
-	char	*src;
-	size_t	len;
-	size_t	i;
-
-	i = 0;
-	src = (char *)s1;
-	len = ft_strlen(src);
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (dst == 0)
-		return ("null");
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
 
 static void		ft_malloc_free(char **dst, int n)
 {
@@ -42,6 +20,22 @@ static void		ft_malloc_free(char **dst, int n)
 		free(dst[n]);
 	}
 	free(dst);
+}
+
+static size_t	ft_word_amount(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }
 
 static char		*ft_word_create(char const *s, char c, size_t *i)
@@ -99,22 +93,6 @@ static int		ft_array_create(char **dst, char const *s, char c)
 	}
 	dst[n] = NULL;
 	return (0);
-}
-
-static size_t	ft_word_amount(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
 }
 
 char			**ft_split_2(char const *s, char c)

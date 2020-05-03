@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_validate_map_line.c                             :+:    :+:            */
+/*   validation_functions.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:21:12 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 17:21:48 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 19:26:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ int		ft_validate_map_line(char *line)
 	int i;
 
 	i = 0;
-	while (line[i] != '\0')
-	{
-		if (line[i] != '0' && line[i] != '1' && line[i] != '2'
-		&& line[i] != ' ' && line[i] != 'N' && line[i] != 'S'
-		&& line[i] != 'W' && line[i] != 'E')
-			return (-1);
-		else
-			i++;
-	}
-	return (1);
+	if (ft_check_next_line(line) == 1)
+		return (0);
+	while (line[i] != '\0' && ft_isspace(line[i]) == 1)
+		i++;
+	if ((line[i] != 'R' && line[i] != 'N' && line[i] != 'S'
+	&& line[i] != 'W' && line[i] != 'C' && line[i] != 'E'
+	&& line[i] != 'S' && line[i] != 'F' && line[i] != '.')
+	|| (ft_isdigit(line[i]) == 1))
+		return (1);
+	return (0);
 }
 
 int		ft_check_spaces(char *line)

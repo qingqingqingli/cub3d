@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/03 17:27:05 by qli           ########   odam.nl          #
+#    Updated: 2020/05/03 19:47:38 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRC 			=	utilis/general_utils_1.c \
 					7_render_wall.c \
 					8_render_sprites.c \
 					9_create_bmp.c \
-					flood_fill/ft_duplicate_array.c \
 					flood_fill/ft_calculate_height.c \
 					flood_fill/ft_check_border.c \
 					flood_fill/ft_flood_fill.c \
@@ -92,7 +91,9 @@ SRC 			=	utilis/general_utils_1.c \
 					parsing/validate_input.c \
 					parsing/ft_lines_join.c \
 					parsing/validation_functions.c \
-					parsing/ft_split_2.c			
+					parsing/ft_split_2.c \
+					parsing/ft_strdup_2.c \
+					parsing/validate_element.c			
 
 SRC_O 			=	$(SRC:.c=.o)
 

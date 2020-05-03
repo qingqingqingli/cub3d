@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   general_utils_1.c                                  :+:    :+:            */
+/*   ft_strdup_2.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 18:39:20 by qli           ########   odam.nl         */
+/*   Created: 2020/05/03 18:53:58 by qli           #+#    #+#                 */
+/*   Updated: 2020/05/03 18:54:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		ft_check_sprawning_pos(char c, t_input *input)
+char	*ft_strdup_2(const char *s1)
 {
-	if (c == 'N')
+	char	*dst;
+	char	*src;
+	size_t	len;
+	size_t	i;
+
+	i = 0;
+	src = (char *)s1;
+	len = ft_strlen(src);
+	dst = (char *)malloc(sizeof(char) * (len + 1));
+	if (dst == 0)
+		return ("null");
+	while (src[i] != '\0')
 	{
-		input->ray_casting.sprawing_dir = 'N';
-		return (1);
+		dst[i] = src[i];
+		i++;
 	}
-	else if (c == 'S')
-	{
-		input->ray_casting.sprawing_dir = 'S';
-		return (1);
-	}
-	else if (c == 'W')
-	{
-		input->ray_casting.sprawing_dir = 'W';
-		return (1);
-	}
-	else if (c == 'E')
-	{
-		input->ray_casting.sprawing_dir = 'E';
-		return (1);
-	}
-	return (0);
+	dst[i] = '\0';
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 13:10:04 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 13:51:39 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 18:53:08 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_parse_n(t_input *input, int line, int *i)
 {
 	if (input->north_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
-	if (input->cub_array[line][*i] == 'N' && 
+	if (input->cub_array[line][*i] == 'N' &&
 	input->cub_array[line][*i + 1] == 'O' &&
 	ft_isspace(input->cub_array[line][*i + 2]) == 1)
 	{
@@ -42,7 +42,7 @@ int		ft_parse_s(t_input *input, int line, int *i)
 {
 	if (input->south_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
-	if (input->cub_array[line][*i] == 'S' && 
+	if (input->cub_array[line][*i] == 'S' &&
 	input->cub_array[line][*i + 1] == 'O' &&
 	ft_isspace(input->cub_array[line][*i + 2]) == 1)
 	{
@@ -68,7 +68,7 @@ int		ft_parse_w(t_input *input, int line, int *i)
 {
 	if (input->west_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
-	if (input->cub_array[line][*i] == 'W' && 
+	if (input->cub_array[line][*i] == 'W' &&
 	input->cub_array[line][*i + 1] == 'E' &&
 	ft_isspace(input->cub_array[line][*i + 2]) == 1)
 	{
@@ -94,7 +94,7 @@ int		ft_parse_e(t_input *input, int line, int *i)
 {
 	if (input->east_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
-	if (input->cub_array[line][*i] == 'E' && 
+	if (input->cub_array[line][*i] == 'E' &&
 	input->cub_array[line][*i + 1] == 'A' &&
 	ft_isspace(input->cub_array[line][*i + 2]) == 1)
 	{

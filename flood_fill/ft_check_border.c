@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/22 11:54:50 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 11:44:19 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 19:32:22 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ int		ft_check_left_border(t_input *input)
 	height = 0;
 	while (height < ft_calculate_height(input->array))
 	{
-		if (input->array[height][0] != '1' && input->array[height][0] != ' ')
+		if (input->array[height][0] != '1' &&
+		input->array[height][0] != ' ')
 			return (ft_return_error("Error\nWrong map\n", input));
 		height++;
 	}
-	return (0);	
+	return (0);
 }
