@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 10:01:02 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 05:52:48 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int		main(int argc, char **argv)
 {
 	t_input	input;
 
-	ft_validate_input(argc, argv, &input); //validate argv
+	ft_validate_file_input(argc, argv, &input);
 	printf("2\n");
-	ft_reset_input(&input); //reset all values
+	ft_reset_input(&input);
 	printf("3\n");
-	ft_process_input_file(argv, &input); //process input file
+	ft_process_input_file(argv, &input);
 	printf("4\n");
 	ft_validate_map(&input);
 	printf("5\n");

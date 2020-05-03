@@ -6,19 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/28 11:19:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/02 11:53:39 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/02 12:13:37 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_check_padding(t_input *input)
-{
-	while ((input->res_x * 3 + input->bmp.padding) % 4 != 0)
-		input->bmp.padding++;
-}
-
-int		ft_write_file_header(int fd, t_input *input)
+static int	ft_write_file_header(int fd, t_input *input)
 {
 	char file_header[14];
 
@@ -34,7 +28,7 @@ int		ft_write_file_header(int fd, t_input *input)
 	return (0);
 }
 
-int		ft_write_image_header(int fd, t_input *input)
+static int	ft_write_image_header(int fd, t_input *input)
 {
 	char image_header[40];
 
@@ -52,7 +46,7 @@ int		ft_write_image_header(int fd, t_input *input)
 	return (0);
 }
 
-int		ft_write_rgb(int fd, t_input *input, int x, int y)
+static int	ft_write_rgb(int fd, t_input *input, int x, int y)
 {
 	int position;
 
@@ -66,22 +60,8 @@ int		ft_write_rgb(int fd, t_input *input, int x, int y)
 	return (0);
 }
 
-int		ft_create_bmp(t_input *input)
+static int	ft_create_image(int fd, t_input *input, int x, int y)
 {
-	int 	fd;
-	int		x;
-	int		y;
-	char 	*file_name;
-
-	x = 0;
-	y = input->res_y - 1;
-	file_name = "./bmp_screenshot/cub3d.bmp";
-	fd = open(file_name, O_RDWR | O_TRUNC | O_CREAT, 0666);
-	if (fd == -1)
-		return (ft_return_error("Error\nOpen file error\n", input));
-	ft_check_padding(input);
-	ft_write_file_header(fd, input);
-	ft_write_image_header(fd, input);
 	while (y >= 0)
 	{
 		x = 0;
@@ -90,8 +70,30 @@ int		ft_create_bmp(t_input *input)
 			ft_write_rgb(fd, input, x, y);
 			x++;
 		}
-		write(fd, "\0\0\0", input->bmp.padding);
+		if (write(fd, "\0\0\0", input->bmp.padding) < 0)
+			return (ft_return_error("Error\nWrite error\n", input));
 		y--;
 	}
+	return (0);
+}
+
+int			ft_create_bmp(t_input *input)
+{
+	int		fd;
+	int		x;
+	int		y;
+	char	*file_name;
+
+	x = 0;
+	y = input->res_y - 1;
+	file_name = "./bmp_screenshot/cub3d.bmp";
+	fd = open(file_name, O_RDWR | O_TRUNC | O_CREAT, 0666);
+	if (fd == -1)
+		return (ft_return_error("Error\nOpen file error\n", input));
+	while ((input->res_x * 3 + input->bmp.padding) % 4 != 0)
+		input->bmp.padding++;
+	ft_write_file_header(fd, input);
+	ft_write_image_header(fd, input);
+	ft_create_image(fd, input, x, y);
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   2_input_parse.c                                    :+:    :+:            */
+/*   2_parse_input.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/30 18:48:54 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/03 06:35:13 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,6 @@ int		ft_choose_element(char *line, t_input *input, int *i)
 	return (0);
 }
 
-/*
-** parse element info
-** validate and resize element info
-** parse map info
-** validate map info
-*/
-
 int		ft_parse_input(char *line, t_input *input)
 {
 	int i;
@@ -62,6 +55,31 @@ int		ft_parse_input(char *line, t_input *input)
 	{
 		ft_process_map_line(line, input);
 		input->array = ft_split(input->line, '\n');
+	}
+	return (0);
+}
+
+int		ft_process_input_file(char **argv, t_input *input)
+{
+	int		fd;
+	char	*line;
+	int		output;
+
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		return (ft_return_error("Error\nOpen file error\n", input));
+	output = get_next_line(fd, &line);
+	if (output < 0)
+		return (ft_return_error("Error\nRead line error\n", input));
+	while (output == 1)
+	{
+		if (!line)
+			return (ft_return_error("Error\nRead line error\n", input));
+		ft_parse_input(line, input);
+		ft_validate_input(line, input);
+		output = get_next_line(fd, &line);
+		if (output < 0)
+			return (ft_return_error("Error\nRead line error\n", input));
 	}
 	return (0);
 }

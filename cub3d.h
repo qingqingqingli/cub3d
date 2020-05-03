@@ -6,7 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2020/05/03 05:28:54 by qli           ########   odam.nl         */
+=======
+/*   Updated: 2020/05/03 07:22:43 by qli           ########   odam.nl         */
+>>>>>>> dda
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +92,7 @@ int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
 int					ft_check_position(int c);
 void				ft_free_malloc(t_input *input);
-int					ft_validate_input(int argc, char **argv, t_input *input);
+int					ft_validate_file_input(int argc, char **argv, t_input *input);
 int					ft_process_input_file(char **argv, t_input *input);
 
 /*
@@ -117,6 +121,7 @@ int					ft_parse_floor(char *line, t_input *input, int *i);
 int					ft_parse_ceilling(char *line, t_input *input, int *i);
 int					ft_check_map_line(char *line);
 int					ft_check_next_line(int c);
+int					ft_validate_input(char *line, t_input *input);
 
 /*
 ** ---------------------------UTILIS----------------------------------------
@@ -131,9 +136,9 @@ void				ft_reset_bmp(t_input *input);
 */
 int					ft_duplicate_array(t_input *input, int x, int y);
 int					ft_calculate_height(char **array);
-int					ft_check_border(t_input *input);
-void				ft_flood_fill(t_input *input, unsigned int x,
-					unsigned int y, unsigned int height);
+int					ft_check_top_border(t_input *input);
+int					ft_check_bottom_border(t_input *input);
+int					ft_flood_fill(t_input *input, int x,int y);
 int					ft_find_player_position(t_input *input);
 
 /*
