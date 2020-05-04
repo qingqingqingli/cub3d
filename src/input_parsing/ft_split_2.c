@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 12:47:40 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 15:17:51 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 21:05:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,12 @@ static int		ft_array_create(char **dst, char const *s, char c, size_t i)
 			i++;
 		while (s[i] == c)
 		{
-			dst[n] = ft_strdup_2("\n");
+			dst[n] = ft_strdup("\n");
+			if (ft_strncmp(dst[n], "null", 6) == 0)
+			{
+				ft_malloc_free(dst, n);
+				return (-1);
+			}
 			n++;
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 14:20:43 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 21:11:00 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_initiate_img_2(t_input *input)
 	input->img_2.addr = mlx_get_data_addr(input->img_2.img,
 	&input->img_2.bits_per_pixel, &input->img_2.line_length,
 	&input->img_2.endian);
-	if (input->img_2.addr == NULL)
+	if (!input->img_2.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }

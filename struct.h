@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 15:22:25 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 16:36:19 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,9 @@ typedef struct		s_movement
 	int				move_forward;
 	int				move_backward;
 	int				move_right;
-	int 			rotate_right;
+	int				rotate_right;
 	int				move_left;
-	int 			rotate_left;
+	int				rotate_left;
 	int				close_window;
 }					t_movement;
 

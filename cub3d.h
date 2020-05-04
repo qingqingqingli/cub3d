@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 16:15:58 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 21:45:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,13 @@ int					ft_validate_map(t_input *input);
 int					ft_cast_ray(t_input *input);
 int					ft_check_sprawning_pos(char c, t_input *input);
 int					ft_calculate_ray(t_input *input);
-int					ft_dda(t_input *input);
 void				ft_reset_input(t_input *input);
-int					ft_draw_line(t_input *input);
-int					create_rgb(int r, int g, int b);
-int					get_r(int rgb);
-int					get_g(int rgb);
-int					get_b(int rgb);
-int					ft_put_color(t_input *input, int x);
 int					ft_check_position(int c);
 void				ft_free_malloc(t_input *input);
 int					ft_validate_file_input(int argc, char **argv,
 					t_input *input);
 int					ft_input_intake(char **argv, t_input *input);
+void				ft_free_2d_array(char **array);
 
 /*
 ** ---------------------------LIBRARIES----------------------------------------
@@ -127,6 +121,9 @@ int					ft_lines_join(char *line, t_input *input, int i1, int i2);
 int					ft_validate_map_line(char *line);
 int					ft_check_spaces(char *line);
 char				*ft_strdup_2(const char *s1);
+void				ft_initiate_variables(t_input *input);
+void				ft_initiate_sprite(t_input *input);
+void				ft_initiate_texture(t_input *input);
 
 /*
 ** ---------------------------UTILIS----------------------------------------

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 15:34:53 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 19:34:46 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int				ft_validate_file_input(int argc, char **argv, t_input *input)
 		if (ft_strncmp(argv[2], "--save", 7) == 0)
 			input->bmp_needed = 1;
 		else
-			(ft_return_error("Error\nWrong save argument\n", input));
+			(ft_return_error("Error\nWrong arguments\n", input));
 	}
 	if (argc > 3)
 		return (ft_return_error("Error\nToo many arguments\n", input));

@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/04 16:17:04 by qli           ########   odam.nl          #
+#    Updated: 2020/05/04 21:06:46 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC 			=	main_1.c \
 					src/wall_rendering/ft_set_player_orientation.c \
 					src/wall_rendering/ft_set_plane_orientation.c \
 					src/wall_rendering/ft_set_player_position.c \
+					src/wall_rendering/initiate_functions.c \
 					src/colors/ft_put_color_ceilling.c \
 					src/colors/ft_put_color_floor.c \
 					src/colors/ft_set_color.c \
@@ -93,7 +94,6 @@ SRC 			=	main_1.c \
 					src/input_parsing/ft_lines_join.c \
 					src/input_parsing/validation_functions.c \
 					src/input_parsing/ft_split_2.c \
-					src/input_parsing/ft_strdup_2.c \
 					src/input_parsing/validate_element.c			
 
 SRC_O 			=	$(SRC:.c=.o)
