@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:25:29 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 19:51:18 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 10:22:22 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ int				ft_validate_map(t_input *input)
 		return (ft_return_error("Error\nDouble player\n", input));
 	ft_check_top_border(input);
 	ft_check_bottom_border(input);
-	// ft_check_left_border(input); //is this right or necessary?
+	ft_check_left_border(input);
 	input->array_copy = ft_split(input->line, '\n');
+	ft_print_2d_array(input->array_copy);
 	ft_flood_fill(input, input->flood_fill_x, input->flood_fill_y);
 	free(input->array_copy);
 	return (0);

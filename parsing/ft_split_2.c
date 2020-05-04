@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 12:47:40 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 18:55:23 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 10:22:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,10 @@ static char		*ft_word_create(char const *s, char c, size_t *i)
 	return (word);
 }
 
-static int		ft_array_create(char **dst, char const *s, char c)
+static int		ft_array_create(char **dst, char const *s, char c, size_t i)
 {
-	size_t	i;
 	size_t	n;
 
-	i = 0;
 	n = 0;
 	while (s[i] != '\0')
 	{
@@ -81,9 +79,8 @@ static int		ft_array_create(char **dst, char const *s, char c)
 				return (-1);
 			}
 			n++;
-		}
-		if (s[i] == c)
 			i++;
+		}
 		while (s[i] == c)
 		{
 			dst[n] = ft_strdup_2("\n");
@@ -106,7 +103,7 @@ char			**ft_split_2(char const *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (word_amount + 1));
 	if (dst == 0)
 		return (0);
-	if (ft_array_create(dst, s, c) == -1)
+	if (ft_array_create(dst, s, c, 0) == -1)
 		return (0);
 	return (dst);
 }
