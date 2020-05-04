@@ -6,7 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2020/05/03 20:19:30 by qli           ########   odam.nl         */
+=======
+/*   Updated: 2020/05/03 19:47:50 by qli           ########   odam.nl         */
+>>>>>>> dda
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +74,7 @@ int					ft_isdigit(int c);
 int					ft_char_range(int c);
 void				ft_print_input(t_input input);
 int					ft_parse_input(char *line, t_input *input);
-int					ft_check_element(t_input input);
-int					ft_validate_element(t_input input);
-int					ft_check_map(char *line, t_input *input);
+int					ft_validate_element(t_input *input);
 int					ft_process_map_line(char *line, t_input *input);
 int					ft_validate_map(t_input *input);
 int					ft_cast_ray(t_input *input);
@@ -88,8 +90,9 @@ int					get_b(int rgb);
 int					ft_put_color(t_input *input, int x);
 int					ft_check_position(int c);
 void				ft_free_malloc(t_input *input);
-int					ft_validate_file_input(int argc, char **argv, t_input *input);
-int					ft_process_input_file(char **argv, t_input *input);
+int					ft_validate_file_input(int argc, char **argv,
+					t_input *input);
+int					ft_input_intake(char **argv, t_input *input);
 
 /*
 ** ---------------------------LIBRARIES----------------------------------------
@@ -103,21 +106,31 @@ int					ft_atoi(const char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 char				**ft_split(char const *s, char c);
+char				*ft_strdup(const char *s1);
 
 /*
 ** ---------------------------PARSING-----------------------------
 */
-int					ft_parse_n(char *line, t_input *input, int *i);
-int					ft_parse_s(char *line, t_input *input, int *i);
-int					ft_parse_w(char *line, t_input *input, int *i);
-int					ft_parse_e(char *line, t_input *input, int *i);
-int					ft_parse_sprite(char *line, t_input *input, int *i);
-int					ft_parse_res(char *line, t_input *input, int *i);
-int					ft_parse_floor(char *line, t_input *input, int *i);
-int					ft_parse_ceilling(char *line, t_input *input, int *i);
+int					ft_parse_n(t_input *input, int line, int *i);
+int					ft_parse_s(t_input *input, int line, int *i);
+int					ft_parse_w(t_input *input, int line, int *i);
+int					ft_parse_e(t_input *input, int line, int *i);
+int					ft_parse_sprite(t_input *input, int line, int *i);
+int					ft_parse_res(t_input *input, int line, int *i);
+int					ft_parse_floor(t_input *input, int line, int *i);
+int					ft_parse_ceilling(t_input *input, int line, int *i);
+int					ft_parse_number(t_input *input, int line,
+					int *element, int *i);
 int					ft_check_map_line(char *line);
-int					ft_check_next_line(int c);
+int					ft_check_next_line(char *line);
 int					ft_validate_input(char *line, t_input *input);
+int					ft_input_parsing(t_input *input);
+int					ft_lines_join_cub(char *line, t_input *input,
+					int i1, int i2);
+int					ft_lines_join(char *line, t_input *input, int i1, int i2);
+int					ft_validate_map_line(char *line);
+int					ft_check_spaces(char *line);
+char				*ft_strdup_2(const char *s1);
 
 /*
 ** ---------------------------UTILIS----------------------------------------
@@ -130,12 +143,12 @@ void				ft_reset_bmp(t_input *input);
 /*
 ** ---------------------------FLOOD FILL----------------------------------------
 */
-int					ft_duplicate_array(t_input *input, int x, int y);
 int					ft_calculate_height(char **array);
 int					ft_check_top_border(t_input *input);
 int					ft_check_bottom_border(t_input *input);
-int					ft_flood_fill(t_input *input, int x,int y);
+int					ft_flood_fill(t_input *input, int x, int y);
 int					ft_find_player_position(t_input *input);
+int					ft_check_left_border(t_input *input);
 
 /*
 ** ---------------------------CALCULATIONS-------------------------------------
@@ -237,5 +250,7 @@ int					ft_create_bmp(t_input *input);
 */
 
 void				ft_print_2d_array(char **array);
+void				ft_print_remove(t_input *input);
+char				**ft_split_2(char const *s, char c);
 
 #endif

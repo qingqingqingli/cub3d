@@ -6,34 +6,15 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:24:27 by qli           #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2020/05/03 20:10:14 by qli           ########   odam.nl         */
+=======
+/*   Updated: 2020/05/03 18:39:20 by qli           ########   odam.nl         */
+>>>>>>> dda
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-int		ft_check_element(t_input input)
-{
-	if (input.res_present == 1 && input.north_present == 1
-	&& input.south_present == 1 && input.west_present == 1
-	&& input.east_present == 1 && input.sprite_present == 1
-	&& input.floor_present == 1 && input.ceilling_present == 1)
-		return (1);
-	return (0);
-}
-
-int		ft_validate_element(t_input input)
-{
-	if (input.res_x > 0 && input.res_y > 0
-	&& input.floor_r >= 0 && input.floor_r <= 255
-	&& input.floor_g >= 0 && input.floor_g <= 255
-	&& input.floor_b >= 0 && input.floor_b <= 255
-	&& input.ceilling_r >= 0 && input.ceilling_r <= 255
-	&& input.ceilling_g >= 0 && input.ceilling_g <= 255
-	&& input.ceilling_b >= 0 && input.ceilling_b <= 255)
-		return (1);
-	return (0);
-}
 
 int		ft_check_sprawning_pos(char c, t_input *input)
 {

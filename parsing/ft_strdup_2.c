@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_strdup_2.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/12 12:47:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 12:52:34 by qli           ########   odam.nl         */
+/*   Created: 2020/05/03 18:53:58 by qli           #+#    #+#                 */
+/*   Updated: 2020/05/03 18:54:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../cub3d.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup_2(const char *s1)
 {
 	char	*dst;
 	char	*src;

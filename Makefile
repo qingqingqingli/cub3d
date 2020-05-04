@@ -6,7 +6,11 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
+<<<<<<< HEAD
 #    Updated: 2020/05/03 20:08:34 by qli           ########   odam.nl          #
+=======
+#    Updated: 2020/05/03 19:47:38 by qli           ########   odam.nl          #
+>>>>>>> dda
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +22,14 @@ SRC 			=	utilis/general_utils_1.c \
 					utilis/reset_value_1.c \
 					utilis/reset_value_2.c \
 					1_main.c \
-					2_parse_input.c \
-					3_validate_input.c \
-					3_validate_input_new.c \
+					2_input_intake.c \
+					3_input_parsing.c \
 					4_validate_map.c \
 					5_cast_ray.c \
 					6_movement.c \
 					7_render_wall.c \
 					8_render_sprites.c \
 					9_create_bmp.c \
-					flood_fill/ft_duplicate_array.c \
 					flood_fill/ft_calculate_height.c \
 					flood_fill/ft_check_border.c \
 					flood_fill/ft_flood_fill.c \
@@ -90,7 +92,12 @@ SRC 			=	utilis/general_utils_1.c \
 					parsing/error_management.c \
 					parsing/ft_parse_path.c \
 					parsing/ft_parse_res_floor_ceilling.c \
-					parsing/validate_input.c				
+					parsing/validate_input.c \
+					parsing/ft_lines_join.c \
+					parsing/validation_functions.c \
+					parsing/ft_split_2.c \
+					parsing/ft_strdup_2.c \
+					parsing/validate_element.c			
 
 SRC_O 			=	$(SRC:.c=.o)
 

@@ -62,9 +62,13 @@ If the return value is negative, start the error management process
 - Oversize --> resize it to the screen resolution
 - get_screen_size --> potentially need to download another mlx library
 
+--> need to work on MacOS
+
 [ERROR MANAGEMENT]
 - double check
 - Need to make sure the things are properly freed and not double freed
+
+--> my focus today
 
 [INPUT PARSING]
 - double check
@@ -92,6 +96,8 @@ If the return value is negative, start the error management process
 - check different maps
 - resolution variation (0, negative, super big)
 - memory leaks on imac
+
+[clean all unnecessary prototypes]
 
 **********************QUESTION*********************************
 

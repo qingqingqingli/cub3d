@@ -1,9 +1,10 @@
-Does these functions need error management?
+all malloc
 
-	input->img.mlx_win = mlx_new_window(input->img.mlx, \
-	input->res_x, input->res_y, "cub3d");
+LIBFT
 
-	input->img.img = mlx_new_image(input->img.mlx, input->res_x, input->res_y);
+- ft_split
+- ft_strdup
 
-	input->img.addr = mlx_get_data_addr(input->img.img, \
-	&input->img.bits_per_pixel, &input->img.line_length, &input->img.endian);
+MINILIBX
+- all initiation
+
