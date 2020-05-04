@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 11:24:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 19:47:50 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 16:15:58 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int					ft_parse_res(t_input *input, int line, int *i);
 int					ft_parse_floor(t_input *input, int line, int *i);
 int					ft_parse_ceilling(t_input *input, int line, int *i);
 int					ft_parse_number(t_input *input, int line,
-					int *element, int *i);
+					long long int *element, int *i);
 int					ft_check_map_line(char *line);
 int					ft_check_next_line(char *line);
 int					ft_validate_input(char *line, t_input *input);
@@ -205,9 +205,13 @@ void				ft_calculate_texture_x(t_input *input);
 void				ft_calculate_texture_step(t_input *input);
 void				ft_calculate_texture_start_pos(t_input *input);
 void				ft_calculate_texture_y(t_input *input);
-int					ft_read_png_file(t_input *input);
+void				ft_read_png_file(t_input *input);
 void				ft_select_texture_path(t_input *input);
 void				ft_get_texture_color(t_input *input);
+int					ft_initiate_north_texture(t_input *input);
+int					ft_initiate_south_texture(t_input *input);
+int					ft_initiate_west_texture(t_input *input);
+int					ft_initiate_east_texture(t_input *input);
 
 /*
 ** ---------------------------SPRITES---------------------------------

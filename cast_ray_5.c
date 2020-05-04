@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   5_cast_ray.c                                       :+:    :+:            */
+/*   cast_ray_5.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 21:17:12 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 16:18:36 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,25 @@ void	ft_initiate_variables(t_input *input)
 	ft_set_color(input);
 }
 
-int		ft_initiate_sprite(t_input *input)
+void	ft_initiate_sprite(t_input *input)
 {
-	ft_initiate_sprite_texture(input);
 	ft_initiate_sprite_buffer(input);
 	ft_calculate_sprite_number(input);
 	ft_initiate_sprite_pos(input);
-	return (0);
+}
+
+void	ft_initiate_texture(t_input *input)
+{
+	ft_initiate_north_texture(input);
+	ft_initiate_south_texture(input);
+	ft_initiate_west_texture(input);
+	ft_initiate_east_texture(input);
+	ft_initiate_sprite_texture(input);
 }
 
 int		ft_cast_ray(t_input *input)
 {
+	ft_initiate_texture(input);
 	ft_initiate_variables(input);
 	if (input->bmp_needed == 0)
 		ft_initiate_img_2(input);

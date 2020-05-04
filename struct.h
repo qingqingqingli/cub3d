@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 16:21:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 15:22:25 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,8 +232,8 @@ typedef struct		s_input
 	char			**cub_array;
 	int				bmp_needed;
 	int				res_present;
-	int				res_x;
-	int				res_y;
+	long long int	res_x;
+	long long int	res_y;
 	int				res_x_present;
 	int				res_y_present;
 	int				north_present;
@@ -247,13 +247,13 @@ typedef struct		s_input
 	int				sprite_present;
 	char			*sprite_path;
 	int				floor_present;
-	int				floor_r;
-	int				floor_g;
-	int				floor_b;
-	int				ceilling_present;
-	int				ceilling_r;
-	int				ceilling_g;
-	int				ceilling_b;
+	long long int	floor_r;
+	long long int	floor_g;
+	long long int	floor_b;
+	long long int	ceilling_present;
+	long long int	ceilling_r;
+	long long int	ceilling_g;
+	long long int	ceilling_b;
 	char			*line;
 	char			**array;
 	char			**array_copy;

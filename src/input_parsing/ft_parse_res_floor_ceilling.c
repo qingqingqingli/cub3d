@@ -6,13 +6,14 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 14:07:37 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 15:21:41 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
-int		ft_parse_number(t_input *input, int line, int *element, int *i)
+int		ft_parse_number(t_input *input, int line,
+long long int *element, int *i)
 {
 	while (input->cub_array[line][*i] != '\0' &&
 	ft_isspace(input->cub_array[line][*i]) == 1)
@@ -27,7 +28,7 @@ int		ft_parse_number(t_input *input, int line, int *element, int *i)
 		*element = *element * 10 + input->cub_array[line][*i] - '0';
 		*i = *i + 1;
 	}
-	return (*i);
+	return (0);
 }
 
 int		ft_parse_floor(t_input *input, int line, int *i)

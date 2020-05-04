@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 18:35:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 16:04:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,22 @@ int		ft_check_color_range(t_input *input)
 	return (-1);
 }
 
+int		ft_check_res_range(t_input *input)
+{
+	if (input->res_x == 0 || input->res_y == 0)
+		return (-1);
+	return (0);
+}
+
 int		ft_validate_element(t_input *input)
 {
 	if (ft_check_element_complete(input) == -1)
 		return (-1);
+	if (ft_check_res_range(input) == -1)
+		return (-1);
 	if (ft_check_color_range(input) == -1)
 		return (-1);
-	ft_reset_resolution(input);
+	if (input->bmp_needed != 1)
+		ft_reset_resolution(input);
 	return (0);
 }

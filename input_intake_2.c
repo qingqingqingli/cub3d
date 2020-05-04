@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   2_input_intake.c                                   :+:    :+:            */
+/*   input_intake_2.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 19:29:39 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 15:19:20 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,15 @@ int		ft_input_intake(char **argv, t_input *input)
 		return (ft_return_error("Error\nRead line error\n", input));
 	if (!line)
 		return (ft_return_error("Error\nRead line error\n", input));
-	while (output == 1)
+	while (output > 0)
 	{
 		ft_create_cub_array(line, input);
 		output = get_next_line(fd, &line);
 		if (output < 0)
 			return (ft_return_error("Error\nRead line error\n", input));
 	}
-	if (output == 0 && line)
-	{
+	if (output == 0 && ft_validate_map_line(line) == 1)
 		ft_create_cub_array(line, input);
-		output = get_next_line(fd, &line);
-		if (output < 0)
-			return (ft_return_error("Error\nRead line error\n", input));
-	}
 	input->cub_array = ft_split_2(input->cub_line, '\n');
 	return (0);
 }

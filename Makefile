@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/04 12:04:31 by qli           ########   odam.nl          #
+#    Updated: 2020/05/04 16:17:04 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRC 			=	main_1.c \
 					src/wall_texture/ft_calculate_texture_y.c \
 					src/wall_texture/ft_select_texture_path.c \
 					src/wall_texture/ft_get_texture_color.c \
+					src/wall_texture/ft_initiate_textures.c \
 					src/sprites/ft_store_ray_len.c \
 					src/sprites/ft_initiate_sprite_buffer.c \
 					src/sprites/ft_initiate_sprite_texture.c \

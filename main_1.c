@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   1_main.c                                           :+:    :+:            */
+/*   main_1.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/03 19:52:03 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 15:30:47 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void 	ft_print_remove(t_input *input)
 {
-	printf("input->res_x is %d\n", input->res_x);
-	printf("input->res_y is %d\n", input->res_y);
+	printf("input->res_x is %lld\n", input->res_x);
+	printf("input->res_y is %lld\n", input->res_y);
 	printf("input->res_present is %d\n", input->res_present);
 	printf("input->north_present is %d\n", input->north_present);
 	printf("input->north_path is '%s'\n", input->north_path);
@@ -27,12 +27,12 @@ void 	ft_print_remove(t_input *input)
 	printf("input->east_path is '%s'\n", input->east_path);
 	printf("input->sprite_present is %d\n", input->sprite_present);
 	printf("input->sprite_path is '%s'\n", input->sprite_path);
-	printf("input->floor_r is %d\n", input->floor_r);
-	printf("input->floor_g is %d\n", input->floor_g);
-	printf("input->floor_b is %d\n", input->floor_b);
-	printf("input->ceilling_r is %d\n", input->ceilling_r);
-	printf("input->ceilling_g is %d\n", input->ceilling_g);
-	printf("input->ceilling_b is %d\n", input->ceilling_b);
+	printf("input->floor_r is %lld\n", input->floor_r);
+	printf("input->floor_g is %lld\n", input->floor_g);
+	printf("input->floor_b is %lld\n", input->floor_b);
+	printf("input->ceilling_r is %lld\n", input->ceilling_r);
+	printf("input->ceilling_g is %lld\n", input->ceilling_g);
+	printf("input->ceilling_b is %lld\n", input->ceilling_b);
 }
 
 int		main(int argc, char **argv)
@@ -44,8 +44,9 @@ int		main(int argc, char **argv)
 	ft_input_intake(argv, &input);
 	ft_input_parsing(&input);
 	input.array = ft_split(input.line, '\n');
-	printf("*********************\n");
+	printf("*********************\n"); //print
 	ft_print_remove(&input); //print
+	printf("*********************\n"); //print
 	ft_validate_map(&input);
 	input.img.mlx = mlx_init();
 	if (input.img.mlx == NULL)
