@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 15:19:20 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 10:01:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,26 @@ int		ft_input_intake(char **argv, t_input *input)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (ft_return_error("Error\nOpen file error\n", input));
+		return (ft_return_error("Error\nOpen input error\n", input));
 	output = get_next_line(fd, &line);
 	if (output < 0)
-		return (ft_return_error("Error\nRead line error\n", input));
+		return (ft_return_error("Error\nRead input error\n", input));
 	if (!line)
-		return (ft_return_error("Error\nRead line error\n", input));
-	while (output > 0)
+		return (ft_return_error("Error\nRead input error\n", input));
+	while (output == 1)
 	{
 		ft_create_cub_array(line, input);
 		output = get_next_line(fd, &line);
 		if (output < 0)
-			return (ft_return_error("Error\nRead line error\n", input));
+			return (ft_return_error("Error\nRead input error\n", input));
 	}
 	if (output == 0 && ft_validate_map_line(line) == 1)
 		ft_create_cub_array(line, input);
 	input->cub_array = ft_split_2(input->cub_line, '\n');
+	if (!input->cub_array)
+		return (ft_return_error("Error\nRead input error\n", input));
+	output = close(fd);
+	if (output == -1)
+		return (ft_return_error("Error\nClose file error\n", input));
 	return (0);
 }

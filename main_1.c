@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/10 14:16:45 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 15:30:47 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 22:07:24 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@ int		main(int argc, char **argv)
 {
 	t_input	input;
 
-	ft_validate_file_input(argc, argv, &input);
 	ft_reset_input(&input);
+	ft_validate_file_input(argc, argv, &input);
 	ft_input_intake(argv, &input);
 	ft_input_parsing(&input);
-	input.array = ft_split(input.line, '\n');
 	printf("*********************\n"); //print
 	ft_print_remove(&input); //print
 	printf("*********************\n"); //print

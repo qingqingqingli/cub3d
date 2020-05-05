@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_initiate_north_texture.c                        :+:    :+:            */
+/*   ft_initiate_textures.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 16:09:13 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 16:11:50 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 21:11:37 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_initiate_north_texture(t_input *input)
 	input->north.addr = (int *)mlx_get_data_addr(input->north.img,
 	&input->north.bits_per_pixel, &input->north.line_length,
 	&input->north.endian);
-	if (input->north.addr == NULL)
+	if (!input->north.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }
@@ -37,7 +37,7 @@ int	ft_initiate_south_texture(t_input *input)
 	input->south.addr = (int *)mlx_get_data_addr(input->south.img,
 	&input->south.bits_per_pixel, &input->south.line_length,
 	&input->south.endian);
-	if (input->south.addr == NULL)
+	if (!input->south.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }
@@ -52,7 +52,7 @@ int	ft_initiate_west_texture(t_input *input)
 	input->west.addr = (int *)mlx_get_data_addr(input->west.img,
 	&input->west.bits_per_pixel, &input->west.line_length,
 	&input->west.endian);
-	if (input->west.addr == NULL)
+	if (!input->west.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }
@@ -67,7 +67,7 @@ int	ft_initiate_east_texture(t_input *input)
 	input->east.addr = (int *)mlx_get_data_addr(input->east.img,
 	&input->east.bits_per_pixel, &input->east.line_length,
 	&input->east.endian);
-	if (input->east.addr == NULL)
+	if (!input->east.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }

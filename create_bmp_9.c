@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   9_create_bmp.c                                     :+:    :+:            */
+/*   create_bmp_9.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/28 11:19:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/02 12:13:37 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 10:01:02 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ int			ft_create_bmp(t_input *input)
 	int		x;
 	int		y;
 	char	*file_name;
+	int		output;
 
 	x = 0;
+	output = 0;
 	y = input->res_y - 1;
 	file_name = "./bmp_screenshot/cub3d.bmp";
 	fd = open(file_name, O_RDWR | O_TRUNC | O_CREAT, 0666);
@@ -95,5 +97,8 @@ int			ft_create_bmp(t_input *input)
 	ft_write_file_header(fd, input);
 	ft_write_image_header(fd, input);
 	ft_create_image(fd, input, x, y);
+	output = close(fd);
+	if (output == -1)
+		return (ft_return_error("Error\nClose file error\n", input));
 	return (0);
 }

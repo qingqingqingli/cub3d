@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/21 20:06:35 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 16:06:36 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 21:11:11 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_initiate_sprite_texture(t_input *input)
 	input->sprite.addr = (int *)mlx_get_data_addr(input->sprite.img,
 	&input->sprite.bits_per_pixel, &input->sprite.line_length,
 	&input->sprite.endian);
-	if (input->sprite.addr == NULL)
+	if (!input->sprite.addr)
 		return (ft_return_error("Error\nMlx img addr failure\n", input));
 	return (0);
 }

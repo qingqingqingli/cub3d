@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/30 13:10:04 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/04 22:54:19 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int		ft_parse_n(t_input *input, int line, int *i)
 {
+	int count;
+
+	count = 0;
 	if (input->north_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
 	if (input->cub_array[line][*i] == 'N' &&
@@ -32,14 +35,23 @@ int		ft_parse_n(t_input *input, int line, int *i)
 	{
 		input->cub_array[line] = input->cub_array[line] + 1;
 		*i = *i - 1;
+		count++;
 	}
 	if (input->north_present == 1)
 		input->north_path = input->cub_array[line];
+	while (count > 0)
+	{
+		input->cub_array[line] = input->cub_array[line] - 1;
+		count--;
+	}
 	return (0);
 }
 
 int		ft_parse_s(t_input *input, int line, int *i)
 {
+	int count;
+
+	count = 0;
 	if (input->south_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
 	if (input->cub_array[line][*i] == 'S' &&
@@ -58,14 +70,23 @@ int		ft_parse_s(t_input *input, int line, int *i)
 	{
 		input->cub_array[line] = input->cub_array[line] + 1;
 		*i = *i - 1;
+		count++;
 	}
 	if (input->south_present == 1)
 		input->south_path = input->cub_array[line];
+	while (count > 0)
+	{
+		input->cub_array[line] = input->cub_array[line] - 1;
+		count--;
+	}
 	return (0);
 }
 
 int		ft_parse_w(t_input *input, int line, int *i)
 {
+	int count;
+
+	count = 0;
 	if (input->west_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
 	if (input->cub_array[line][*i] == 'W' &&
@@ -84,14 +105,23 @@ int		ft_parse_w(t_input *input, int line, int *i)
 	{
 		input->cub_array[line] = input->cub_array[line] + 1;
 		*i = *i - 1;
+		count++;
 	}
 	if (input->west_present == 1)
 		input->west_path = input->cub_array[line];
+	while (count > 0)
+	{
+		input->cub_array[line] = input->cub_array[line] - 1;
+		count--;
+	}
 	return (0);
 }
 
 int		ft_parse_e(t_input *input, int line, int *i)
 {
+	int count;
+
+	count = 0;
 	if (input->east_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
 	if (input->cub_array[line][*i] == 'E' &&
@@ -110,14 +140,23 @@ int		ft_parse_e(t_input *input, int line, int *i)
 	{
 		input->cub_array[line] = input->cub_array[line] + 1;
 		*i = *i - 1;
+		count++;
 	}
 	if (input->east_present == 1)
 		input->east_path = input->cub_array[line];
+	while (count > 0)
+	{
+		input->cub_array[line] = input->cub_array[line] - 1;
+		count--;
+	}
 	return (0);
 }
 
 int		ft_parse_sprite(t_input *input, int line, int *i)
 {
+	int count;
+
+	count = 0;
 	if (input->sprite_present == 1)
 		return (ft_return_error("Error\nInvalid element input\n", input));
 	if (input->cub_array[line][*i] == 'S' &&
@@ -135,8 +174,14 @@ int		ft_parse_sprite(t_input *input, int line, int *i)
 	{
 		input->cub_array[line] = input->cub_array[line] + 1;
 		*i = *i - 1;
+		count++;
 	}
 	if (input->sprite_present == 1)
 		input->sprite_path = input->cub_array[line];
+	while (count > 0)
+	{
+		input->cub_array[line] = input->cub_array[line] - 1;
+		count--;
+	}
 	return (0);
 }

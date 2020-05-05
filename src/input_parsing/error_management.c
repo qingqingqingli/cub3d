@@ -6,18 +6,69 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 15:56:25 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 12:03:34 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 12:58:08 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
+void	ft_free_2d_array(char **array)
+{
+	int height;
+
+	height = 0;
+	if (!array)
+		return ;
+	while (array[height] != NULL)
+	{
+		free(array[height]);
+		height++;
+	}
+	free(array);
+}
+
+void	ft_free_parsing(t_input *input)
+{
+	if (input->cub_line)
+	{
+		free(input->cub_line);
+		printf("input->cub_line freed\n");
+	}
+	if (input->line)
+	{
+		free(input->line);
+		printf("input->line freed\n");
+	}
+	if (input->cub_array)
+	{
+		ft_free_2d_array(input->cub_array);
+		printf("input->cub_array freed\n");
+	}
+	if (input->array)
+	{
+		ft_free_2d_array(input->array);
+		printf("input->array freed\n");
+	}
+}
+
+void	ft_free_sprite(t_input *input)
+{
+	if (input->sprite_data.buffer)
+	{
+		free(input->sprite_data.buffer);
+		printf("input->sprite_data.buffer freed\n");
+	}
+	if (input->sprite_data.pos)
+	{
+		free(input->sprite_data.pos);
+		printf("input->sprite_data.pos freed\n");
+	}
+}
+
 void	ft_free_malloc(t_input *input)
 {
-	if (input->sprite_data.buffer_present == 1)
-		free(input->sprite_data.buffer);
-	if (input->sprite_data.pos_present == 1)
-		free(input->sprite_data.pos);
+	ft_free_parsing(input);
+	ft_free_sprite(input);
 	printf("freed all malloc\n");
 }
 
