@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   6_movement.c                                       :+:    :+:            */
+/*   movement_6.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/14 11:57:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/01 11:27:37 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 12:40:06 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_key_movement(int keycode, t_input *input)
 {
-	if (keycode == KEY_DOWN || keycode == S)
+	if (keycode == S)
 		input->move.move_backward = 1;
-	else if (keycode == KEY_UP || keycode == W)
+	else if (keycode == W)
 		input->move.move_forward = 1;
 	else if (keycode == KEY_LEFT)
 		input->move.rotate_left = 1;
@@ -33,9 +33,9 @@ int		ft_key_movement(int keycode, t_input *input)
 
 int		ft_release(int keycode, t_input *input)
 {
-	if (keycode == KEY_DOWN || keycode == S)
+	if (keycode == S)
 		input->move.move_backward = 0;
-	else if (keycode == KEY_UP || keycode == W)
+	else if (keycode == W)
 		input->move.move_forward = 0;
 	else if (keycode == KEY_LEFT)
 		input->move.rotate_left = 0;
