@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 21:06:14 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 10:01:38 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ int		ft_input_intake(char **argv, t_input *input)
 	input->cub_array = ft_split_2(input->cub_line, '\n');
 	if (!input->cub_array)
 		return (ft_return_error("Error\nRead input error\n", input));
+	output = close(fd);
+	if (output == -1)
+		return (ft_return_error("Error\nClose file error\n", input));
 	return (0);
 }

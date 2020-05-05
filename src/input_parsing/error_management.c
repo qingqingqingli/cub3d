@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 15:56:25 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 22:54:05 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 09:19:17 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	ft_free_2d_array(char **array)
 void	ft_free_parsing(t_input *input)
 {
 	if (input->cub_line)
+	{
+		printf("complete\n");
 		free(input->cub_line);
+	}
 	if (input->line)
 		free(input->line);
 	if (input->cub_array)
