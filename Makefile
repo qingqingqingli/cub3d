@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/05 13:52:10 by qli           ########   odam.nl          #
+#    Updated: 2020/05/06 10:31:04 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,9 @@ SRC 			=	main_1.c \
 					src/input_parsing/ft_lines_join.c \
 					src/input_parsing/validation_functions.c \
 					src/input_parsing/ft_split_2.c \
-					src/input_parsing/validate_element.c			
+					src/input_parsing/validate_element.c \
+					src/input_parsing/ft_parse_path_2.c	\
+					src/input_parsing/ft_split_3.c		
 
 SRC_O 			=	$(SRC:.c=.o)
 

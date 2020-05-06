@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 12:47:40 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 21:05:38 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 10:31:11 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,6 @@ static void		ft_malloc_free(char **dst, int n)
 		free(dst[n]);
 	}
 	free(dst);
-}
-
-static size_t	ft_word_amount(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
 }
 
 static char		*ft_word_create(char const *s, char c, size_t *i)
@@ -63,16 +47,24 @@ static char		*ft_word_create(char const *s, char c, size_t *i)
 	return (word);
 }
 
-static int		ft_array_create(char **dst, char const *s, char c, size_t i)
+static int		ft_create_next_line(char **dst, size_t n)
 {
-	size_t	n;
+	dst[n] = ft_strdup("\n");
+	if (ft_strncmp(dst[n], "null", 6) == 0)
+	{
+		ft_malloc_free(dst, n);
+		return (-1);
+	}
+	return (0);
+}
 
-	n = 0;
+static int		ft_array_create(char **dst, char const *s, size_t n, size_t i)
+{
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
+		if (s[i] != '\n')
 		{
-			dst[n] = ft_word_create(s, c, &i);
+			dst[n] = ft_word_create(s, '\n', &i);
 			if (!dst[n])
 			{
 				ft_malloc_free(dst, n);
@@ -80,16 +72,12 @@ static int		ft_array_create(char **dst, char const *s, char c, size_t i)
 			}
 			n++;
 		}
-		if (s[i] == c)
+		if (s[i] == '\n')
 			i++;
-		while (s[i] == c)
+		while (s[i] == '\n')
 		{
-			dst[n] = ft_strdup("\n");
-			if (ft_strncmp(dst[n], "null", 6) == 0)
-			{
-				ft_malloc_free(dst, n);
+			if (ft_create_next_line(dst, n) == -1)
 				return (-1);
-			}
 			n++;
 			i++;
 		}
@@ -109,7 +97,7 @@ char			**ft_split_2(char const *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (word_amount + 1));
 	if (dst == 0)
 		return (0);
-	if (ft_array_create(dst, s, c, 0) == -1)
+	if (ft_array_create(dst, s, 0, 0) == -1)
 		return (0);
 	return (dst);
 }

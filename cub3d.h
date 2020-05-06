@@ -6,14 +6,13 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/05 13:52:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/06 08:12:36 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 10:33:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # include <unistd.h>
-# include <stdio.h> //need to remove
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
@@ -124,6 +123,12 @@ char				*ft_strdup_2(const char *s1);
 void				ft_initiate_variables(t_input *input);
 void				ft_initiate_sprite(t_input *input);
 void				ft_initiate_texture(t_input *input);
+void				ft_parse_n_2(t_input *input, int line, int *i);
+void				ft_parse_s_2(t_input *input, int line, int *i);
+void				ft_parse_w_2(t_input *input, int line, int *i);
+void				ft_parse_e_2(t_input *input, int line, int *i);
+void				ft_parse_sprite_2(t_input *input, int line, int *i);
+size_t				ft_word_amount(char const *s, char c);
 
 /*
 ** ---------------------------UTILIS----------------------------------------
