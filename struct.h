@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 19:15:09 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 13:52:15 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 15:48:31 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,6 +230,8 @@ typedef struct		s_input
 	t_bmp_data		bmp;
 	char			*cub_line;
 	char			**cub_array;
+	int				cub_line_present;
+	int				cub_array_present;
 	int				bmp_needed;
 	int				res_present;
 	long long int	res_x;
@@ -257,6 +259,8 @@ typedef struct		s_input
 	char			*line;
 	char			**array;
 	char			**array_copy;
+	int				line_present;
+	int				array_present;
 	int				flood_fill_x;
 	int				flood_fill_y;
 	int				ceilling_color;

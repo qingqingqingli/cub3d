@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 16:25:36 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 15:48:47 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,10 @@ void		ft_reset_input(t_input *input)
 	input->cub_line = "null";
 	input->map_line_present = 0;
 	input->element_line_present = 0;
+	input->cub_line_present = 0;
+	input->cub_array_present = 0;
+	input->line_present = 0;
+	input->array_present = 0;
 	ft_reset_struct(input);
 	ft_reset_ray_casting(input);
 	ft_reset_dda(input);

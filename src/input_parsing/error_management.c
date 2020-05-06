@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/29 15:56:25 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 12:58:08 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 09:28:51 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,47 +29,28 @@ void	ft_free_2d_array(char **array)
 
 void	ft_free_parsing(t_input *input)
 {
-	if (input->cub_line)
-	{
+	if (input->cub_line_present == 1)
 		free(input->cub_line);
-		printf("input->cub_line freed\n");
-	}
-	if (input->line)
-	{
+	if (input->line_present == 1)
 		free(input->line);
-		printf("input->line freed\n");
-	}
-	if (input->cub_array)
-	{
+	if (input->cub_array_present == 1)
 		ft_free_2d_array(input->cub_array);
-		printf("input->cub_array freed\n");
-	}
-	if (input->array)
-	{
+	if (input->array_present == 1)
 		ft_free_2d_array(input->array);
-		printf("input->array freed\n");
-	}
 }
 
 void	ft_free_sprite(t_input *input)
 {
-	if (input->sprite_data.buffer)
-	{
+	if (input->sprite_data.buffer_present == 1)
 		free(input->sprite_data.buffer);
-		printf("input->sprite_data.buffer freed\n");
-	}
-	if (input->sprite_data.pos)
-	{
+	if (input->sprite_data.pos_present == 1)
 		free(input->sprite_data.pos);
-		printf("input->sprite_data.pos freed\n");
-	}
 }
 
 void	ft_free_malloc(t_input *input)
 {
 	ft_free_parsing(input);
 	ft_free_sprite(input);
-	printf("freed all malloc\n");
 }
 
 int		ft_return_error(char *s, t_input *input)

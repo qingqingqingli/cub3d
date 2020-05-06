@@ -6,14 +6,14 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/05 13:52:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 13:52:55 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 08:12:36 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # include <unistd.h>
-# include <stdio.h>
+# include <stdio.h> //need to remove
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>

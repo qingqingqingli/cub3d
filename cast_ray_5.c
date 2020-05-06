@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/10 14:34:06 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 13:52:29 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 15:55:09 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,5 @@ int			ft_cast_ray(t_input *input)
 		ft_create_bmp(input);
 		ft_close(input);
 	}
-	printf("here 2\n");
 	return (0);
 }

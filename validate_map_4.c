@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:25:29 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 13:52:22 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/05 16:02:33 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int				ft_validate_map(t_input *input)
 	if (ft_find_player_position(input) == 0)
 		return (ft_return_error("Error\nNo player\n", input));
 	if (ft_check_double_player(input) == -1)
-		return (ft_return_error("Error\nDouble player\n", input));
+		return (ft_return_error("Error\nMultiple player\n", input));
 	ft_check_top_border(input);
 	ft_check_bottom_border(input);
 	ft_check_left_border(input);

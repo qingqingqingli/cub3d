@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 13:15:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 20:58:44 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 09:11:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,21 @@ int		ft_check_element_line(t_input *input, int line)
 	return (0);
 }
 
+int		ft_create_map_array(t_input *input, int line)
+{
+	if (ft_strncmp(input->line, "null", 6) == 0)
+	{
+		input->line = ft_strdup(input->cub_array[line]);
+		if (ft_strncmp(input->line, "null", 6) == 0)
+			return (ft_return_error("Error\nStrdup error\n", input));
+		else
+			input->line_present = 1;
+	}
+	else
+		ft_lines_join(input->cub_array[line], input, 0, 0);
+	return (0);
+}
+
 int		ft_input_parsing(t_input *input)
 {
 	int	line;
@@ -74,14 +89,7 @@ int		ft_input_parsing(t_input *input)
 			input->map_line_present = 1;
 			if (ft_validate_element(input) == -1)
 				return (ft_return_error("Error\nInvalid input\n", input));
-			if (ft_strncmp(input->line, "null", 6) == 0)
-			{
-				input->line = ft_strdup(input->cub_array[line]);
-				if (ft_strncmp(input->line, "null", 6) == 0)
-					return (ft_return_error("Error\nStrdup error\n", input));
-			}
-			else
-				ft_lines_join(input->cub_array[line], input, 0, 0);
+			ft_create_map_array(input, line);
 		}
 		if (input->map_line_present == 1 &&
 		ft_check_next_line(input->cub_array[line]) == 1)
@@ -91,5 +99,7 @@ int		ft_input_parsing(t_input *input)
 	input->array = ft_split(input->line, '\n');
 	if (!input->array)
 		return (ft_return_error("Error\nArray creation failure\n", input));
+	else
+		input->array_present = 1;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:19:37 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 19:29:22 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 09:17:27 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_lines_join(char *line, t_input *input, int i1, int i2)
 		i2++;
 	}
 	new_line[i1 + i2] = '\0';
+	free(input->line);
 	input->line = ft_strdup(new_line);
 	if (ft_strncmp(input->line, "null", 6) == 0)
 		return (ft_return_error("Error\nStrdup error\n", input));
@@ -61,6 +62,7 @@ int		ft_lines_join_cub(char *line, t_input *input, int i1, int i2)
 		i2++;
 	}
 	new_line[i1 + i2] = '\0';
+	free(input->cub_line);
 	input->cub_line = ft_strdup(new_line);
 	if (ft_strncmp(input->cub_line, "null", 6) == 0)
 		return (ft_return_error("Error\nStrdup error\n", input));
