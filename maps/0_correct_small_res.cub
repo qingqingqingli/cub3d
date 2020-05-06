@@ -2,7 +2,7 @@
 
 EA      ./pics/greystone.png
 
-R 2 3
+R 250 250
 
 NO      ./pics/eagle.png
 

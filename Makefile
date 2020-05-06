@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/06 10:31:04 by qli           ########   odam.nl          #
+#    Updated: 2020/05/06 11:08:30 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRC 			=	main_1.c \
 					create_bmp_9.c \
 					src/utilis/general_utils_1.c \
 					src/utilis/general_utils_2.c \
-					src/utilis/print_utils.c \
 					src/utilis/reset_value_1.c \
 					src/utilis/reset_value_2.c \
 					src/flood_fill/ft_calculate_height.c \

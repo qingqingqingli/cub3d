@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/05 13:52:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/06 10:33:21 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 11:29:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <math.h>
 # include "minilibx-master/mlx.h"
 # include "struct.h"
+# include <stdio.h> //to remove
 
 /*
 ** ---------------------------KEY-------------------------------------------
@@ -129,6 +130,7 @@ void				ft_parse_w_2(t_input *input, int line, int *i);
 void				ft_parse_e_2(t_input *input, int line, int *i);
 void				ft_parse_sprite_2(t_input *input, int line, int *i);
 size_t				ft_word_amount(char const *s, char c);
+char				**ft_split_2(char const *s, char c);
 
 /*
 ** ---------------------------UTILIS----------------------------------------
@@ -246,13 +248,5 @@ void				ft_calculate_sprite_texture_y(t_input *input, int y);
 */
 
 int					ft_create_bmp(t_input *input);
-
-/*
-** ---------------------------UTILS TO REMOVE---------------------------------
-*/
-
-void				ft_print_2d_array(char **array);
-void				ft_print_remove(t_input *input);
-char				**ft_split_2(char const *s, char c);
 
 #endif

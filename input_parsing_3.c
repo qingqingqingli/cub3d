@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 13:15:08 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/06 09:11:21 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 11:42:21 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int		ft_input_parsing(t_input *input)
 		}
 		if (input->map_line_present == 1 &&
 		ft_check_next_line(input->cub_array[line]) == 1)
-			return (0);
+			break ;
 		line++;
 	}
 	input->array = ft_split(input->line, '\n');

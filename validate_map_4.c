@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 17:25:29 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 16:02:33 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 11:42:34 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ static int		ft_check_map_content(t_input *input)
 			if (input->array[y][x] != 'N' && input->array[y][x] != 'S'
 			&& input->array[y][x] != 'E' && input->array[y][x] != 'W'
 			&& input->array[y][x] != '1' && input->array[y][x] != '2'
-			&& input->array[y][x] != ' ' && input->array[y][x] != '0')
+			&& input->array[y][x] != ' ' && input->array[y][x] != '0'
+			&& input->array[y][x] != '\n')
 				return (-1);
 			x++;
 		}
