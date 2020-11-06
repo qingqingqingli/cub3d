@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/05/06 11:08:30 by qli           ########   odam.nl          #
+#    Updated: 2020/11/06 22:06:04 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,7 @@ SRC_O 			=	$(SRC:.c=.o)
 
 EXTERNAL_LIBS	=	libft/libft.a \
 					gnl/libgnl.a \
-					minilibx-master/libmlx.a \
+					minilibx-master/libmlx_Linux.a \
 
 LIBS 			= 	-lXext -lX11 -lm -lz -AppKit
 
@@ -112,7 +112,7 @@ INLCUDES		=	-Ilibft \
 HEADERS 		= 	cub3d.h \
 					struct.h \
 
-FLAGS 			=	-g -Wall -Wextra -Werror
+FLAGS 			=	-Wall -Wextra -Werror
 
 COMPILE 		=	gcc
 
@@ -134,7 +134,7 @@ $(NAME): $(SRC_O)
 	@echo "$(C_GREEN)compiling minilibx ... $(RESET)"
 	@make -C minilibx-master
 	@echo "$(C_GREEN)compiling cub3d ... $(RESET)"
-	@$(COMPILE) $(FLAGS) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) -o $(NAME)
+	@$(COMPILE) $(FLAGS) -o $(NAME) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) 
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
 %.o: %.c $(HEADERS)
@@ -146,8 +146,8 @@ clean:
 	@make clean -C libft
 	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
 	@make clean -C gnl
-	# @echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
-	# @make clean -C minilibx-master
+	@echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
+	@make clean -C minilibx-master
 	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
 	@rm -f $(SRC_O)
 	@echo "$(C_ORANGE)make clean complete...$(RESET)"

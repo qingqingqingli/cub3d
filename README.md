@@ -14,3 +14,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 - Allow for setting the floor and ceilling colors to two different colors
 - Program must take a scene description file as a first argument
 
+<!-- to do list:
+- check how it works on Linux
+- add instructions on how to make it work on Linux -->
+
