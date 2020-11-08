@@ -7,17 +7,17 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Technical considerations
 
-- Allowed functions: ```open```, ```close```, ```read```, ```write```, ```malloc```, ```free```, ```perror```, ```strerror```, ```exit```, all functions of the ```math``` library and the ```MinilibX```
+- **Allowed functions**: ```open```, ```close```, ```read```, ```write```, ```malloc```, ```free```, ```perror```, ```strerror```, ```exit```, all functions of the ```math``` library and the ```MinilibX```
 
-- All heap allocated memory space must be properly freed when necessary
+- All **heap allocated memory** space must be properly freed when necessary
 
-- Management of window must remain smooth
+- Management of **window** must remain smooth
 
-- Allow for the display of different wall textures
+- Allow for the display of different **wall textures**
 
-- Allow for setting the floor and ceilling colors to two different colors
+- Allow for setting the **floor and ceilling colors** to two different colors
 
-- Program must take a scene description file as a first argument
+- Program must take a **scene description file** as a first argument
 
 <!-- to do list:
 - check how it works on Linux
