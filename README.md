@@ -23,6 +23,10 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 > If you are on a Linux distribution, make sure that you installed the packages below
 
+```shell
+sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
+```
+
 ## How to test
 
 > Run the following commands. A few map files (```xx.cub```) are provided in the ```maps``` directory. Replace ```choose_one_file.cub``` with the file of your choice
