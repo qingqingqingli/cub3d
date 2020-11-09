@@ -14,6 +14,15 @@ This project also enables us to improve skills in: windows, colors, events, fill
 - Allow for setting the floor and ceilling colors to two different colors
 - Program must take a scene description file as a first argument
 
+## Disclaimer
+
+- This repo provides two versions: one for Linux and another for MacOS
+- There are a few differences between these two:
+-- XX
+-- XX 
+
+
+
 ## Examples
 
 [![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d)
