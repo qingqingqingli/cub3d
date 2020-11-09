@@ -21,7 +21,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Examples
 
-[![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d
+[![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d)
 
 <!-- to do list:
 - Check how it works on Linux
