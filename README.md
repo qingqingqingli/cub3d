@@ -19,7 +19,14 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 - Program must take a scene description file as a first argument
 
+## Examples
+
+[![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d
+
 <!-- to do list:
-- check how it works on Linux
-- add instructions on how to make it work on Linux -->
+- Check how it works on Linux
+- Add instructions on how to make it work on Linux
+- Add Makefil to compile on MacOS and also Linux
+- Find out what's different on the MacOS and Linux github version
+- set the color to -1 so if not set correctly it won't run -->
 
