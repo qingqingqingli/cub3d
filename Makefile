@@ -6,7 +6,7 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/09 17:06:23 by qli           #+#    #+#                  #
-#    Updated: 2020/11/06 22:06:04 by qli           ########   odam.nl          #
+#    Updated: 2020/11/09 11:16:47 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,13 +101,13 @@ SRC_O 			=	$(SRC:.c=.o)
 
 EXTERNAL_LIBS	=	libft/libft.a \
 					gnl/libgnl.a \
-					minilibx-master/libmlx_Linux.a \
+					mlx_linux/libmlx_Linux.a \
 
 LIBS 			= 	-lXext -lX11 -lm -lz -AppKit
 
 INLCUDES		=	-Ilibft \
 					-Ignl \
-					-Iminilibx_master
+					-Imlx_linux
 
 HEADERS 		= 	cub3d.h \
 					struct.h \
@@ -132,14 +132,14 @@ $(NAME): $(SRC_O)
 	@echo "$(C_GREEN)compiling gnl ... $(RESET)"
 	@make -C gnl
 	@echo "$(C_GREEN)compiling minilibx ... $(RESET)"
-	@make -C minilibx-master
+	@make -C mlx_linux
 	@echo "$(C_GREEN)compiling cub3d ... $(RESET)"
-	@$(COMPILE) $(FLAGS) -o $(NAME) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) 
+	@$(COMPILE) $(INLCUDES) $(SRC_O) $(EXTERNAL_LIBS) $(LIBS) $(LIBS) -o $(NAME)
 	@echo "$(C_GREEN)*****cub3d created***** $(RESET)"
 
 %.o: %.c $(HEADERS)
 	@echo "CUB3D: Compiling $<"
-	@$(COMPILE) $(FLAGS) $(INLCUDES) -c $< -o $@
+	@$(COMPILE) $(FLAGS) $(INLCUDES) -O3 -c $< -o $@
 
 clean:
 	@echo "$(C_ORANGE)cleaning libft...$(RESET)"
@@ -147,7 +147,7 @@ clean:
 	@echo "$(C_ORANGE)cleaning gnl...$(RESET)"
 	@make clean -C gnl
 	@echo "$(C_ORANGE)cleaning minilibx...$(RESET)"
-	@make clean -C minilibx-master
+	@make clean -C mlx_linux
 	@echo "$(C_ORANGE)cleaning cub3d...$(RESET)"
 	@rm -f $(SRC_O)
 	@echo "$(C_ORANGE)make clean complete...$(RESET)"

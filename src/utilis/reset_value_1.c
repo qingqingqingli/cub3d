@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/08 19:45:27 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 15:48:47 by qli           ########   odam.nl         */
+/*   Updated: 2020/11/09 11:00:50 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ static void	ft_reset_dda(t_input *input)
 
 static void	ft_reset_color(t_input *input)
 {
-	input->ceilling_color = 0;
-	input->floor_color = 0;
-	input->color.r = 0;
-	input->color.g = 0;
-	input->color.b = 0;
-	input->color.wall = 0;
-	input->color.ceilling = 0;
-	input->color.floor = 0;
+	input->ceilling_color = -1;
+	input->floor_color = -1;
+	input->color.r = -1;
+	input->color.g = -1;
+	input->color.b = -1;
+	input->color.wall = -1;
+	input->color.ceilling = -1;
+	input->color.floor = -1;
 }
 
 void		ft_reset_input(t_input *input)

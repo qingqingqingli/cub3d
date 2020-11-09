@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/05/05 13:52:52 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/06 11:29:34 by qli           ########   odam.nl         */
+/*   Created: 2020/03/11 13:47:27 by qli           #+#    #+#                 */
+/*   Updated: 2020/05/06 17:29:37 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
-# include "minilibx-master/mlx.h"
+# include "mlx/mlx.h"
 # include "struct.h"
-# include <stdio.h> //to remove
 
 /*
 ** ---------------------------KEY-------------------------------------------
@@ -26,43 +25,25 @@
 ** changed left and right
 */
 
-# define KEY_UP 65362
-# define KEY_LEFT 65361
-# define KEY_RIGHT 65363
-# define KEY_DOWN 65364
-# define ESC 65307
-# define W 119
-# define A 97
-# define D 100
-# define S 115
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+# define ESC 53
+# define W 13
+# define A 0
+# define D 2
+# define S 1
 # define KEY_PRESS 2
 # define KEY_RELEASE 3
 # define DESTROY_NOTIFY	17
 
 /*
-** ---------------------------COLOR-------------------------------------------
-*/
-
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000099ff
-# define ORANGE 0x00ff9900
-# define DARK_GREEN 0x00009933
-# define DARK_PINK 0x00cc3399
-# define WHITE 0x00FFFFFF
-# define BLACK 0x00000000
-# define GRAY 0x00808080
-# define DARK_GRAY 0x00191919
-# define ALICE_BLUE	0x00f0f8ff
-
-/*
 ** ---------------------------MOVEMENT----------------------------------------
 */
-# define MOVE_SPEED	0.0055
-# define ROTATE_SPEED 0.0055
+# define MOVE_SPEED	0.02
+# define ROTATE_SPEED 0.05
 
 /*
-** ---------------------------FUNCTIONS----------------------------------------
+** --------------------------FUNCTIONS----------------------------------------
 */
 int					ft_return_error(char *s, t_input *input);
 int					ft_isspace(int c);

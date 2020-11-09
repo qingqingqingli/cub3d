@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/12 08:51:23 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/06 09:27:14 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 15:02:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,17 +142,16 @@ int				get_next_line(int fd, char **line)
 {
 	static char		*container;
 	char			buf[BUFFER_SIZE + 1];
-	ssize_t			res;
+	int				res;
 
 	if (fd == -1 || line == NULL)
 		return (-1);
 	while (ft_check_line(container) == 0 && res != -1)
 	{
-		if ((res = read(fd, buf, BUFFER_SIZE)) == 0 && res != -1)
+		if (ft_read_res(&res, fd, buf) == 0)
 			return (ft_read_line(&container, line, 0, buf));
 		else if (res > 0)
 		{
-			buf[res] = '\0';
 			if (ft_read_line(&container, line, 2, buf) == -1)
 				return (-1);
 		}

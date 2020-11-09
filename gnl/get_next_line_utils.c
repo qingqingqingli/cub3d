@@ -6,27 +6,11 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/04 11:02:48 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:22:51 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 15:03:18 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-/*
-**	count the len of a string
-*/
-
-size_t		ft_strlen_1(const char *s)
-{
-	size_t len;
-
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
 
 /*
 ** duplicate the buf to containter, when the container is empty

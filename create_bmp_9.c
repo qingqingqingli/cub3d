@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/28 11:19:46 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/05 10:01:02 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 17:24:10 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static int	ft_write_rgb(int fd, t_input *input, int x, int y)
 	&input->bmp_color.endian);
 	if (input->bmp_color.addr == NULL)
 		return (ft_return_error("Error\nMlx addr error\n", input));
-	write(fd, &input->bmp_color.addr[position], 3);
+	if (write(fd, &input->bmp_color.addr[position], 3) < 0)
+		return (ft_return_error("Error\nWrite error\n", input));
 	return (0);
 }
 

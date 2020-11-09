@@ -6,7 +6,7 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/04 11:03:04 by qli           #+#    #+#                 */
-/*   Updated: 2020/04/29 18:22:27 by qli           ########   odam.nl         */
+/*   Updated: 2020/05/06 15:02:54 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ char	*ft_strdup_1(const char *s1);
 char	*ft_strjoin_1(char *s1, char *s2);
 size_t	ft_char_find(char *s, char c);
 int		ft_check_line(char *container);
+int		ft_read_res(int *res, int fd, char *buf);
 
 #endif

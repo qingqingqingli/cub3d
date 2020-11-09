@@ -28,5 +28,5 @@ This project also enables us to improve skills in: windows, colors, events, fill
 - Add instructions on how to make it work on Linux
 - Add Makefil to compile on MacOS and also Linux
 - Find out what's different on the MacOS and Linux github version
-- set the color to -1 so if not set correctly it won't run -->
+- set the color to -1 so if not set correctly it won't run (done) -->
 

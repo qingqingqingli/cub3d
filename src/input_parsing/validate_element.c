@@ -6,16 +6,30 @@
 /*   By: qli <qli@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/03 18:35:31 by qli           #+#    #+#                 */
-/*   Updated: 2020/05/04 16:04:02 by qli           ########   odam.nl         */
+/*   Updated: 2020/11/09 10:58:43 by qli           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
-/*
-** need to use mlx_get_screen_sizen
-*/
+// //MacOS
+// int		ft_reset_resolution(t_input *input)
+// {
+// 	mlx_get_screen_size(input->img.mlx, &input->res_x_present,
+// 	&input->res_y_present);
+// 	if (input->res_x_present <= 0 || input->res_y_present <= 0)
+// 		return (ft_return_error("Error\nMlx screen size error\n", input));
+// 	if (input->res_present == 1 && input->bmp_needed == 0)
+// 	{
+// 		if (input->res_x > input->res_x_present || input->res_x < 0)
+// 			input->res_x = input->res_x_present;
+// 		if (input->res_y > input->res_y_present || input->res_y < 0)
+// 			input->res_y = input->res_y_present;
+// 	}
+// 	return (0);
+// }
 
+//Linux
 void	ft_reset_resolution(t_input *input)
 {
 	input->res_x_present = 800;

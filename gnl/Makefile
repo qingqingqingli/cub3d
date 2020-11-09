@@ -6,14 +6,15 @@
 #    By: qli <qli@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/10 14:17:15 by qli           #+#    #+#                  #
-#    Updated: 2020/04/29 18:22:58 by qli           ########   odam.nl          #
+#    Updated: 2020/05/06 15:02:41 by qli           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libgnl.a
 
-SRC = get_next_line.c\
-		get_next_line_utils.c
+SRC =	get_next_line.c\
+		get_next_line_utils.c\
+		get_next_line_utils_2.c
 
 SRC_O = $(SRC:.c=.o)
 
