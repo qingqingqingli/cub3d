@@ -23,7 +23,8 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Examples
 
-[![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d)
+- Press ```W / A / S / D``` key to move and ```Left / Right``` key to rotate
+[![cub3d_4](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_4.gif)](https://github.com/qingqingqingli/cub3d)
 
 ## TO DO
 
