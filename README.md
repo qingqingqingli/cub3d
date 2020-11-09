@@ -16,10 +16,10 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Disclaimer
 
-> This repo provides two versions (Linux & MacOS), due to major differences between these two OS:
+> This repo provides two versions (Linux & MacOS), due to major differences between these two operation systems:
 - mlx library needs to be compiled differently on Linux and MacOS
 - ```ft_reset_resolution()``` function from mlx library is not provided on the Linux version
-- keycode for movement are different
+- The keycode value for movement and closing windows are different
 
 ## Examples
 
