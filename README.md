@@ -16,12 +16,8 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Disclaimer
 
-- This repo provides two versions: one for Linux and another for MacOS
-- There are a few differences between these two:
--- XX
--- XX 
-
-
+> Due to the differences between operation systems, this repo provides two versions (Linux & MacOS). The main differences include: 
+- mlx library
 
 ## Examples
 
