@@ -21,7 +21,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 - ```ft_reset_resolution()``` function from the ```MinilibX``` library is not provided on the Linux version
 - The keycode value for movement and closing windows are different
 
-> If you are on a Linux distribution, make sure that you installed the packages below
+**If you are on a Linux distribution, make sure that you installed the packages below:**
 
 ```shell
 sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
