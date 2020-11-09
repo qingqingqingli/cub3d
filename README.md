@@ -7,7 +7,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Technical considerations
 
-- Allowed functions: ```open```, ```close```, ```read```, ```write```, ```malloc```, ```free```, ```perror```, ```strerror```, ```exit```, all functions of the ```math``` library and the ```MinilibX```
+- Allowed functions: ```open```, ```close```, ```read```, ```write```, ```malloc```, ```free```, ```perror```, ```strerror```, ```exit```, all functions of the ```math``` library and the ```MinilibX``` library
 - All heap allocated memory space must be properly freed when necessary
 - Management of window must remain smooth
 - Allow for the display of different wall textures
@@ -17,8 +17,8 @@ This project also enables us to improve skills in: windows, colors, events, fill
 ## Disclaimer
 
 > This repo provides two versions (Linux & MacOS), due to major differences between these two operation systems:
-- mlx library needs to be compiled differently on Linux and MacOS
-- ```ft_reset_resolution()``` function from mlx library is not provided on the Linux version
+- The ```MinilibX``` library needs to be compiled differently on Linux and MacOS
+- ```ft_reset_resolution()``` function from the ```MinilibX``` library is not provided on the Linux version
 - The keycode value for movement and closing windows are different
 
 ## Examples
