@@ -27,7 +27,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## TO DO
 
-- To make one version that works for Linux and MacOS 
+- [ ] To make one version that works for Linux and MacOS 
 
 <!-- to do list:
 - Check how it works on Linux
