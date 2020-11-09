@@ -16,12 +16,18 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Disclaimer
 
-> Due to the differences between operation systems, this repo provides two versions (Linux & MacOS). The main differences include: 
-- mlx library
+> This repo provides two versions (Linux & MacOS), due to major differences between these two OS:
+- mlx library needs to be compiled differently on Linux and MacOS
+- ```ft_reset_resolution()``` function from mlx library is not provided on the Linux version
+- keycode for movement are different
 
 ## Examples
 
 [![cub3d_0](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_0.png)](https://github.com/qingqingqingli/cub3d)
+
+## TO DO
+
+- To make one version that works for Linux and MacOS 
 
 <!-- to do list:
 - Check how it works on Linux
