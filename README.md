@@ -16,7 +16,7 @@ This project also enables us to improve skills in: windows, colors, events, fill
 
 ## Disclaimer
 
-**This repo provides two versions (Linux & MacOS), due to major differences between these two operation systems:**
+**This repo provides two versions (Linux & MacOS), due to major differences between these two operating systems:**
 
 - The ```MinilibX``` library needs to be compiled differently on Linux and MacOS
 - ```ft_reset_resolution()``` function from the ```MinilibX``` library is not provided on the Linux version
