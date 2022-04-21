@@ -51,13 +51,3 @@ $ ./cub3d maps/choose_one_file.cub
 - Press ```W / A / S / D``` key to move and ```Left / Right``` key to rotate
 
 [![cub3d_4](https://github.com/qingqingqingli/readme_images/blob/master/cub3d_4.gif)](https://github.com/qingqingqingli/cub3d)
-
-## TO DO
-
-- [ ] To make one version that works for Linux and MacOS 
-
-<!-- to do list:
-- Add instructions on how to make it work on Linux
-- Add Makefil to compile on MacOS and also Linux
-- set the color to -1 so if not set correctly it won't run (done) -->
-
